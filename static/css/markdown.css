@@ -1,0 +1,65 @@
+.container {
+    text-align: left;
+    gap: 2rem;
+}
+
+:global(.md-h1) {
+    color: black;
+    display: flex;
+    margin-top: 2rem;
+    font-size: 3rem;
+}
+
+:global(.md-h2) {
+    display: flex;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+:global(.md-h3) {
+    display: flex;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+
+:global(.md-h-a) {
+    margin-left: -1.05em;
+    padding-right: 0.25em;
+    visibility: hidden;
+}
+
+:global(.md-h-a img) {
+    width: 0.75em;
+    margin: 0;
+}
+
+:global(.md-h1:hover .md-h-a, .md-h2:hover .md-h-a, .md-h3:hover .md-h-a) {
+    visibility: visible;
+}
+
+:global(.md-hr) {
+    background-color: rgb(168, 168, 168);
+    height: 1px;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+:global(ul, .md-ul, .md-ol) {
+    padding-left: 2rem;
+}
+
+:global(.md-code) {
+    background-color: rgb(190, 190, 190);
+    padding: 0.2rem;
+    border-radius: 0.375rem;
+}
+
+:global(.md-img) {
+    margin: 1rem 0;
+}
+
+@media screen and (max-width: 1100px) {
+    :global(.md-img) {
+        width: 100%;
+    }
+}
