@@ -48,10 +48,11 @@
             await goto("/account");
             alert("Please log in to your Meteor account before donating!");
         }
-
-        const text = document.getElementById("paypal-text");
-        text!.innerText = err;
-        text!.style.color = "#FF0000";
+        else {
+            const text = document.getElementById("paypal-text");
+            text!.innerText = err.error;
+            text!.style.color = "#FF0000";
+        }
 
         return await api("payments/cancel", true);
     }
@@ -71,6 +72,10 @@
 <style>
     h1 {
         color: black;
+    }
+
+    h3 {
+        margin-top: 1rem;
     }
 
     h3 {
