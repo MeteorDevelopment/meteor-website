@@ -78,7 +78,11 @@
         color: black;
     }
 
+    h3 {
+        margin-top: 1rem;
+    }
+
     #paypal-buttons {
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
 </style>
