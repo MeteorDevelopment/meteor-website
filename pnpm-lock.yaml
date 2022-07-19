@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@paypal/paypal-js': ^5.1.0
   '@sveltejs/adapter-node': 1.0.0-next.81
   '@sveltejs/kit': next
   mdsvex: ^0.10.6
@@ -16,6 +17,7 @@ specifiers:
   vite: 3.0.0
 
 devDependencies:
+  '@paypal/paypal-js': 5.1.0
   '@sveltejs/adapter-node': 1.0.0-next.81
   '@sveltejs/kit': 1.0.0-next.378_svelte@3.49.0+vite@3.0.0
   mdsvex: 0.10.6_svelte@3.49.0
@@ -67,6 +69,12 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: true
+
+  /@paypal/paypal-js/5.1.0:
+    resolution: {integrity: sha512-GNkbxef+HS+rZ+Ou3cvDBfzJ2+dpaiX8wbf/f7LFwGXmozWz0VFhG4qZRXoVJRxjHcXmz/TFFQN/q57HwnXdJA==}
+    dependencies:
+      promise-polyfill: 8.2.3
     dev: true
 
   /@rollup/pluginutils/4.2.1:
@@ -720,6 +728,10 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /promise-polyfill/8.2.3:
+    resolution: {integrity: sha512-Og0+jCRQetV84U8wVjMNccfGCnMQ9mGs9Hv78QFe+pSDD3gWTpz0y+1QCuxy5d/vBFuZ3iwP2eycAkvqIMPmWg==}
+    dev: true
+
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
@@ -831,8 +843,8 @@ packages:
       svelte: ^3.24.0
     dependencies:
       '@jridgewell/trace-mapping': 0.3.14
-      fast-glob: 3.2.11
       chokidar: 3.5.3
+      fast-glob: 3.2.11
       import-fresh: 3.3.0
       picocolors: 1.0.0
       sade: 1.8.1
