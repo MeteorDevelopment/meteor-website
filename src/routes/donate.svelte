@@ -4,8 +4,8 @@
     import { api } from "$lib/api";
     import { goto } from '$app/navigation';
 
-    const amount = 5.00;
-    const clientId = "AQwX-Z2PR6vUPbFVakBoSQVUCW_QmMlc7ZfTdd_fMqZ9ZKb2YyGAGCppB95XCDlZAUwZsmZAlcVaUUZm";
+    export var amount = 5.00;
+    export const clientId = "AQwX-Z2PR6vUPbFVakBoSQVUCW_QmMlc7ZfTdd_fMqZ9ZKb2YyGAGCppB95XCDlZAUwZsmZAlcVaUUZm";
 
     onMount(async () => {
         const paypal = await loadScript({ "client-id": clientId, currency: "GBP" });
