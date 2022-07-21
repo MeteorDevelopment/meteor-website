@@ -43,6 +43,18 @@
     function logout() {
         token.set(null);
     }
+
+    let customCape: HTMLInputElement;
+    let customCapeError: HTMLSpanElement;
+
+    function submit() {
+        let form = new FormData();
+        form.append("file", customCape.files![0]);
+
+        api("account/uploadCape", true, "POST", form)
+            .then(() => refreshUser())
+            .catch(reason => customCapeError = reason);
+    }
 </script>
 
 <Navbar />
@@ -52,6 +64,7 @@
         <div>
             <h1>Manage Account</h1>
 
+            <!-- Discord -->
             <div class="section">
                 <h2>Discord</h2>
                 {#if $user.discordId}
@@ -75,6 +88,7 @@
                 {/if}
             </div>
 
+            <!-- Minecraft -->
             <div class="section">
                 <h2>Minecraft</h2>
                 <ul>
@@ -94,13 +108,15 @@
                 </form>
             </div>
 
+            <!-- Cape -->
             <div class="section">
                 <h2>Cape</h2>
                 <ul>
                     {#each $user.capes as cape}
                         <li>
                             {#if cape.url !== ""}
-                                <img src={cape.url} alt="cape" style="width: 10rem;">
+                                <!-- Quick hack to disable broser cache -->
+                                <img src={cape.url + "?_rand=" + new Date().getTime()} alt="cape" style="width: 10rem;">
                             {/if}
 
                             {#if cape.current}
@@ -112,8 +128,19 @@
                         </li>
                     {/each}
                 </ul>
+                {#if $user.canHavaCustomcape}
+                    <form on:submit|preventDefault={submit}>
+                        <label for="upload-cape" class="form-label"><b>Upload custom cape</b></label>
+                        <input bind:this={customCape} type="file" id="upload-cape" name="upload-cape" required>
+
+                        <span bind:this={customCapeError} class="error"></span>
+
+                        <button type="submit" class="form-button" style="width: 100%;">Upload</button>
+                    </form>
+                {/if}
             </div>
 
+            <!-- Controls -->
             <div class="section">
                 <h2>Controls</h2>
                 <div class="buttons">

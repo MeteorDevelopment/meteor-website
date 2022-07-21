@@ -1,10 +1,11 @@
 import { get } from "svelte/store";
 import { token } from "./user";
 
-export function api(path: string, auth = false, method = "GET"): Promise<any> {
+export function api(path: string, auth = false, method = "GET", body: BodyInit | null = null): Promise<any> {
     return new Promise((resolve, reject) => {
         let options: RequestInit = {
-            method: method
+            method: method,
+            body: body
         };
 
         if (auth) options.headers = {

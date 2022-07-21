@@ -34,7 +34,7 @@
 
         <label for="newEmail" class="form-label"><b>New Email</b></label>
         <!-- svelte-ignore a11y-autofocus -->
-        <input bind:value={newEmail} type="newEmail" placeholder="New Email" id="newEmail" name="newEmail" required autofocus>
+        <input bind:value={newEmail} type="email" placeholder="New Email" id="newEmail" name="newEmail" required autofocus>
 
         <span bind:this={error} class="error"></span>
 
