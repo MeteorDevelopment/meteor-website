@@ -50,7 +50,7 @@
         }
         else {
             const text = document.getElementById("paypal-text");
-            text!.innerText = err.error;
+            text!.innerText = err;
             text!.style.color = "#FF0000";
         }
 
