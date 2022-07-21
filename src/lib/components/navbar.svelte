@@ -127,9 +127,11 @@
 
     .nav-links {
         display: flex;
-        align-items: center;
         justify-content: center;
         gap: 2rem;
+        position:absolute;
+        left:0;
+        right:0;
     }
 
     .nav-links a {
