@@ -39,7 +39,7 @@ A red highlight on the hud element indicates that they are **OFF**. Simply left 
 ## How do I import and export configs?
 You can use Copy Paste shortcuts in the GUI to copy and paste configs.
 - Windows and Linux: <kbd>Ctrl + C</kbd> and <kbd>Ctrl + V</kbd>
-- MacOS: <kbd>Cmd + C</kbd> and <kbd>Cmd + V</kbd>
+- MacOS: <kbd>⌘ + C</kbd> and <kbd>⌘ + V</kbd>
 
 You can also use this feature in individual modules and individual tabs (GUI, Config, HUD, etc).
 
