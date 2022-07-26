@@ -15,7 +15,7 @@ If unstable changes were do made in dev builds, they are usually made clear with
 
 ## How do I use Meteor on older Minecraft versions?
 Meteor is always kept up to date with the latest stable release of Minecraft.  
-You can use [ViaFabric](https://www.curseforge.com/minecraft/mc-mods/viafabric) if you want to connect to servers running other versions of Minecraft.
+You can use [ViaFabric](https://modrinth.com/mod/viafabric) or [Multiconnect](https://modrinth.com/mod/multiconnect) if you want to connect to servers running other versions of Minecraft.
 
 ## How do I open the GUI?
 The default key for opening the GUI is <kbd>Right Shift</kbd> which you can change this via the Minecraft controls menu.
@@ -32,8 +32,8 @@ A red highlight on the hud element indicates that they are **OFF**. Simply left 
 
 ## How do I import and export configs?
 You can use Copy Paste shortcuts in the GUI to copy and paste configs.
-- Windows and Linux: `Ctrl + C` and `Ctrl + V`
-- MacOS: `Cmd + C` and `Cmd + V`
+- Windows and Linux: <kbd>Ctrl + C</kbd> and <kbd>Ctrl + V</kbd>
+- MacOS: <kbd>⌘ + C</kbd> and <kbd>⌘ + V</kbd>
 
 You can also use this feature in individual modules and individual tabs (GUI, Config, HUD, etc).
 
