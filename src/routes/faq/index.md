@@ -16,7 +16,7 @@ To install Meteor Client:
 3. Go in the `mods` folder of the newely created instance, and paste the `meteor-client-x.x.x-xxxx.jar` file in it;
 4. Run the instance, and if you did everything correctly, you should see a text in the top right corner indicating that you are using Meteor.
 
-For in-depth installation instructions, refer to the [Installation guide](https://github.com/MeteorDevelopment/meteor-client/wiki/Installation).
+For in-depth installation instructions, refer to the [Installation guide](https://meteorclient.com/faq/installation).
 
 ## How do I use Meteor on older Minecraft versions?
 Meteor is always kept up to date with the latest stable release of Minecraft.  
