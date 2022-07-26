@@ -15,8 +15,8 @@ To play Minecraft, you'll need to have the compatible version of the JRE (Java R
 Usually Minecraft downloads it automatically, but if it doesn't, you should get it from [Adoptium](https://adoptium.net/temurin/releases).  
 The current version used by Minecraft 1.18.2 is v17.
 
-#### Unsafe cracked launchers</p>
-Avoid using closed source third-party launchers (<code>TLauncher</code> is a common example).  
+### Unsafe cracked launchers
+Avoid using closed source third-party launchers (`TLauncher` is a common example).  
 Since nobody can look at the code, the developers could insert malicious code, that could potentilally harm your devices.  
 We do not provide support to cracked users in any way, as they do not legally own the game.
 
