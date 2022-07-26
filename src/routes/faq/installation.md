@@ -4,10 +4,16 @@ layout: faq
 
 ## Downloading
 
-The latest release of Meteor can be downloaded from [here](/) for Minecraft 1.18.2.  
-*Disclaimer: If your antivirus flags Meteor as dangerous, it is probably because it is an executable (jar) file. If you have any concerns feel free to check the source code located within this repository.*
+The latest release of Meteor can be downloaded from [here](https://meteorclient.com/download).  
+*Disclaimer: If your antivirus flags Meteor as dangerous, it is probably because it is an executable (jar) file.  
+If you have any concerns feel free to check the source code located within this repository.*
 
 ## Installing
+
+### Prerequisites
+To play Minecraft, you'll need to have the compatible version of the JRE (Java Runtime Environment).  
+Usually Minecraft downloads it automatically, but if it doesn't, you should get it from [Adoptium](https://adoptium.net/temurin/releases).  
+The current version used by Minecraft 1.18.2 is v17.
 
 ### Minecraft Launcher
 If you already have Fabric Loader installed, skip to step 4.
@@ -20,14 +26,14 @@ If you already have Fabric Loader installed, skip to step 4.
 5. Open the Minecraft Launcher and select the Fabric 1.18.2 profile.
 6. Thats it, just click `Launch` to start up Meteor.
 
-### MultiMC
-If you already have MultiMC installed, skip to step 2.  
-If you already have a MultiMC instance with Fabric Loader, skip to step 4.  
+### PolyMC
+If you already have PolyMC installed, skip to step 2.  
+If you already have a PolyMC instance with Fabric Loader, skip to step 4.  
 
-1. Download [MultiMC](https://multimc.org/#Download) and install it.
-2. Open MultiMC and click `Add Instance`, make sure 1.18.2 is selected, give your instance a name and click `OK`.
+1. Download [PolyMC](https://polymc.org/download/) and install it.
+2. Open PolyMC and click `Add Instance`, make sure 1.18.2 is selected, choose the `Fabric` loader in the bottom window, and press `OK`.
 3. Click `Edit Instance` with your new instance selected and then click `Install Fabric` then `OK`.
 4. Download Meteor from [here](https://meteorclient.com/download).
-5. Go back to MultiMC and click the `Loader Mods` tab in the edit instance window, drag the downloaded meteor jar into the middle of the mods screen.
+5. Go back to PolyMC and click the `Mods` tab in the edit instance window, drag the downloaded meteor jar into the middle of the mods screen.
 6. Thats it, just click `Launch` to start up Meteor.
 
