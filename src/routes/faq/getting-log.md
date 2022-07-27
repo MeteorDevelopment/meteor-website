@@ -42,7 +42,7 @@ In the Logs folder, scroll down and find a file called `latest` or `latest.log`.
 Select the entire contents (<kbd>Ctrl</kbd>+<kbd>A</kbd> or <kbd>⌘</kbd>+<kbd>A</kbd>) of the file and copy it (<kbd>Ctrl</kbd>+<kbd>C</kbd> or <kbd>⌘</kbd>+<kbd>C</kbd>).
 
 ### Step 6
-Open [pastebin.com](https://pastebin.com/) and paste (<kbd>Ctrl</kbd>+<kbd>V</kbd> or <kbd>⌘</kbd>+<kbd>V</kbd>) the contents into the largest field.
+Open [mclo.gs](https://mclo.gs/) and paste (<kbd>Ctrl</kbd>+<kbd>V</kbd> or <kbd>⌘</kbd>+<kbd>V</kbd>) the contents into the largest field.
 
 ### Step 7
 Press `Create New Paste` and on the next page, copy the URL from the address bar and give it to whoever requested the log. Wait for further instructions.
