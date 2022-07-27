@@ -1,7 +1,7 @@
 import { get } from "svelte/store";
 import { token } from "./user";
 
-export function api(path: string, auth = false, method = "GET", body: BodyInit | null = null): Promise<any> {
+export function api(path: string, auth = false, method = "GET", body: BodyInit | null = null, fetchImpl: any = null): Promise<any> {
     return new Promise((resolve, reject) => {
         let options: RequestInit = {
             method: method,
@@ -12,7 +12,10 @@ export function api(path: string, auth = false, method = "GET", body: BodyInit |
             Authorization: "Bearer " + get(token)
         };
 
-        fetch("https://meteorclient.com/api/" + path, options)
+        let f = fetch;
+        if (fetchImpl) f = fetchImpl;
+
+        f("https://meteorclient.com/api/" + path, options)
             .then(rawRes => {
                 rawRes.json().then(res => {
                     if (rawRes.status == 200) resolve(res);
