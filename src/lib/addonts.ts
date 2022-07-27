@@ -37,13 +37,13 @@ export function getAddon(id: string, fetch: any = null): Promise<Addon> {
     });
 }
 
-export function searchAddons(text: string, fetch: any = null): Promise<Addon[]> {
-    let path = "addons/search";
-    if (text !== "") path += "?text=" + text;
+export function searchAddons(text: string, page: number, fetch: any = null): Promise<[number, Addon[]]> {
+    let path = "addons/search?page=" + page;
+    if (text && text !== "") path += "&text=" + text;
 
     return new Promise((resolve, reject) => {
         api(path, false, "GET", null, fetch)
-            .then(res => resolve(res.addons.map(idk)))
+            .then(res => resolve([res.page_count, res.addons.map(idk)]))
             .catch(reason => reject(reason));
     });
 }

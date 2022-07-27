@@ -75,6 +75,8 @@
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        
+        width: 100%;
     }
 
     .card {
