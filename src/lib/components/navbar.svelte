@@ -52,6 +52,7 @@
                 {/if}
 
                 <a href="/">Home</a>
+                <a href="/addons">Addons</a>
                 <a href="/faq">FAQ</a>
                 <a href="/github" target="_blank">GitHub</a>
             </div>
@@ -59,6 +60,7 @@
     {:else}
         <div class="nav-links">
             <a href="/">Home</a>
+            <a href="/addons">Addons</a>
             <a href="/faq">FAQ</a>
             <a href="/github" target="_blank">GitHub</a>
         </div>
