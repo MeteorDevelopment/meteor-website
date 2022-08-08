@@ -7,6 +7,4 @@ COPY . .
 RUN npm install
 RUN npm run build
 
-ENV PORT 82
-
 CMD [ "node", "build" ]
