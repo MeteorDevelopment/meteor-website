@@ -4,8 +4,9 @@ WORKDIR /app
 
 COPY . .
 
-RUN curl -fsSL https://get.pnpm.io/install.sh | sh -
-RUN pnpm install
-RUN pnpm build
+RUN npm install
+RUN npm build
 
-CMD [ "PORT=82", "node", "build" ]
+ENV PORt 82
+
+CMD [ "node", "build" ]
