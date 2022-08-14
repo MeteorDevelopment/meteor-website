@@ -78,7 +78,7 @@
                 {:else}
                     {#if linkToken}
                         <p>To link your Discord account dm Meteor Bot on discord this message:</p>
-                        <p><b>.link {linkToken}</b></p>
+                        <p><b>/link {linkToken}</b></p>
                         <p>The command will only be valid for next 5 minutes.</p>
                     {:else}
                         <div class="buttons">
@@ -104,7 +104,7 @@
                 </ul>
                 <form class="buttons add-account" on:submit|preventDefault={addMcAccount}>
                     <input type="text" placeholder="Username" bind:value={username}>
-                    <button type="button">Add Account</button>
+                    <button type="button" on:click={addMcAccount}>Add Account</button>
                 </form>
             </div>
 
