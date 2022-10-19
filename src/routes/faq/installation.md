@@ -34,8 +34,8 @@ If you already have Fabric Loader installed, skip to step 4.
 4. Open your `.minecraft` folder and create a folder within it called `mods` if it does not exist already.
 5. Go to where you downloaded Meteor and drag the jar file into the mods folder.  
 *Note: If the file appears to be a zip because of winrar, it isn't! just ignore that as it is still a jar*
-5. Open the Minecraft Launcher and select the Fabric profile.
-6. Thats it, just click `Launch` to start up Meteor.
+6. Open the Minecraft Launcher and select the Fabric profile.
+7. Thats it, just click `Launch` to start up Meteor.
 
 ### MultiMC/PolyMC/PrismLauncher
 If you already have one of these installed, skip to step 2.  
