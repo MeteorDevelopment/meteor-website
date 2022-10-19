@@ -22,8 +22,9 @@ To install Meteor Client:
 For in-depth installation instructions, refer to the [Installation guide](https://meteorclient.com/faq/installation).
 
 ## How do I use Meteor on older Minecraft versions?
-Meteor is always kept up to date with the latest stable release of Minecraft.  
-You can use [ViaFabric](https://modrinth.com/mod/viafabric) or [Multiconnect](https://modrinth.com/mod/multiconnect) to connect to servers running versions of Minecraft older than the latest one.
+Meteor is always kept up to date with the latest stable release of Minecraft, this means we do not support the use of older Meteor/Minecraft versions.  
+You can use [ViaFabric](https://modrinth.com/mod/viafabric) or [Multiconnect](https://modrinth.com/mod/multiconnect) to connect to servers running versions of Minecraft older than the latest one.  
+The reason for this is because every commit is done on the latest Minecraft version, as such we do not have the time to backport every fix to older versions and therfore do not support the use of them as they may contain old, already fixed bugs.
 
 ## How do I open the GUI?
 The default key for opening the GUI is <kbd>Right Shift</kbd>, which you can change this via the Minecraft controls menu.  
