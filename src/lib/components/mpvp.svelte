@@ -2,7 +2,7 @@
     import Waves from "$lib/components/waves.svelte";
 </script>
 
-<Waves />
+<Waves/>
 <div class="container">
     <div>
         <h2>Meteor PvP</h2>

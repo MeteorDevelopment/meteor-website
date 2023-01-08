@@ -2,7 +2,7 @@
     import type { TransitionConfig } from "svelte/transition";
     import { cubicOut } from "svelte/easing";
     import { user } from "$lib/user";
-    import { browser } from "$app/env";
+    import { browser } from "$app/environment";
     import { clickOutside } from "svelte-use-click-outside";
 
     export let hideProfile = false;
@@ -44,7 +44,7 @@
                 {#if !hideProfile}
                     {#if $user}
                         <a class="user" href="/account">
-                            <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.jpg"} alt="profile" />
+                            <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.jpg"} alt="profile"/>
                         </a>
                     {:else}
                         <a href="/login"><button>Login</button></a>
@@ -69,7 +69,7 @@
             {#if $user}
                 <a class="user" href="/account">
                     <p>{$user.username}</p>
-                    <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.png"} alt="profile" />
+                    <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.png"} alt="profile"/>
                 </a>
             {:else}
                 <a href="/login"><button>Login</button></a>

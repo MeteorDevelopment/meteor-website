@@ -1,5 +1,5 @@
-import { writable, get } from "svelte/store";
-import { browser } from "$app/env";
+import { get, writable } from "svelte/store";
+import { browser } from "$app/environment";
 import { api } from "./api";
 
 export type Cape = {
@@ -25,7 +25,7 @@ export type User = {
     capes: Cape[];
 };
 
-export const token = writable(browser ? localStorage.getItem("token") : null);
+export const token = writable<string | null>(browser ? localStorage.getItem("token") : null);
 export const user = writable<User | null>();
 
 token.subscribe(token => {

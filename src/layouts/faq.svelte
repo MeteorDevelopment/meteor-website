@@ -3,10 +3,10 @@
     import Navbar from "$lib/components/navbar.svelte";
 </script>
 
-<Navbar />
+<Navbar/>
 <div class="container">
     <div>
-        <slot />
+        <slot/>
     </div>
     <ul>
         <li><a href="/faq">Home</a></li>
@@ -17,7 +17,7 @@
         <li><a href="/faq/swarm">Swarm</a></li>
     </ul>
 </div>
-<Footer />
+<Footer/>
 
 <style>
     @import "markdown.css";
