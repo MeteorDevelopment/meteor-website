@@ -23,7 +23,7 @@ If you have any concerns feel free to check the source code located within this 
 To play Minecraft, you'll need to have the compatible version of the JRE (Java Runtime Environment).  
 Usually Minecraft downloads it automatically, but if it doesn't, you should get it
 from [Adoptium](https://adoptium.net/temurin/releases).  
-The current version used by Minecraft 1.19.2 is v17.
+The current version used by Minecraft 1.19.3 is v17.
 
 ### Unsafe cracked launchers
 
@@ -51,9 +51,8 @@ If you already have Fabric Loader installed, skip to step 4.
 If you already have one of these installed, skip to step 2.  
 If you already have an instance with Fabric Loader, skip to step 4.
 
-1. Download [MultiMC](https://multimc.org/#Download), [PolyMC](https://polymc.org/download/),
-   or [PrismLauncher](https://prismlauncher.org/) and install it.
-2. Open the launcher and click `Add Instance`, make sure the correct Minecraft version is selected, choose the `Fabric`
+1. Download [MultiMC](https://multimc.org/#Download) or [PrismLauncher](https://prismlauncher.org/) and install it.
+3. Open the launcher and click `Add Instance`, make sure the correct Minecraft version is selected, choose the `Fabric`
    loader in the bottom window, and press `OK`.
 3. Click `Edit Instance` with your new instance selected and then click `Install Fabric` then `OK`.
 4. [Download](#downloading) your desired version of meteor from above.
