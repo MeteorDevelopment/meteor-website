@@ -132,3 +132,7 @@ means the object iself and not accessing any field.
 
 - `duration`: Effect's duration in ticks.
 - `level`: Effect's level.
+
+## Baritone
+
+When using Baritone commands in Starscript, you should use the `.b ` prefix in place of the usual `#` prefix.
