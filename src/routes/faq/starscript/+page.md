@@ -104,6 +104,7 @@ means the object iself and not accessing any field.
 
 - ` `: Item's name formatted as `Stone 32x` or just `Stone` if count is 1.
 - `name`: Item's name.
+- `id`: Item's registry identifier.
 - `count`: Number of items.
 - `durability`: Current durability.
 - `max_durability`: Maximum durability.
@@ -111,6 +112,7 @@ means the object iself and not accessing any field.
 ### Block
 
 - ` `: Block's name.
+- `id`: Block's registry identifier.
 - `pos`: Block's position formatted as `X: 0 Y: 0 Z: 0`.
 - `pos.x`: Block's X position.
 - `pos.y`: Block's Y position.
@@ -119,6 +121,7 @@ means the object iself and not accessing any field.
 ### Entity
 
 - ` `: Entity's name.
+- `id`: Entity's registry identifier.
 - `health`: Entity's health or 0 if the entity doesn't have health.
 - `pos`: Entity's position formatted as `X: 0 Y: 0 Z: 0`.
 - `pos.x`: Entity's X position.
