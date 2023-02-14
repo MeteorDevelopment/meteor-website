@@ -46,7 +46,7 @@ If you already have Fabric Loader installed, skip to step 4.
 6. Open the Minecraft Launcher and select the Fabric profile.
 7. Thats it, just click `Launch` to start up Meteor.
 
-### MultiMC/PolyMC/PrismLauncher
+### MultiMC/PrismLauncher
 
 If you already have one of these installed, skip to step 2.  
 If you already have an instance with Fabric Loader, skip to step 4.
