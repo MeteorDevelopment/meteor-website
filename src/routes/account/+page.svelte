@@ -77,8 +77,8 @@
                     </div>
                 {:else}
                     {#if linkToken}
-                        <p>To link your Discord account dm Meteor Bot on discord this message:</p>
-                        <p><b>/link {linkToken}</b></p>
+                        <p>To link your Discord, dm Meteor Bot:</p>
+                        <p><b>/link token:{linkToken}</b></p>
                         <p>The command will only be valid for next 5 minutes.</p>
                     {:else}
                         <div class="buttons">
