@@ -51,6 +51,7 @@ found [here](https://github.com/MeteorDevelopment/starscript/wiki#standard-varia
 
 - `player`: Username.
 - `player.health`: Player's health.
+- `player.absorption`: Player's absorption.
 - `player.hunger`: Player's hunger.
 - `player.speed`: Speed in blocks per second.
 - `player.breaking_progress`: Block breaking progress.
@@ -120,6 +121,7 @@ means the object iself and not accessing any field.
 
 - ` `: Entity's name.
 - `health`: Entity's health or 0 if the entity doesn't have health.
+- `absorption`: Entity's absorption or 0 if the entity doesn't have absorption.
 - `pos`: Entity's position formatted as `X: 0 Y: 0 Z: 0`.
 - `pos.x`: Entity's X position.
 - `pos.y`: Entity's Y position.
