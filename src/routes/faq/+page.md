@@ -30,7 +30,7 @@ For in-depth installation instructions, refer to the [Installation guide](https:
 
 Meteor is always kept up to date with the latest stable release of Minecraft, this means we do not support the use of
 older Meteor/Minecraft versions.  
-You can use [ViaFabric](https://modrinth.com/mod/viafabric) or [Multiconnect](https://modrinth.com/mod/multiconnect) to
+You can use [ViaFabricPlus](https://modrinth.com/mod/viafabricplus) to
 connect to servers running versions of Minecraft older than the latest one.  
 The reason for this is because every commit is done on the latest Minecraft version, as such we do not have the time to
 backport every fix to older versions and therfore do not support the use of them as they may contain old, already fixed
