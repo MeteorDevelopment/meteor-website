@@ -23,7 +23,7 @@ If you have any concerns feel free to check the source code located within this 
 To play Minecraft, you'll need to have the compatible version of the JRE (Java Runtime Environment).  
 Usually Minecraft downloads it automatically, but if it doesn't, you should get it
 from [Adoptium](https://adoptium.net/temurin/releases).  
-The current version used by Minecraft 1.19.2 is v17.
+The current version used by Minecraft is v17.
 
 ### Unsafe cracked launchers
 
@@ -42,7 +42,7 @@ If you already have Fabric Loader installed, skip to step 4.
 3. Click `Install` and then wait for the process to complete.
 4. Open your `.minecraft` folder and create a folder within it called `mods` if it does not exist already.
 5. Go to where you downloaded Meteor and drag the jar file into the mods folder.  
-   *Note: If the file appears to be a zip because of winrar, it isn't! just ignore that as it is still a jar*
+   *Note: If the file appears to be a zip because of winrar, or the icon is missing, ignore that as it is still a jar*
 6. Open the Minecraft Launcher and select the Fabric profile.
 7. Thats it, just click `Launch` to start up Meteor.
 
