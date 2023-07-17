@@ -15,7 +15,7 @@
         <p>Online Players: {prettyNumber(stats.onlinePlayers)}</p>
 
         <div class="buttons">
-            <a href="/download" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> Release {stats.version} [{stats.mcVersion}]</a>
+            <a href="https://adfoc.us/81926897223650" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> Release {stats.version} [{stats.mcVersion}]</a>
             <a href="https://adfoc.us/8192681" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> Dev Build {stats.devBuildVersion} [{stats.devBuildMcVersion}]</a>
         </div>
     </div>
