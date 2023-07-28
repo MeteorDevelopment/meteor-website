@@ -4,19 +4,35 @@
     import { browser } from "$app/environment";
     import { token } from "$lib/user";
     import { goto } from "$app/navigation";
+    import { Turnstile } from 'svelte-turnstile';
 
     let username: string;
     let email: string;
     let password: string;
+    let cfToken: string;
     let error: HTMLSpanElement;
 
     let sent = false;
 
+    function onTurnstileError() {
+        error.textContent = "Captcha failed, please try again.";
+    }
+
+    function onTurnstileSuccess(event: CustomEvent) {
+        cfToken = event.detail.token;
+    }
+
     function submit() {
         error.textContent = "";
 
-        api("account/register?username=" + username + "&email=" + email + "&password=" + password, true, "POST")
-            .then(res => sent = true)
+        const formData = new FormData()
+        formData.append("username", username)
+        formData.append("email", email)
+        formData.append("password", password)
+        formData.append("cf-token", cfToken)
+
+        api("account/register", true, "POST", formData)
+            .then(() => sent = true)
             .catch(reason => error.textContent = reason);
     }
 
@@ -44,6 +60,17 @@
 
         <label for="password" class="form-label"><b>Password</b></label>
         <input bind:value={password} type="password" placeholder="Password" id="password" name="password" required>
+
+        <p class="form-label"><b>Captcha</b></p>
+        <Turnstile
+            id="captcha"
+            siteKey="0x4AAAAAAAH2MXj1b8rpN6cf"
+            theme="light"
+            on:turnstile-callback={onTurnstileSuccess}
+            on:turnstile-error={onTurnstileError}
+            on:turnstile-expired={onTurnstileError}
+            on:turnstile-timeout={onTurnstileError}
+        />
 
         <span bind:this={error} class="error"></span>
 
