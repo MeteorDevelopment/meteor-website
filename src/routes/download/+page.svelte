@@ -13,7 +13,7 @@
         setInterval(() => {
             timer--;
 
-            if (timer <= 0) {
+            if (timer == 0) {
                 if ($page.url.searchParams.has("devBuild"))
                     goto("/api/download?devBuild=latest");
                 else
