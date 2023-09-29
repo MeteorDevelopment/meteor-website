@@ -15,9 +15,9 @@
 
             if (timer == 0) {
                 if ($page.url.searchParams.has("devBuild"))
-                    goto("localhost:3001/api/download?devBuild=latest");
+                    goto("https://meteorclient.com/api/download?devBuild=latest");
                 else
-                    goto("localhost:3001/api/download");
+                    goto("https://meteorclient.com/api/download");
                 document.getElementById("timer")!.innerText = "Download started";
                 clearInterval(i);
             }
