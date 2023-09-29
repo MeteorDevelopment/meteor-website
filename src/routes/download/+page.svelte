@@ -10,14 +10,16 @@
         const w: any = window;
         (w.adsbygoogle = w.adsbygoogle || []).push({});
 
-        setInterval(() => {
+        let i = setInterval(() => {
             timer--;
 
             if (timer == 0) {
                 if ($page.url.searchParams.has("devBuild"))
-                    goto("/api/download?devBuild=latest");
+                    goto("localhost:3001/api/download?devBuild=latest");
                 else
-                    goto("/api/download");
+                    goto("localhost:3001/api/download");
+                document.getElementById("timer")!.innerText = "Download started";
+                clearInterval(i);
             }
         }, 1000);
     });
@@ -37,7 +39,7 @@
     </ins>
 {/if}
 
-<p>Download will start in {timer} seconds</p>
+<p id="timer">Download will start in {timer} seconds</p>
 
 {#if browser}
     <ins class="adsbygoogle"
