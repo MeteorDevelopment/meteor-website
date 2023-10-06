@@ -26,10 +26,6 @@
     });
 </script>
 
-<svelte:head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8546584413187411"crossorigin="anonymous"></script>
-</svelte:head>
-
 <div>
     {#if browser}
         <ins class="adsbygoogle"
