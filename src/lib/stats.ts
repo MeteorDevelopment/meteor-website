@@ -4,6 +4,7 @@ export interface Stats {
 
     mcVersion: string;
     devBuildMcVersion: string;
+    baritoneMcVersion: string;
 
     downloads: number;
     onlinePlayers: number;
@@ -18,6 +19,7 @@ export async function fetchStats(fetch: any): Promise<Stats> {
 
         mcVersion: stats.mc_version,
         devBuildMcVersion: stats.dev_build_mc_version,
+        baritoneMcVersion: stats.baritone_mc_version,
 
         downloads: stats.downloads,
         onlinePlayers: stats.onlinePlayers
