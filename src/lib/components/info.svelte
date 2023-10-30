@@ -20,7 +20,7 @@
             <a href="/api/downloadBaritone" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> *Baritone [{stats.baritoneMcVersion}]</a>
         </div>
 
-        <p>* Baritone is our <a href="https://github.com/MeteorDevelopment/baritone">fork</a> which was previously included in Meteor itself. If you want the most up to date version, or want help with Baritone go to the <a href="https://github.com/wagyourtail/baritone">official sources</a>.</p>
+        <p>* Baritone is our <a href="https://github.com/MeteorDevelopment/baritone">fork</a> which was previously included in Meteor itself. If you want the most up to date version, or want help with Baritone go to the <a href="https://github.com/cabaletta/baritone">official sources</a>.</p>
     </div>
 </div>
 
