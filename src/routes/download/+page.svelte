@@ -8,7 +8,7 @@
 
     onMount(() => {
         const interval = setInterval(() => {
-            timer--;
+            //timer--;
 
             if (timer == 0) {
                 if ($page.url.searchParams.has("devBuild"))
@@ -33,6 +33,8 @@
         <p>Download started</p>
     {/if}
 
+    <p class="small">* If the timer or download does not start then try disabling your ad blocker. Some of them (especially Opera GX) aggressively block JavaScript.</p>
+
     <Ad />
 </div>
 
@@ -44,5 +46,9 @@
 
     p {
         margin: 2rem 0;
+    }
+
+    .small {
+        font-size: 0.75rem;
     }
 </style>
