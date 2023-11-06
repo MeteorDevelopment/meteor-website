@@ -8,7 +8,7 @@
 
     onMount(() => {
         const interval = setInterval(() => {
-            //timer--;
+            timer--;
 
             if (timer == 0) {
                 if ($page.url.searchParams.has("devBuild"))
