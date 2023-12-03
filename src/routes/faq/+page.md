@@ -82,6 +82,8 @@ Baritone's default command prefix is `#`.
 You can view all of Baritone's commands [here](https://github.com/cabaletta/baritone/blob/master/USAGE.md) and
 settings [here](https://baritone.leijurv.com/baritone/api/Settings.html).
 
+*From dev-build 1952 Baritone is no longer included with Meteor. Features that depend on Baritone will be disabled unless you put Baritone into your mods folder manually.*
+
 ## Why can't I talk in the Meteor Discord?
 
 You may have broken one of the rules in
