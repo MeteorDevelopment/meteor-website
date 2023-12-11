@@ -77,12 +77,13 @@ supported [here](https://lambdaurora.dev/optifine_alternatives/).
 
 ## How do I use Baritone with Meteor?
 
-Meteor comes with Baritone built in, so you don't need to download a standalone baritone.  
+Baritone is no longer included with Meteor. Features that depend on Baritone will be disabled unless you put Baritone into your mods folder manually. This will allow us to decouple Meteor from Baritone and update to newer versions faster. 
+
+### Using Baritone 
+
 Baritone's default command prefix is `#`.
 You can view all of Baritone's commands [here](https://github.com/cabaletta/baritone/blob/master/USAGE.md) and
 settings [here](https://baritone.leijurv.com/baritone/api/Settings.html).
-
-*From dev-build 1952 Baritone is no longer included with Meteor. Features that depend on Baritone will be disabled unless you put Baritone into your mods folder manually.*
 
 ## Why can't I talk in the Meteor Discord?
 
