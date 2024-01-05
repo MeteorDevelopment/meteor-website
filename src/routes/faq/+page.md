@@ -6,6 +6,7 @@ layout: faq
 
 If you have encountered or used YouTube "tutorials" on how to install and use Meteor, please disregard them.  
 Many of them are incorrect or outdated and, as stated below, we do not support older versions.
+
 <br>
 
 To install Meteor Client:
@@ -18,7 +19,7 @@ To install Meteor Client:
       the `#dev-builds` channel in the [Meteor Discord](https://meteorclient.com/discord), or by compiling the source
       from [GitHub](https://github.com/MeteorDevelopment/meteor-client).
 2. Create a Fabric instance in your Minecraft launcher, and choose the `latest` version of Minecraft;
-3. Go in the `mods` folder of the newely created instance, and paste the `meteor-client-x.x.x-xxxx.jar` file in it;
+3. Go in the `mods` folder of the newly created instance, and paste the `meteor-client-x.x.x-xxxx.jar` file in it;
 4. Run the instance, and if you did everything correctly, you should see a text in the top right corner indicating that
    you are using Meteor.
 
@@ -35,7 +36,7 @@ the [Old versions](https://meteorclient.com/faq/old-versions) guide.
 
 The default key for opening the GUI is <kbd>Right Shift</kbd>, which you can change this via the Minecraft controls
 menu.  
-Inside the GUI, you can left click on a Module to toggle it and right click to configure its settings.
+Inside the GUI, you can left-click on a Module to toggle it and right click to configure its settings.
 
 ## How do I use the HUD?
 
@@ -50,7 +51,7 @@ configure.
 
 ## How do I import and export configs?
 
-You can use Copy Paste shortcuts in the GUI to copy and paste configs.
+You can use Copy and Paste shortcuts in the GUI to copy and paste configs.
 
 - Windows and Linux: <kbd>Ctrl</kbd> + <kbd>C</kbd> and <kbd>Ctrl</kbd> + <kbd>V</kbd>
 - MacOS: <kbd>⌘</kbd> + <kbd>C</kbd> and <kbd>⌘</kbd> + <kbd>V</kbd>
@@ -59,22 +60,23 @@ You can also use this feature in individual modules and individual tabs (GUI, Co
 
 ## How to use Meteor with Optifine?
 
-Optifine is not and never will be supported by Meteor. We recommend using these instead:
+Optifine is not and will never be supported by Meteor. We recommend using these instead:
 
- Mod                                             | Description                                     
--------------------------------------------------|-------------------------------------------------
- [Sodium](https://modrinth.com/mod/sodium)       | Performance improvements (better than Optifine) 
- [Lithium](https://modrinth.com/mod/lithium)     | Server optimisations                            
- [Starlight](https://modrinth.com/mod/starlight) | Lighting engine improvements                    
+| Mod                                             | Description                                     |
+|-------------------------------------------------|-------------------------------------------------|
+| [Sodium](https://modrinth.com/mod/sodium)       | Performance improvements (better than Optifine) |
+| [Lithium](https://modrinth.com/mod/lithium)     | Server optimisations                            |
+| [Starlight](https://modrinth.com/mod/starlight) | Lighting engine improvements                    |
 
-More alternatives and the detailed reason optifine is not
+More alternatives and the detailed reason Optifine is not
 supported [here](https://lambdaurora.dev/optifine_alternatives/).
 
 ## How do I use Baritone with Meteor?
 
-Baritone is no longer included with Meteor. Features that depend on Baritone will be disabled unless you put Baritone into your mods folder manually. This will allow us to decouple Meteor from Baritone and update to newer versions faster. 
+Baritone is no longer included with Meteor. Features that depend on Baritone will be disabled unless you put Baritone
+into your mods folder manually. This will allow us to decouple Meteor from Baritone and update to newer versions faster.
 
-### Using Baritone 
+### Using Baritone
 
 Baritone's default command prefix is `#`.
 You can view all of Baritone's commands [here](https://github.com/cabaletta/baritone/blob/master/USAGE.md) and
@@ -84,7 +86,7 @@ settings [here](https://baritone.leijurv.com/baritone/api/Settings.html).
 
 You may have broken one of the rules in
 the [#rules](https://discord.com/channels/689197705683140636/816501672477720626/) channel and have been muted by staff
-or the automod.
+or the auto-moderator.
 
 If you did not break a rule,
 then [this](https://discord.com/channels/689197705683140636/689198722097348624/870066829622652989) might explain why.

@@ -99,7 +99,7 @@ found [here](https://github.com/MeteorDevelopment/starscript/wiki#standard-varia
 ## Objects
 
 Various variables and functions can return more complex objects which fields can be accessed using `.`. An empty ` `
-means the object iself and not accessing any field.
+means the object itself and not accessing any field.
 
 ### Item
 
