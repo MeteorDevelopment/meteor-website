@@ -35,7 +35,8 @@ the [ViaFabricPlus wiki](https://github.com/ViaVersion/ViaFabricPlus/blob/main/d
 ### Building from source
 
 If you want to use an older version of Meteor, you can build it from source.  
-Keep in mind that this is **not** recommended, as we do **not** provide support for older versions.   
+Keep in mind that this is **not** recommended, as we do **not** provide support for older versions.  
+Any threads opened in our support forum regarding failed builds of older versions will be closed.  
 If you encounter any issues, you will have to update to the latest version to get support.
 
 <br>
