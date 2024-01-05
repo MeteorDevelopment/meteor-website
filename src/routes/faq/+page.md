@@ -28,13 +28,8 @@ For in-depth installation instructions, refer to the [Installation guide](https:
 
 ## How do I use Meteor on older Minecraft versions?
 
-Meteor is always kept up to date with the latest stable release of Minecraft, this means we do not support the use of
-older Meteor/Minecraft versions.  
-You can use [ViaFabricPlus](https://modrinth.com/mod/viafabricplus) to
-connect to servers running versions of Minecraft older than the latest one.  
-The reason for this is because every commit is done on the latest Minecraft version, as such we do not have the time to
-backport every fix to older versions and therfore do not support the use of them as they may contain old, already fixed
-bugs.
+While we do not directly support older versions of Minecraft, you can refer to
+the [Old versions](https://meteorclient.com/faq/old-versions) guide.
 
 ## How do I open the GUI?
 
