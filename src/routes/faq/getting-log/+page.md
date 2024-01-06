@@ -1,7 +1,7 @@
 The Minecraft launcher keeps logs of game events as they happen which can be useful for debugging errors or other issues
 that may occur within the game.
 
-The latest log begins logging after Minecraft successfuly launches. Sometimes error messages are logged there and are
+The latest log begins logging after Minecraft successfully launches. Sometimes error messages are logged there and are
 helpful in troubleshooting certain errors and crashes that happen in-game.
 
 ## Instructions
@@ -44,7 +44,7 @@ Open the `logs` folder inside the `.minecraft` folder.
 
 ### Step 4
 
-In the Logs folder, scroll down and find a file called `latest` or `latest.log`. Double click the file to open it in
+In the Logs folder, scroll down and find a file called `latest` or `latest.log`. Double-click the file to open it in
 Notepad.
 
 ![latest.log file](https://user-images.githubusercontent.com/18114966/181199377-1e6af9d2-4495-44da-a2f6-8ffbbb0ed040.png)
