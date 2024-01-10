@@ -13,6 +13,7 @@
         <li><a href="/faq/installation">Installation</a></li>
         <li><a href="/faq/old-versions">Old versions</a></li>
         <li><a href="/faq/getting-log">Getting latest.log</a></li>
+        <li><a href="/faq/addon-template">Addon template</a></li>
         <li><a href="/faq/starscript">Starscript</a></li>
         <li><a href="/faq/notebot">Notebot</a></li>
         <li><a href="/faq/swarm">Swarm</a></li>
