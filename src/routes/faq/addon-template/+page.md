@@ -6,8 +6,7 @@ layout: faq
 
 Our template is a great way to get started with Meteor addon development.  
 The following guide will show you how to set up a new project using said template.    
-We will be using [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/), but you can use any IDE
-you want, as long as it can connect to GitHub.
+We will be using [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/), but you can use any IDE.
 
 <br>
 
@@ -18,7 +17,7 @@ First, a couple of prerequisites:
   **](https://docs.gradle.org/current/userguide/about_manual.html#about_manual) for dependency management.
 - A [GitHub](https://github.com/) account to host your repository.
 - A [Git](https://git-scm.com/downloads) client for all the Git commands.
-- An IDE that can connect to GitHub, IntelliJ IDEA in this case.
+- A Java-compatible IDE, IntelliJ IDEA in this case.
 - (Optional) A Java 17 JDK, we recommend [Adoptium](https://adoptium.net/temurin/releases/?package=jdk&version=17). You
   can also
   use the one bundled with IntelliJ IDEA.
