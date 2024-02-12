@@ -149,6 +149,7 @@
                     <a class="button" href="/changeUsername">Change Username</a>
                     <a class="button" href="/changeEmail">Change Email</a>
                     <a class="button" href="/changePassword">Change Password</a>
+                    <a class="button" href="/deleteAccount">Delete Account</a>
                 </div>
             </div>
         </div>
