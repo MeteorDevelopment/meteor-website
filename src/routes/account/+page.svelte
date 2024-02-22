@@ -93,7 +93,7 @@
                 <h2>Minecraft</h2>
                 <ul>
                     {#each $user.mcAccounts as uuid}
-                        {#await fetchJson("https://mc-heads.net/minecraft/profile/" + uuid)}
+                        {#await fetchJson("https://corsjangsessionserver.b-cdn.net/session/minecraft/profile/" + uuid)}
                             <li><img src="https://mc-heads.net/head/MHF_Steve/32" alt="head">Steve<button>Remove</button></li>
                         {:then res}
                             <li><img src={"https://mc-heads.net/head/" + uuid + "/32"} alt="head">{res.name}<button on:click={() => removeMcAccount(uuid)}>Remove</button></li>
