@@ -16,7 +16,7 @@
 
         <div class="buttons">
             <a href="/download" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> Release {stats.version} [{stats.mcVersion}]</a>
-            <a href="/download?devBuild" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> Dev Build {stats.devBuildVersion} [{stats.devBuildMcVersion}]</a>
+            <a href="/download?devBuild=latest" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> Dev Build {stats.devBuildVersion} [{stats.devBuildMcVersion}]</a>
             <p>If you're looking for older versions of Meteor, read <a href="/faq/old-versions">this</a>.</p>
             <a href="/api/downloadBaritone" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> *Baritone [{stats.baritoneMcVersion}]</a>
         </div>
