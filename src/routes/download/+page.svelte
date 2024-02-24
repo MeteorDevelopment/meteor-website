@@ -12,7 +12,7 @@
 
             if (timer == 0) {
                 if ($page.url.searchParams.has("devBuild"))
-                    goto("/api/download?devBuild=latest");
+                    goto("/api/download?devBuild=" + $page.url.searchParams.get("devBuild"));
                 else
                     goto("/api/download");
 
