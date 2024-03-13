@@ -27,6 +27,7 @@ found [here](https://github.com/MeteorDevelopment/starscript/wiki#standard-varia
 - `meteor.active_modules`: Number of active modules.
 - `meteor.is_module_active(id)`: Returns true when the specified module is active.
 - `meteor.get_module_info(id)`: Returns the module info string.
+- `get_module_setting(id, setting)`: Returns the current value of the setting. Numbers, booleans and strings stay the same type when converted to Starscript. Lists return the number of elements and everything is converted to a string according to it's Java toString() method.
 
 ### Baritone
 
