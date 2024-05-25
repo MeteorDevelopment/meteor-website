@@ -1,11 +1,12 @@
 <script lang="ts">
     import Centered from "$lib/components/centered.svelte";
     import Form from "$lib/components/form.svelte";
-    import IconButton from "$lib/components/iconbutton.svelte";
-    import { api } from "$lib/api";
-    import { browser } from "$app/environment";
-    import { token } from "$lib/user";
-    import { goto } from "$app/navigation";
+    import Icon from "$lib/components/icon.svelte";
+    import Link from "$lib/components/link.svelte";
+    import {api} from "$lib/api";
+    import {browser} from "$app/environment";
+    import {token} from "$lib/user";
+    import {goto} from "$app/navigation";
 
     let name: string;
     let password: string;
@@ -26,21 +27,22 @@
 </script>
 
 <Centered>
-    <Form submit={submit}>
-        <h1>Login</h1>
+    <Form submit={submit} style="padding-inline: 50px 16px">
+        <div style="display: inline-grid; align-items: center; row-gap: 10px; grid-template-columns: 1fr auto;">
+            <h1>Login</h1>
 
-        <!-- svelte-ignore a11y-autofocus -->
-        <input bind:value={name} type="text" placeholder="Username or Email" id="name" name="name" required autofocus />
+            <!-- svelte-ignore a11y-autofocus -->
+            <input name="name" type="text" bind:value={name} placeholder="Username or Email" style="grid-column: 1;" required autofocus/>
 
-        <div style="display: flex; flex-direction: row; gap: 10px;">
-            <input bind:value={password} type="password" placeholder="Password" id="password" name="password" required />
-            <IconButton location="/forgotPassword" icon="help-circle" style="background-color: var(--button); border-radius: 4px; padding: 3px; border: var(--button-outline) solid 3px;" />
+            <input name="password" type="password" bind:value={password} placeholder="Password" style="grid-column: 1;" required />
+
+            <Link location="/forgotPassword" style="margin-inline: 5px; grid-column: 2; width: fit-content;"><Icon src="help-circle" size={24} /></Link>
+
+            <button type="submit" style="grid-column: 1;">Login</button>
+
+            <p bind:this={error} class="error" style="display: none; grid-column: 1;"/>
+
+            <p style="grid-column: 1;">Don't have an account? <a href="/register">Sign Up</a></p>
         </div>
-
-        <button type="submit">Login</button>
-
-        <p bind:this={error} class="error" style="display: none;" />
-
-        <p>Don't have an account? <a href="/register">Sign Up</a></p>
     </Form>
 </Centered>

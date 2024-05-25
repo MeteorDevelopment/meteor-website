@@ -1,15 +1,16 @@
 <script lang="ts">
     import Button from "$lib/components/button.svelte";
-    import IconButton from "$lib/components/iconbutton.svelte";
+    import Icon from "$lib/components/icon.svelte";
+    import Link from "$lib/components/link.svelte";
 </script>
 
 <nav>
     <a id="title" href="/">Meteor</a>
 
     <div id="links">
-        <IconButton icon="discord" location="/discord" newTab/>
-        <IconButton icon="github" location="/github" newTab/>
-        <IconButton icon="youtube" location="/youtube" newTab/>
+        <Link location="/discord" newTab><Icon src="discord"/></Link>
+        <Link location="/github" newTab><Icon src="github"/></Link>
+        <Link location="/youtube" newTab><Icon src="youtube"/></Link>
 
         <a href="/faq">FAQ</a>
         <a href="/donate">Donate</a>

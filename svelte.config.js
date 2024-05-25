@@ -12,6 +12,7 @@ const config = {
             layout: "src/lib/layouts/markdown.svelte",
         })
     ],
+
     kit: {
         adapter: adapter()
     }
