@@ -1,0 +1,77 @@
+@import "reset.css";
+
+/* theme */
+@font-face {
+    font-family: 'Logo Font';
+    font-style: normal;
+    font-weight: bold;
+    src: url("../fonts/logo.ttf");
+}
+
+:root {
+    --font: 'Red Hat Mono';
+    --font-header: 'Logo Font';
+
+    --text-size: 1rem;
+    --header-size: 1.25rem;
+    --title-size: 2rem;
+    --nav-link-size: 0.9rem;
+
+    --text: #d7d6d6;
+    --text-highlight: white;
+
+    --background: #150225;
+    --background-secondary: #5d2094;
+
+    --button: #4d0d75;
+    --button-hovered: #4d0d75;
+    --button-outline: #2b0641;
+    --button-hovered-outline: #A443E1;
+
+    --discord: #5865F2;
+    --highlight: #FFD708;
+    --warning: #FF3F3F;
+}
+
+/* default styles */
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--font), monospace;
+    font-weight: bold;
+}
+
+h1, h2 {
+    font-family: var(--font-header), sans-serif;
+    color: var(--text-highlight);
+    cursor: default;
+}
+
+h1 {
+    font-size: var(--title-size);
+}
+
+h2 {
+    font-size: var(--header-size);
+}
+
+p {
+    font-size: var(--text-size);
+    cursor: default;
+}
+
+a {
+    color: var(--text-highlight);
+    cursor: pointer;
+}
+
+/* text decoration */
+
+.highlight {
+    color: var(--text-highlight);
+}
+
+.draw {
+    color: var(--highlight);
+}

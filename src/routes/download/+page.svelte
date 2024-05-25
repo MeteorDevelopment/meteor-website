@@ -1,8 +1,9 @@
 <script lang="ts">
-    import Ad from "$lib/components/ad.svelte";
-    import { goto } from "$app/navigation";
     import { page } from "$app/stores";
     import { onMount } from "svelte";
+    import Centered from "$lib/components/centered.svelte";
+    import {goto} from "$app/navigation";
+    import {redirect} from "@sveltejs/kit";
 
     let timer = 5;
 
@@ -22,33 +23,25 @@
     });
 </script>
 
-<div>
-    <Ad />
-
+<Centered>
     {#if timer > 1}
-        <p>Download will start in {timer} seconds</p>
+        <h2>Download will start in {timer} seconds</h2>
     {:else if timer > 0}
-        <p>Download will start in 1 second</p>
+        <h2>Download will start in 1 second</h2>
     {:else}
-        <p>Download started</p>
+        <h2>Download started</h2>
     {/if}
 
-    <p class="small">* If the timer or download does not start then try disabling your ad blocker. Some of them (especially Opera GX) aggressively block JavaScript.</p>
-
-    <Ad />
-</div>
+    <p class="small">* If the timer or download does not start then try disabling your ad blocker. *</p>
+    <p class="small">Some of them (especially Opera GX) aggressively block JavaScript.</p>
+</Centered>
 
 <style>
-    div {
-        margin: 2rem;
-        text-align: center;
-    }
-
-    p {
-        margin: 2rem 0;
+    h2 {
+        margin-bottom: 3vh;
     }
 
     .small {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
     }
 </style>

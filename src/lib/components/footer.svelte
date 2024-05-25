@@ -1,16 +1,23 @@
+<script lang="ts">
+    import Link from "$lib/components/link.svelte";
+</script>
+
 <footer>
-    <p>Copyright © 2023 Meteor Development</p>
-    <p>All Rights Reserved.</p>
+    <p>Copyright © 2024 <Link location="https://github.com/MeteorDevelopment" newTab noDecoration>Meteor Development</Link></p>
+    <a href="/privacy">Privacy Policy</a>
 </footer>
 
-<style>
+<style lang="scss">
     footer {
-        background-color: #3e3e3e;
-        text-align: center;
-        padding: 1rem 0;
-    }
+        display: grid;
+        place-items: center;
 
-    p {
-        color: var(--text-secondary);
+        gap: 5px;
+        width: 100%;
+        padding-block: 20px;
+
+        a {
+            color: var(--text-highlight);
+        }
     }
 </style>

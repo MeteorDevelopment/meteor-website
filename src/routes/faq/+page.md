@@ -1,37 +1,10 @@
----
-layout: faq
----
-
-## How do I install Meteor?
-
-If you have encountered or used YouTube "tutorials" on how to install and use Meteor, please disregard them.  
-Many of them are incorrect or outdated and, as stated below, we do not support older versions.
-
-<br>
-
-To install Meteor Client:
-
-1. Download the Meteor Client, choosing one of two options:
-    * `Release`: this version is updated less frequently, but is preferred if you don't want to update often.  
-      You can download it on the [official website](https://meteorclient.com/download);
-    * `Dev build`: this version is updated frequently, but can have some bugs.  
-      You can get this version from the [official website](https://meteorclient.com/download?devBuild=latest),
-      the `#dev-builds` channel in the [Meteor Discord](https://meteorclient.com/discord), or by compiling the source
-      from [GitHub](https://github.com/MeteorDevelopment/meteor-client).
-2. Create a Fabric instance in your Minecraft launcher, and choose the `latest` version of Minecraft;
-3. Go in the `mods` folder of the newly created instance, and paste the `meteor-client-x.x.x-xxxx.jar` file in it;
-4. Run the instance, and if you did everything correctly, you should see a text in the top right corner indicating that
-   you are using Meteor.
-
-<br>
-
-For in-depth installation instructions, refer to the [Installation guide](https://meteorclient.com/faq/installation).
+# FAQ
 
 ## How do I use Meteor on older Minecraft versions?
 
 While we do not directly support older versions of Minecraft, you can refer to
 the [Old versions](https://meteorclient.com/faq/old-versions) guide.
-
+  
 ## How do I open the GUI?
 
 The default key for opening the GUI is <kbd>Right Shift</kbd>, which you can change this via the Minecraft controls

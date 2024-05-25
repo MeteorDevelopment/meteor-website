@@ -1,6 +1,6 @@
-import { get, writable } from "svelte/store";
-import { browser } from "$app/environment";
-import { api } from "./api";
+import {get, writable} from "svelte/store";
+import {browser} from "$app/environment";
+import {api} from "$lib/api";
 
 export type Cape = {
     current: boolean;
@@ -19,7 +19,7 @@ export type User = {
     maxMcAccounts: number;
     mcAccounts: string[];
     cape: string;
-    canHavaCustomcape: boolean;
+    canHaveCustomCape: boolean;
     discordName: string;
     discordAvatar: string;
     capes: Cape[];
@@ -57,7 +57,7 @@ export function refreshUser() {
                 maxMcAccounts: res.max_mc_accounts,
                 mcAccounts: res.mc_accounts,
                 cape: res.cape,
-                canHavaCustomcape: res.can_have_custom_cape,
+                canHaveCustomCape: res.can_have_custom_cape,
                 discordName: res.discord_name,
                 discordAvatar: res.discord_avatar,
                 capes: res.capes

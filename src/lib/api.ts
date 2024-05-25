@@ -1,5 +1,5 @@
-import { get } from "svelte/store";
-import { token } from "./user";
+import {get} from "svelte/store";
+import {token} from "$lib/user";
 
 export function api(path: string, auth = false, method = "GET", body: BodyInit | null = null): Promise<any> {
     return new Promise((resolve, reject) => {
