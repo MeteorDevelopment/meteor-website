@@ -14,7 +14,7 @@
 
         gap: 5px;
         width: 100%;
-        padding-block: 20px;
+        margin-bottom: var(--spacing);
 
         a {
             color: var(--text-highlight);

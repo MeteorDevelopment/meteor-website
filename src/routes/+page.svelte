@@ -5,10 +5,8 @@
 </script>
 
 <!-- Download -->
-<div id="download" class="section">
+<div>
     <h2>Getting Started</h2>
-
-    <br>
 
     <p>
         Meteor is a <span style="color: var(--text-highlight)">Minecraft Fabric utility mod</span> designed to be used on anarchy servers.
@@ -18,8 +16,8 @@
 
     <br>
 
-    <div id="download-content">
-        <div id="download-text">
+    <div style="display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: center;">
+        <div style="flex: 1;">
             <p>To get started, visit our download guide in the <Link location="/faq">FAQ</Link>.</p>
             <br>
             <p>Alternatively, if you know what you’re doing, use the links to download your preferred version.</p>
@@ -27,7 +25,7 @@
             <p>Meteor supports a number of integrations with <Link location="https://github.com/MeteorDevelopment/baritone" newTab>Baritone</Link>, if you would like to use them, you must install it separately.</p>
         </div>
 
-        <div id="download-buttons">
+        <div style="flex: 1; display: flex; flex-flow: column nowrap; align-items: end; gap: 15px; margin-right: var(--spacing); text-align: center;">
             <Button location="/download" style="font-size: 1.25rem; width: 60%;">Release ({$page.data.stats.mcVersion})</Button>
             <Button location="/download?devBuild=latest" style="font-size: 1.25rem; width: 60%;">Development ({$page.data.stats.devBuildMcVersion})</Button>
             <Button location="/api/downloadBaritone" style="font-size: 1.25rem; width: 60%;">Baritone ({$page.data.stats.baritoneMcVersion})</Button>
@@ -36,10 +34,8 @@
 </div>
 
 <!-- Contributing -->
-<div id="contributing" class="section">
+<div>
     <h2>Contributing</h2>
-
-    <br>
 
     <p>
         If you enjoy using <span style="color: var(--text-highlight);">Meteor</span>, please consider making a <Link location="/donate" color="highlight">one time donation</Link> to support the creators.
@@ -54,66 +50,23 @@
         Thanks to everyone that has contributed with a <Link location="https://github.com/MeteorDevelopment/meteor-client/pulls?q=is%3Apr" newTab>pull request</Link>.
     </p>
 
-    <br>
-
     <a href="https://github.com/MeteorDevelopment/meteor-client/graphs/contributors">
-        <img src="https://contrib.rocks/image?repo=MeteorDevelopment/meteor-client&columns=20" alt="contributors" />
+        <img src="https://contrib.rocks/image?repo=MeteorDevelopment/meteor-client&columns=20" alt="contributors"
+             style="display: block; width: 95%; margin: var(--spacing) auto 0 auto;"/>
     </a>
 </div>
 
 <!-- Showcase -->
-<div id="showcase" class="section">
+<div>
     <h2>Showcase</h2>
-    <br>
-    <iframe src="https://www.youtube.com/embed/e3foFwGsUfw" title="showcase" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+    <iframe src="https://www.youtube.com/embed/e3foFwGsUfw" title="showcase"
+            referrerpolicy="strict-origin-when-cross-origin"
+            style="width: 100%; aspect-ratio: 16 / 9; border: white solid 2px; border-radius: 8px;"/>
 </div>
 
-<style>
-    .section {
-        margin: 20px 0;
-    }
-
-    /* download */
-
-    #download-content {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    #download-content * {
-        flex: 1;
-    }
-
-    #download-buttons {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: end;
-        gap: 15px;
-        margin-right: 20px;
-        text-align: center;
-    }
-
-    /* showcase */
-
-    #showcase {
-        width: 100%;
-    }
-
-    #showcase iframe {
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        border: white solid 2px;
-        border-radius: 8px;
-    }
-
-    /* contributors */
-
-    #contributing img {
-        display: block;
-        width: 95%;
-        height: 100%;
-        margin: 0 auto;
+<style lang="scss">
+    h2 {
+        margin-bottom: 10px;
     }
 </style>

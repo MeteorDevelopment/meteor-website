@@ -8,7 +8,7 @@
     }
 
     #markdown :global(h2) {
-        padding-top: 20px;
-        padding-bottom: 10px;
+        margin-top: var(--spacing);
+        margin-bottom: var(--header-spacing);
     }
 </style>

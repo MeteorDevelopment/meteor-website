@@ -17,6 +17,14 @@
     --title-size: 2rem;
     --nav-link-size: 0.9rem;
 
+    --spacing: 20px;
+    --header-spacing: 10px;
+
+    --button-padding: 10px;
+    --container-padding: 50px;
+
+    --icon-size: 24px;
+
     --text: #d7d6d6;
     --text-highlight: white;
 

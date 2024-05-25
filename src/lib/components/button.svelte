@@ -13,7 +13,7 @@
         display: grid;
         place-items: center;
 
-        padding: 8px 16px;
+        padding: var(--button-padding);
 
         color: var(--text);
         background-color: var(--button);

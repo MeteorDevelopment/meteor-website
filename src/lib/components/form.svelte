@@ -14,7 +14,7 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        padding: 50px;
+        padding: var(--container-padding);
         min-width: 50%;
 
         background-color: var(--background-secondary);
@@ -23,7 +23,7 @@
 
         :global(input), :global(button) {
             width: 100%;
-            padding: 0.6rem;
+            padding: var(--button-padding);
             border-radius: 4px;
             border: var(--button-outline) solid 3px;
         }

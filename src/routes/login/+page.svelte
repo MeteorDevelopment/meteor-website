@@ -27,7 +27,7 @@
 </script>
 
 <Centered>
-    <Form submit={submit} style="padding-inline: 50px 16px">
+    <Form submit={submit} style="padding-right: calc(var(--container-padding) - var(--icon-size) - var(--button-padding));">
         <div style="display: inline-grid; align-items: center; row-gap: 10px; grid-template-columns: 1fr auto;">
             <h1>Login</h1>
 
@@ -36,7 +36,7 @@
 
             <input name="password" type="password" bind:value={password} placeholder="Password" style="grid-column: 1;" required />
 
-            <Link location="/forgotPassword" style="margin-inline: 5px; grid-column: 2; width: fit-content;"><Icon src="help-circle" size={24} /></Link>
+            <Link location="/forgotPassword" style="margin-inline: calc(var(--button-padding) / 2); grid-column: 2; width: fit-content;"><Icon src="help-circle" /></Link>
 
             <button type="submit" style="grid-column: 1;">Login</button>
 

@@ -26,7 +26,7 @@
         justify-content: space-between;
         align-items: center;
 
-        padding: 20px 0;
+        margin-top: var(--spacing);
 
         :global(a) {
             text-decoration: none;
