@@ -27,16 +27,17 @@
 </script>
 
 <Centered>
-    <Form submit={submit} style="padding-right: calc(var(--container-padding) - var(--icon-size) - var(--button-padding));">
+    <Form submit={submit}>
         <div style="display: inline-grid; align-items: center; row-gap: 10px; grid-template-columns: 1fr auto;">
             <h1>Login</h1>
 
             <!-- svelte-ignore a11y-autofocus -->
             <input name="name" type="text" bind:value={name} placeholder="Username or Email" style="grid-column: 1;" required autofocus/>
 
-            <input name="password" type="password" bind:value={password} placeholder="Password" style="grid-column: 1;" required />
-
-            <Link location="/forgotPassword" style="margin-inline: calc(var(--button-padding) / 2); grid-column: 2; width: fit-content;"><Icon src="help-circle" /></Link>
+            <div style="position: relative; grid-column: 1;">
+                <input name="password" type="password" bind:value={password} placeholder="Password" required style="padding-right: 34px;" />
+                <Link location="/forgotPassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);"><Icon src="help-circle" /></Link>
+            </div>
 
             <button type="submit" style="grid-column: 1;">Login</button>
 
