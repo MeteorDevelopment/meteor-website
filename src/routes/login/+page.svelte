@@ -45,7 +45,7 @@
                 <input name="password" bind:this={passwordInput} type="password" bind:value={password}
                        placeholder="Password" required style="padding-right: 34px;"/>
 
-                <button type="button" on:click={togglePasswordVisibility} class="password-toggle">
+                <button type="button" on:click={togglePasswordVisibility} id="password-toggle">
                     <Icon src={passwordVisible ? 'eye-off' : 'eye'}/>
                 </button>
             </div>
@@ -62,7 +62,7 @@
 </Centered>
 
 <style>
-    .password-toggle {
+    #password-toggle {
         position: absolute;
         right: 10px;
         top: 50%;
