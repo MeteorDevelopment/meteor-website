@@ -9,8 +9,8 @@
     import {goto} from "$app/navigation";
 
     let name: string;
-    let password: string = "";
-    let passwordVisible: boolean = false;
+    let password: string;
+    let passwordVisible: boolean;
     let passwordInput: HTMLInputElement;
     let error: HTMLSpanElement;
 
