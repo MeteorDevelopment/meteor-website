@@ -10,6 +10,8 @@
 
     let name: string;
     let password: string;
+    let passwordVisible: boolean;
+    let passwordInput: HTMLInputElement;
     let error: HTMLSpanElement;
 
     function submit() {
@@ -23,20 +25,32 @@
             });
     }
 
+    function togglePasswordVisibility() {
+        passwordVisible = !passwordVisible;
+        passwordInput.type = passwordVisible ? 'text' : 'password';
+    }
+
     $: if (browser && $token) goto("/account");
 </script>
 
 <Centered>
-    <Form submit={submit} style="padding-right: calc(var(--container-padding) - var(--icon-size) - var(--button-padding));">
+    <Form submit={submit}>
         <div style="display: inline-grid; align-items: center; row-gap: 10px; grid-template-columns: 1fr auto;">
             <h1>Login</h1>
 
             <!-- svelte-ignore a11y-autofocus -->
             <input name="name" type="text" bind:value={name} placeholder="Username or Email" style="grid-column: 1;" required autofocus/>
 
-            <input name="password" type="password" bind:value={password} placeholder="Password" style="grid-column: 1;" required />
+            <div style="position: relative; grid-column: 1;">
+                <input name="password" bind:this={passwordInput} type="password" bind:value={password}
+                       placeholder="Password" required style="padding-right: 34px;"/>
 
-            <Link location="/forgotPassword" style="margin-inline: calc(var(--button-padding) / 2); grid-column: 2; width: fit-content;"><Icon src="help-circle" /></Link>
+                <button type="button" on:click={togglePasswordVisibility} id="password-toggle">
+                    <Icon src={passwordVisible ? 'eye-off' : 'eye'}/>
+                </button>
+            </div>
+
+            <Link location="/forgotPassword" style="grid-column: 1;">Password reset</Link>
 
             <button type="submit" style="grid-column: 1;">Login</button>
 
@@ -46,3 +60,17 @@
         </div>
     </Form>
 </Centered>
+
+<style>
+    #password-toggle {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0;
+        border: none !important;
+        background: none !important;
+        width: 24px;
+        height: 24px;
+    }
+</style>

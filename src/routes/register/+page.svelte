@@ -1,15 +1,18 @@
 <script lang="ts">
     import Centered from "$lib/components/centered.svelte";
     import Form from "$lib/components/form.svelte";
-    import { api } from "$lib/api";
-    import { browser } from "$app/environment";
-    import { token } from "$lib/user";
-    import { goto } from "$app/navigation";
-    import { Turnstile } from 'svelte-turnstile';
+    import Icon from "$lib/components/icon.svelte";
+    import {api} from "$lib/api";
+    import {browser} from "$app/environment";
+    import {token} from "$lib/user";
+    import {goto} from "$app/navigation";
+    import {Turnstile} from 'svelte-turnstile';
 
     let username: string;
     let email: string;
     let password: string;
+    let passwordVisible: boolean;
+    let passwordInput: HTMLInputElement;
     let cfToken: string;
     let error: HTMLSpanElement;
 
@@ -40,6 +43,11 @@
             });
     }
 
+    function togglePasswordVisibility() {
+        passwordVisible = !passwordVisible;
+        passwordInput.type = passwordVisible ? 'text' : 'password';
+    }
+
     if (browser && $token) goto("/account");
 </script>
 
@@ -56,23 +64,44 @@
 
             <input bind:value={email} type="email" placeholder="Email" id="email" name="email" required>
 
-            <input bind:value={password} type="password" placeholder="Password" id="password" name="password" required>
+            <div style="position: relative; grid-column: 1;">
+                <input name="password" bind:this={passwordInput} type="password" bind:value={password}
+                       placeholder="Password" required style="padding-right: 34px;"/>
+
+                <button type="button" on:click={togglePasswordVisibility} id="password-toggle">
+                    <Icon src={passwordVisible ? 'eye-off' : 'eye'}/>
+                </button>
+            </div>
 
             <Turnstile
-                    id="captcha"
-                    siteKey="1x00000000000000000000AA"
-                    theme="light"
-                    on:turnstile-callback={onTurnstileSuccess}
-                    on:turnstile-error={onTurnstileError}
-                    on:turnstile-expired={onTurnstileError}
-                    on:turnstile-timeout={onTurnstileError}
+                id="captcha"
+                siteKey="1x00000000000000000000AA"
+                theme="light"
+                on:turnstile-callback={onTurnstileSuccess}
+                on:turnstile-error={onTurnstileError}
+                on:turnstile-expired={onTurnstileError}
+                on:turnstile-timeout={onTurnstileError}
             />
 
             <button type="submit">Register</button>
 
-            <p bind:this={error} class="error" style="display: none;" />
+            <p bind:this={error} class="error" style="display: none;"/>
 
             <p>Have an account? <a href="/login">Login</a></p>
         </Form>
     {/if}
 </Centered>
+
+<style>
+    #password-toggle {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0;
+        border: none !important;
+        background: none !important;
+        width: 24px;
+        height: 24px;
+    }
+</style>
