@@ -22,8 +22,8 @@ If you have any concerns feel free to check the source code located within this 
 
 To play Minecraft, you'll need to have the compatible version of the JRE (Java Runtime Environment).  
 Usually Minecraft downloads it automatically, but if it doesn't, you should get it
-from [Adoptium](https://adoptium.net/temurin/releases/?package=jre&version=17).  
-The current version used by Minecraft is v17.
+from [Adoptium](https://adoptium.net/temurin/releases/?package=jre&version=21).  
+The current version used by Minecraft is Java 21.
 
 ### Unsafe cracked launchers
 

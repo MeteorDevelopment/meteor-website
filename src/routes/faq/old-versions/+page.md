@@ -39,17 +39,22 @@ Keep in mind that this is **not** recommended, as we do **not** provide support 
 Any threads opened in our support forum regarding failed builds of older versions will be closed.  
 If you encounter any issues, you will have to update to the latest version to get support.
 
+To build Meteor for source, you'll need a **Java 21 JDK**,
+you can get it from [Adoptium](https://adoptium.net/temurin/releases/?package=jdk&version=21).
+
 <br>
 
 1. Go to the [Meteor GitHub repository](https://github.com/MeteorDevelopment/meteor-client).
-2. Click the `master` button under the repository name, then click the `Tags` tab.
-3. Click on a tag, this will bring you to the repository at the state of that tag.
-4. Click the `gradle.properties` file, it will contain the version of Minecraft that tag is built for.
-5. Once you have found the tag you want, go back, click the green `Code` button and then click `Download ZIP`.
-6. Extract the zip file and open a terminal in the extracted folder.
-7. Run `gradlew build` (or `.\gradlew build` on PowerShell). This will build Meteor and put the JAR file in
-   the `build/libs` folder.
-8. Copy the `meteor-client-x.x.x.jar` file to your `mods` folder.
+2. Click the `gradle.properties` file, it will contain the `minecraft_version` that the latest commit is built for.
+3. Click the `master` button in the top left, then click the `Tags` tab.
+4. Click on a tag, this will bring you to the repository at the state of that tag.
+5. Checkout tags from newer to older until you find the one where `minecraft_version` matches the one you want.
+6. Once you have found the tag you want, click the `Code` tab in the top left,
+   then click the green `Code` button on the right and select `Download ZIP`.
+7. Extract the zip file and open a terminal in the extracted folder.
+8. Run the `gradlew build` command (or `.\gradlew build` on PowerShell).
+   This will build Meteor and put the JAR file in the `build/libs` folder.
+9. Copy the `meteor-client-x.x.x.jar` file to your `mods` folder.
 
 <br>
 
