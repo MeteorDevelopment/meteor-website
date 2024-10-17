@@ -28,5 +28,5 @@ Repeat this for any other worker accounts you want to add to your Swarm session.
 
 ## Controlling workers
 
-To control workers, just use the `.swarm` command from the host instance, this will transmit any commands you enter to *
-*all** of the workers connected to your session.
+To control workers, just use the `.swarm` command from the host instance, this will transmit any commands you enter to
+**all** of the workers connected to your session.
