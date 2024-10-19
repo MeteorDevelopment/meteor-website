@@ -7,7 +7,6 @@
 
     $: if (browser && !$token) goto("/login");
 
-    let username: string;
     let linkToken: string | null = null;
 
     function unlinkDiscord() {
@@ -23,16 +22,6 @@
     function removeMcAccount(uuid: string) {
         api("account/mcAccount?uuid=" + uuid, true, "DELETE")
             .then(() => refreshUser());
-    }
-
-    function addMcAccount() {
-        if (username === "") return;
-
-        api("account/mcAccount?username=" + username, true, "POST")
-            .then(() => {
-                username = "";
-                refreshUser();
-            });
     }
 
     function selectCape(id: string) {
@@ -102,10 +91,9 @@
                         {/await}
                     {/each}
                 </ul>
-                <form class="buttons add-account" on:submit|preventDefault={addMcAccount}>
-                    <input type="text" placeholder="Username" bind:value={username}>
-                    <button type="button" on:click={addMcAccount}>Add Account</button>
-                </form>
+                <div class="buttons">
+                    <a class="button" href="/addMcAccount">Add Account</a>
+                </div>
             </div>
 
             <!-- Cape -->
@@ -209,9 +197,5 @@
         background-image: none;
         padding: 0.5rem;
         font-size: 1rem;
-    }
-
-    .add-account {
-        gap: 0;
     }
 </style>
