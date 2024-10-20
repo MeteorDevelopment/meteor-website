@@ -1,5 +1,5 @@
 import adapter from "@sveltejs/adapter-node";
-import preprocess from "svelte-preprocess";
+import { sveltePreprocess } from "svelte-preprocess";
 import atImport from "postcss-import";
 import { mdsvex } from "mdsvex";
 import { markdown } from "./src/lib/markdown.js";
@@ -11,7 +11,7 @@ const config = {
 	extensions: [ ".svelte", ".md" ],
 
 	preprocess: [
-		preprocess({
+		sveltePreprocess({
 			postcss: {
 				plugins: [
 					atImport({
