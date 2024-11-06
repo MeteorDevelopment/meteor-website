@@ -69,7 +69,7 @@
             {#if $user}
                 <a class="user" href="/account">
                     <p>{$user.username}</p>
-                    <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.png"} alt="profile"/>
+                    <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.jpg"} alt="profile"/>
                 </a>
             {:else}
                 <a href="/login"><button>Login</button></a>
