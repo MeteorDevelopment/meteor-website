@@ -1,10 +1,23 @@
 <script lang="ts">
     import type { Stats } from "$lib/stats";
+    import semver from "semver";
 
     export let stats: Stats;
 
     function prettyNumber(x: number) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
+
+    function getLatestVersion(): string {
+        let latest = "0.0.0";
+
+        for (const version of Object.keys(stats.builds)) {
+            if (semver.gt(version, latest)) {
+                latest = version;
+            }
+        }
+
+        return latest;
     }
 </script>
 
@@ -15,8 +28,7 @@
         <p>Online Players: {prettyNumber(stats.onlinePlayers)}</p>
 
         <div class="buttons">
-            <a href="https://adfoc.us/81926897739205" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> Release {stats.version} [{stats.mcVersion}]</a>
-            <a href="https://adfoc.us/819268106314032" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> Dev Build {stats.devBuildVersion} [{stats.devBuildMcVersion}]</a>
+            <a href="https://adfoc.us/81926897739205" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> Meteor Client [{getLatestVersion()} - {stats.builds[getLatestVersion()]}]</a>
             <p>If you're looking for older versions of Meteor, read <a href="/faq/old-versions">this</a>.</p>
             <a href="/api/downloadBaritone" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> *Baritone [{stats.baritoneMcVersion}]</a>
         </div>

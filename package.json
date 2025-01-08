@@ -14,6 +14,7 @@
 		"@sveltejs/adapter-node": "^5.2.8",
 		"@sveltejs/kit": "^2.7.2",
 		"@sveltejs/vite-plugin-svelte": "^3.1.2",
+		"@types/semver": "^7.5.8",
 		"mdsvex": "^0.12.3",
 		"postcss": "^8.4.47",
 		"postcss-import": "^15.1.0",
@@ -26,5 +27,8 @@
 		"unist-util-visit": "^4.1.2",
 		"vite": "^5.4.9"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"semver": "^7.6.3"
+	}
 }
