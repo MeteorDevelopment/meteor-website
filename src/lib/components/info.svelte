@@ -30,7 +30,7 @@
             <a href="https://adfoc.us/81926897739205" target="_blank" class="button" ><img src="/icons/download.svg" alt="download" loading="lazy"/> Meteor Client[{getLatestVersion()} - #{stats.builds[getLatestVersion()]}]</a>
             <div class="READ-IT">
                 <img class="mirror arrow" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGJrbnF3aGx2Z2x4eDJ1ZnFzMjh4YndvNjY2MDIwdmE3bzV3cDMyYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YckWAcjkSZ66d5P6Fh/giphy.gif" loading="lazy" alt="-->"/>
-                <p>If you're looking for <span class="emphasize">OLDER VERSIONS</span>of Meteor, read <a href="/faq/old-versions">this</a>.</p>
+                <p>If you're looking for <span class="emphasize">OLDER VERSIONS</span> of Meteor, read <a href="/faq/old-versions">this</a>.</p>
                 <img class="arrow" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGJrbnF3aGx2Z2x4eDJ1ZnFzMjh4YndvNjY2MDIwdmE3bzV3cDMyYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YckWAcjkSZ66d5P6Fh/giphy.gif" loading="lazy" alt="<--"/>
             </div>
             <a href="/api/downloadBaritone" target="_blank" class="button"><img src="/icons/download.svg" loading="lazy" alt="download" /> *Baritone [{stats.baritoneMcVersion}]</a>
