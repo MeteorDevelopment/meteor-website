@@ -27,13 +27,13 @@
         <p>Count: {prettyNumber(stats.downloads)}</p>
         <p>Online Players: {prettyNumber(stats.onlinePlayers)}</p>
         <div class="buttons">
-            <a href="https://adfoc.us/81926897739205" target="_blank" class="button" ><img src="/icons/download.svg" alt="download" /> Meteor Client[{getLatestVersion()} - #{stats.builds[getLatestVersion()]}]</a>
+            <a href="https://adfoc.us/81926897739205" target="_blank" class="button" ><img src="/icons/download.svg" alt="download" loading="lazy"/> Meteor Client[{getLatestVersion()} - #{stats.builds[getLatestVersion()]}]</a>
             <div class="READ-IT">
-                <img class="mirror arrow" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGJrbnF3aGx2Z2x4eDJ1ZnFzMjh4YndvNjY2MDIwdmE3bzV3cDMyYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YckWAcjkSZ66d5P6Fh/giphy.gif" width="200px" alt="-->"/>
+                <img class="mirror arrow" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGJrbnF3aGx2Z2x4eDJ1ZnFzMjh4YndvNjY2MDIwdmE3bzV3cDMyYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YckWAcjkSZ66d5P6Fh/giphy.gif" loading="lazy" alt="-->"/>
                 <p>If you're looking for <span class="emphasize">OLDER VERSIONS</span>of Meteor, read <a href="/faq/old-versions">this</a>.</p>
-                <img class="arrow" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGJrbnF3aGx2Z2x4eDJ1ZnFzMjh4YndvNjY2MDIwdmE3bzV3cDMyYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YckWAcjkSZ66d5P6Fh/giphy.gif" width="200px" alt="<--"/>
+                <img class="arrow" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGJrbnF3aGx2Z2x4eDJ1ZnFzMjh4YndvNjY2MDIwdmE3bzV3cDMyYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YckWAcjkSZ66d5P6Fh/giphy.gif" loading="lazy" alt="<--"/>
             </div>
-            <a href="/api/downloadBaritone" target="_blank" class="button"><img src="/icons/download.svg" alt="download" /> *Baritone [{stats.baritoneMcVersion}]</a>
+            <a href="/api/downloadBaritone" target="_blank" class="button"><img src="/icons/download.svg" loading="lazy" alt="download" /> *Baritone [{stats.baritoneMcVersion}]</a>
         </div>
         <p>* Baritone is our <a href="https://github.com/MeteorDevelopment/baritone">fork</a> which was previously included in Meteor itself.<br/> If you want the most up to date version, or want help with Baritone go to the <a href="https://github.com/cabaletta/baritone">official sources</a>.</p>
     </div>
