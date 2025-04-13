@@ -4,12 +4,12 @@
 
         <div class="cont">
             <div class="card">
-                <img src="minegame.jpg" alt="MineGame159">
+                <img src="minegame.webp" alt="MineGame159" loading="lazy">
                 <p><b>MineGame159</b></p>
                 <span>Owner / Head Developer</span>
             </div>
             <div class="card">
-                <img src="seasnail.jpg" alt="seasnail">
+                <img src="seasnail.webp" alt="seasnail" loading="lazy">
                 <p><b>seasnail</b></p>
                 <span>Developer</span>
             </div>
