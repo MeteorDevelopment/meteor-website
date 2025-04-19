@@ -29,7 +29,7 @@
 
         <div class="buttons">
             <a href="https://adfoc.us/81926897739205" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> Meteor Client [{getLatestVersion()} - #{stats.builds[getLatestVersion()]}]</a>
-            <p>If you're looking for older versions of Meteor, read <a href="/faq/old-versions">this</a>.</p>
+            <p>If you're looking for older versions of Meteor, check out the <a href="/archive">archive</a>.</p>
             <a href="/api/downloadBaritone" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> *Baritone [{stats.baritoneMcVersion}]</a>
         </div>
 

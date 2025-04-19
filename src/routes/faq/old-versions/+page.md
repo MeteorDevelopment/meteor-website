@@ -4,14 +4,6 @@ Meteor is always kept up to date with the latest stable release of Minecraft, th
 older Meteor/Minecraft versions. We understand that some people may want to play older versions of Minecraft, so here
 are some ways to do so.
 
-### Third-party downloads
-
-The only official place to get older Meteor releases is
-our [GitHub repository](https://github.com/MeteorDevelopment/meteor-client).  
-Many websites claim to offer "archived" versions of Meteor, but these are not official and may contain malware.  
-A simple scan through services like VirusTotal will not be enough to detect malware in JAR files.  
-JAR files are executable, so they can be dangerous if not obtained from a trusted source.
-
 ### Using ViaFabricPlus
 
 ViaFabricPlus lets you experience all the new features of Meteor, while being able to join servers running older
@@ -31,6 +23,12 @@ These steps expect you to use the latest version of Minecraft, Meteor and ViaFab
 You can repeat the last two steps for every server you want to join, specifying accordingly the version of the server.  
 For more detailed instructions, you can refer to
 the [ViaFabricPlus wiki](https://github.com/ViaVersion/ViaFabricPlus/blob/main/docs/USAGE.md).
+
+### Archive
+
+Since Minecraft version 1.21.4 (when we changed Meteor's versioning scheme) we are providing an [archive page](/archive) with
+the latest build for every Minecraft version.  
+**WARNING: These versions are archived and NOT supported, you will NOT receive any help when using these versions!**
 
 ### Building from source
 
