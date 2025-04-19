@@ -10,6 +10,7 @@
 
         <hr>
         <p class="warning">These versions are archived and NOT supported, you will NOT receive any help when using these versions!</p>
+        <p class="warning-small">See the <a href="/faq/old-versions">FAQ</a> for more details.</p>
         <hr>
 
         <div class="center">
@@ -39,6 +40,15 @@
     .warning {
         font-size: 2.25rem;
         color: red;
+    }
+
+    .warning-small {
+        font-size: 1.75rem;
+        color: red;
+    }
+
+    .warning-small a {
+        color: darkred;
     }
 
     .center {
