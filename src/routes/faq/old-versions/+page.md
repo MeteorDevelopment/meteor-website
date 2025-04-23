@@ -49,10 +49,11 @@ you can get it from [Adoptium](https://adoptium.net/temurin/releases/?package=jd
 5. Checkout tags from newer to older until you find the one where `minecraft_version` matches the one you want.
 6. Once you have found the tag you want, click the `Code` tab in the top left,
    then click the green `Code` button on the right and select `Download ZIP`.
-7. Extract the zip file and open a terminal in the extracted folder.
-8. Run the `gradlew build` command (or `.\gradlew build` on PowerShell).
+7. Set your `JAVA_HOME` environment variable (read more about it [here](https://www.baeldung.com/java-home-on-windows-mac-os-x-linux)).
+8. Extract the zip file and open a terminal in the extracted folder.
+9. Run the `gradlew build` command (or `.\gradlew build` on PowerShell).
    This will build Meteor and put the JAR file in the `build/libs` folder.
-9. Copy the `meteor-client-x.x.x.jar` file to your `mods` folder.
+10. Copy the `meteor-client-x.x.x.jar` file to your `mods` folder.
 
 <br>
 
