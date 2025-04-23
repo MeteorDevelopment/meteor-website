@@ -7,9 +7,9 @@ layout: faq
 When you download Meteor, you can choose one of two options:
 
 * `Release`: this version is updated less frequently, but is preferred if you don't want to update often.  
-  You can download it on the [official website](https://meteorclient.com/download);
+  You can download it on the [official website](https://meteorclient.com);
 * `Dev build`: this version is updated frequently, can have some bugs, but often has less than the release.  
-  You can get this version from the [official website](https://meteorclient.com/download?devBuild=latest),
+  You can get this version from the [official website](https://meteorclient.com),
   the `#dev-builds` channel in the [Meteor Discord](https://meteorclient.com/discord), or by compiling the source
   from [GitHub](https://github.com/MeteorDevelopment/meteor-client).
 
