@@ -44,7 +44,7 @@
                 {#if !hideProfile}
                     {#if $user}
                         <a class="user" href="/account">
-                            <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.jpg"} alt="profile"/>
+                            <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.webp"} alt="profile"/>
                         </a>
                     {:else}
                         <a href="/login"><button>Login</button></a>
