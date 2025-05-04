@@ -35,6 +35,7 @@
     <a href="/" class="icon-link"><img src="/icon.png" alt="icon" class="icon"></a>
 
     {#if hamburger}
+        <div></div>
         <button on:click={() => hamburgerOpen = !hamburgerOpen} use:clickOutside={() => hamburgerOpen = false} class="hamburger hamburger--collapse" class:is-active={hamburgerOpen} type="button">
             <span class="hamburger-box"><span class="hamburger-inner"></span></span>
         </button>
@@ -72,7 +73,7 @@
                     <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.png"} alt="profile"/>
                 </a>
             {:else}
-                <a href="/login"><button>Login</button></a>
+                <a class="login-button" href="/login"><button>Login</button></a>
             {/if}
         {/if}
     {/if}
@@ -81,9 +82,9 @@
 <style>
     nav {
         background-color: var(--accent);
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         align-items: center;
-        justify-content: space-between;
     }
 
     a {
@@ -107,13 +108,15 @@
     .user {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: end;
         gap: 0.5rem;
         min-height: 4.5rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
         color: var(--text-primary);
         text-decoration: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .user:hover {
@@ -138,6 +141,10 @@
 
     .nav-links a:hover {
         text-shadow: rgba(0, 0, 0, 0.44) 1px 1px 4px;
+    }
+
+    .login-button {
+        place-self: center end;
     }
 
     button {
