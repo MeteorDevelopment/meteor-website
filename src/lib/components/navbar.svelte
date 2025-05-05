@@ -40,7 +40,7 @@
         </button>
 
         {#if hamburgerOpen}
-            <div class="nav-links hamburger-menu" transition:slide>
+            <aside class="nav-links hamburger-menu" transition:slide>
                 {#if !hideProfile}
                     {#if $user}
                         <a class="user" href="/account">
@@ -54,7 +54,7 @@
                 <a href="/">Home</a>
                 <a href="/faq">FAQ</a>
                 <a href="/github" target="_blank">GitHub</a>
-            </div>
+            </aside>
         {/if}
     {:else}
         <div class="nav-links">
