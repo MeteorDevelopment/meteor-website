@@ -81,10 +81,13 @@
 
 <style>
     nav {
-        background-color: var(--accent);
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: var(--accent);
     }
 
     a {
@@ -152,6 +155,7 @@
     }
 
     .hamburger {
+        place-self: center end;
         background-image: none;
         padding: 0 !important;
         box-shadow: none;
