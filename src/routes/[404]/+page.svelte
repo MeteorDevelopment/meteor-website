@@ -5,7 +5,7 @@
 <Navbar/>
 
 <div>
-    <img src="icon.png" alt="icon">
+    <img src="icon.webp" alt="icon">
     <h1>Page not found</h1>
 </div>
 
