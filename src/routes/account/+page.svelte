@@ -40,9 +40,11 @@
         let form = new FormData();
         form.append("file", customCape.files![0]);
 
+        customCapeError.textContent = "";
+
         api("account/uploadCape", true, "POST", form)
             .then(() => refreshUser())
-            .catch(reason => customCapeError = reason);
+            .catch(reason => customCapeError.textContent = reason);
     }
 </script>
 
@@ -120,7 +122,7 @@
                 {#if $user.canHavaCustomcape}
                     <form on:submit|preventDefault={submit}>
                         <label for="upload-cape" class="form-label"><b>Upload custom cape</b></label>
-                        <input bind:this={customCape} type="file" id="upload-cape" name="upload-cape" required>
+                        <input bind:this={customCape} type="file" accept=".png" id="upload-cape" name="upload-cape" required>
 
                         <span bind:this={customCapeError} class="error"></span>
 
@@ -197,5 +199,10 @@
         background-image: none;
         padding: 0.5rem;
         font-size: 1rem;
+    }
+
+    .error {
+        color: red;
+        margin-bottom: 1rem;
     }
 </style>
