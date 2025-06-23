@@ -4,22 +4,22 @@
 
         <div class="cont">
             <div class="card">
-                <img src="minegame.jpg" alt="MineGame159">
+                <img src="minegame.webp" alt="MineGame159" loading="lazy">
                 <p><b>MineGame159</b></p>
                 <span>Owner / Head Developer</span>
             </div>
             <div class="card">
-                <img src="seasnail.jpg" alt="seasnail">
+                <img src="seasnail.webp" alt="seasnail" loading="lazy">
                 <p><b>seasnail</b></p>
                 <span>Developer</span>
             </div>
         </div>
 
         <div class="cont">
-            <a href="/discord" target="_blank" class="button" style="background-color: var(--discord);"><img src="icons/discord.svg" alt="discord">Discord</a>
-            <a href="/github" target="_blank"  class="button" style="background-color: var(--github);"><img src="icons/github.svg" alt="github">GitHub</a>
-            <a href="/youtube" target="_blank"  class="button" style="background-color: var(--youtube);"><img src="icons/youtube.svg" alt="youtube">YouTube</a>
-            <a href="/donate" target="_blank"  class="button" style="background-color: var(--paypal);"><img src="icons/paypal.svg" alt="donate">Donate</a>
+            <a href="/discord" target="_blank" class="button" style="background-color: var(--discord);"><img src="icons/discord.svg" alt="discord" loading="lazy">Discord</a>
+            <a href="/github" target="_blank"  class="button" style="background-color: var(--github);"><img src="icons/github.svg" alt="github" loading="lazy">GitHub</a>
+            <a href="/youtube" target="_blank"  class="button" style="background-color: var(--youtube);"><img src="icons/youtube.svg" alt="youtube" loading="lazy">YouTube</a>
+            <a href="/donate" target="_blank"  class="button" style="background-color: var(--paypal);"><img src="icons/paypal.svg" alt="donate" loading="lazy">Donate</a>
         </div>
     </div>
 </div>
