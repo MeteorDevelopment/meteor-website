@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /account
+Disallow: /addMcAccount
+Disallow: /changeEmail
+Disallow: /changePassword
+Disallow: /changeUsername
+Disallow: /confirm
+Disallow: /confirmChangeEmail
+Disallow: /discord
+Disallow: /forgotPassword
+Disallow: /github
+Disallow: /login
+Disallow: /paypal
+Disallow: /register
+Disallow: /youtube
