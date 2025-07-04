@@ -1,3 +1,7 @@
+---
+layout: faq
+---
+
 The Minecraft launcher keeps logs of game events as they happen which can be useful for debugging errors or other issues
 that may occur within the game.
 
