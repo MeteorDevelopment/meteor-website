@@ -3,6 +3,11 @@ import { sveltePreprocess } from "svelte-preprocess";
 import atImport from "postcss-import";
 import { mdsvex } from "mdsvex";
 import { markdown } from "./src/lib/markdown.js";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /** @type {import("@sveltejs/kit").Config} */
 const config = {
@@ -23,7 +28,7 @@ const config = {
 		mdsvex({
 			extensions: [ ".md" ],
 			layout: {
-				faq: "src/layouts/faq.svelte"
+				faq: join(__dirname, "./src/layouts/faq.svelte")
 			},
 			remarkPlugins: [markdown]
 		})

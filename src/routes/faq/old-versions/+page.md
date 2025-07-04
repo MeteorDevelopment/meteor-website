@@ -1,3 +1,7 @@
+---
+layout: faq
+---
+
 ## Meteor and older versions of Minecraft
 
 Meteor is always kept up to date with the latest stable release of Minecraft, this means we do not support the use of
