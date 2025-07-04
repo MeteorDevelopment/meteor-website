@@ -32,7 +32,7 @@
 </svelte:head>
 
 <nav>
-    <a href="/" class="icon-link"><img src="/icon.png" alt="icon" class="icon"></a>
+    <a href="/" class="icon-link"><img src="/icon.webp" alt="icon" class="icon"></a>
 
     {#if hamburger}
         <button on:click={() => hamburgerOpen = !hamburgerOpen} use:clickOutside={() => hamburgerOpen = false} class="hamburger hamburger--collapse" class:is-active={hamburgerOpen} type="button">
@@ -44,7 +44,7 @@
                 {#if !hideProfile}
                     {#if $user}
                         <a class="user" href="/account">
-                            <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.jpg"} alt="profile"/>
+                            <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.webp"} alt="profile"/>
                         </a>
                     {:else}
                         <a href="/login"><button>Login</button></a>
@@ -69,7 +69,7 @@
             {#if $user}
                 <a class="user" href="/account">
                     <p>{$user.username}</p>
-                    <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.png"} alt="profile"/>
+                    <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.webp"} alt="profile"/>
                 </a>
             {:else}
                 <a href="/login"><button>Login</button></a>
