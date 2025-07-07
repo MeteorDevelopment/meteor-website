@@ -36,7 +36,7 @@
 
         <ol>
             <li>Launch your Minecraft client and join our server with the IP <span class="ip">mcauth.meteorclient.com</span></li>
-            <li>You will be immediatelly kicked with a one-time 6-digit code</li>
+            <li>You will be immediately kicked with a one-time 6-digit code</li>
             <li>Write the code into the input box below</li>
         </ol>
 

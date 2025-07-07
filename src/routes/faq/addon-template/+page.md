@@ -12,13 +12,13 @@ We will be using [IntelliJ IDEA Community Edition](https://www.jetbrains.com/ide
 
 First, a couple of prerequisites:
 
-- Knowledge of [**Java**](https://docs.oracle.com/en/java/javase/17/docs/api/index.html) programming, [**Git
+- Knowledge of [**Java**](https://docs.oracle.com/en/java/javase/21/docs/api/index.html) programming, [**Git
   **](https://git-scm.com/docs) for version control and [**Gradle
   **](https://docs.gradle.org/current/userguide/about_manual.html#about_manual) for dependency management.
 - A [GitHub](https://github.com/) account to host your repository.
 - A [Git](https://git-scm.com/downloads) client for all the Git commands.
 - A Java-compatible IDE, IntelliJ IDEA in this case.
-- (Optional) A Java 17 JDK, we recommend [Adoptium](https://adoptium.net/temurin/releases/?package=jdk&version=17). You
+- (Optional) A Java 21 JDK, we recommend [Adoptium](https://adoptium.net/temurin/releases/?package=jdk&version=21). You
   can also
   use the one bundled with IntelliJ IDEA.
 
@@ -87,7 +87,7 @@ The template contains the following important files:
       root.
     - `custom/meteor-client:color`: RGB comma separated value used for the color of your addon's credits in the main
       menu.
-- `build.gradle`: The Gradle build script contains the [Loom](https://github.com/FabricMC/fabric-loom) version, the
+- `build.gradle.kts`: The Gradle build script contains the [Loom](https://github.com/FabricMC/fabric-loom) version, the
   mod's dependencies, and other useful
   variables.
 - `gradle.properties`: The Gradle properties file contains the Minecraft version used by the project,

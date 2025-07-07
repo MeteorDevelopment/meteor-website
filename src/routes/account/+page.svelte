@@ -109,7 +109,7 @@
                     {#each $user.capes as cape}
                         <li>
                             {#if cape.url !== ""}
-                                <!-- Quick hack to disable broser cache -->
+                                <!-- Quick hack to disable browser cache -->
                                 <img src={cape.url + "?_rand=" + new Date().getTime()} alt="cape" style="width: 10rem;">
                             {/if}
 

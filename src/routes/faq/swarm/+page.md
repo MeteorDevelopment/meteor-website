@@ -11,7 +11,7 @@ large tasks to be completed quickly and efficiently by utilising many features o
 
 To set up a Swarm Host, first open the Swarm module settings from Meteor's GUI and select "Host" under the mode
 setting (you must be in a world/server or this won't work).  
-You can optionally choose a port for the host server to run on, but in most cases you wont need to change this.  
+You can optionally choose a port for the host server to run on, but in most cases you won't need to change this.  
 Now just click the "Start" button and your host server is ready to go!
 
 ## Connecting workers

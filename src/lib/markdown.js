@@ -12,7 +12,7 @@ export function markdown() {
 
     // @ts-ignore
     return (root) => {
-        // Add .md-hX, spearators and link
+        // Add .md-hX, separators and link
         visit(root, (node, index, parent) => {
             if (node.type == "heading") {
                 addClasses(node, "md-h" + node.depth);

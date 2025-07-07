@@ -32,7 +32,7 @@
 
     <label for="newUsername" class="form-label"><b>New Username</b></label>
     <!-- svelte-ignore a11y_autofocus -->
-    <input bind:value={newUsername} type="newUsername" placeholder="New Username" id="newUsername" name="newUsername" required autofocus>
+    <input bind:value={newUsername} type="text" placeholder="New Username" id="newUsername" name="newUsername" required autofocus>
 
     <span bind:this={error} class="error"></span>
 
