@@ -3,7 +3,7 @@
     import {goto} from "$app/navigation";
     import {refreshUser, token} from "$lib/user";
     import Navbar from "$lib/components/navbar.svelte";
-    import {OtpInput} from "@codersandip/svelte-otp";
+    import { OTPRoot, OTPInput } from "@jimmyverburgt/svelte-input-otp";
     import {api} from "$lib/api";
 
     $effect(() => {
@@ -12,14 +12,6 @@
 
     let errorEl: HTMLSpanElement;
     let value = $state<string>("");
-
-    function onChange(otpValue: string) {
-        value = otpValue;
-
-        if (otpValue.length === 6) {
-            onComplete(otpValue);
-        }
-    }
 
     function onComplete(code: string) {
         errorEl.textContent = "";
@@ -43,21 +35,19 @@
         <h1>Add MC account</h1>
 
         <ol>
-            <li>Launch your Minecraft client and join our server with the IP <span
-                class="ip">mcauth.meteorclient.com</span></li>
+            <li>Launch your Minecraft client and join our server with the IP <span class="ip">mcauth.meteorclient.com</span></li>
             <li>You will be immediatelly kicked with a one-time 6-digit code</li>
             <li>Write the code into the input box below</li>
         </ol>
 
-        <OtpInput
-            length={6}
-            inputType="number"
-            bind:value={value}
-            onChange={onChange}
-            containerClass="otp-root"
-            inputWrapClass="otp-input-wrap"
-            inputClass="otp-input"
-        />
+        <OTPRoot maxLength={6} autoFocus={true} inputMode="numeric" onComplete={onComplete} bind:value className="otp-root">
+            <OTPInput index={0} className="otp-input" focusClassName="focused" />
+            <OTPInput index={1} className="otp-input" focusClassName="focused" />
+            <OTPInput index={2} className="otp-input" focusClassName="focused" />
+            <OTPInput index={3} className="otp-input" focusClassName="focused" />
+            <OTPInput index={4} className="otp-input" focusClassName="focused" />
+            <OTPInput index={5} className="otp-input" focusClassName="focused" />
+        </OTPRoot>
 
         <span class="error" bind:this={errorEl}></span>
     </div>
@@ -109,7 +99,7 @@
         border-radius: 0.325rem;
     }
 
-    :global(.otp-input:focus) {
+    :global(.otp-input.focused) {
         border-width: 2px;
         border-color: black;
     }
