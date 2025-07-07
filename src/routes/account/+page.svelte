@@ -5,9 +5,11 @@
     import { browser } from "$app/environment";
     import { api, fetchJson } from "$lib/api";
 
-    $: if (browser && !$token) goto("/login");
+    $effect(() => {
+        if (browser && !$token) goto("/login");
+    });
 
-    let linkToken: string | null = null;
+    let linkToken = $state<string | null>(null);
 
     function unlinkDiscord() {
         api("account/unlinkDiscord", true, "POST")
@@ -33,18 +35,20 @@
         token.set(null);
     }
 
-    let customCape: HTMLInputElement;
-    let customCapeError: HTMLSpanElement;
+    let customCape = $state<HTMLInputElement | null>(null);
+    let customCapeError = $state<string>("");
 
     function submit() {
-        let form = new FormData();
-        form.append("file", customCape.files![0]);
+        if (!customCape || !customCape.files || !customCape.files.length) return;
 
-        customCapeError.textContent = "";
+        let form = new FormData();
+        form.append("file", customCape.files[0]);
+
+        customCapeError = "";
 
         api("account/uploadCape", true, "POST", form)
             .then(() => refreshUser())
-            .catch(reason => customCapeError.textContent = reason);
+            .catch(reason => customCapeError = reason);
     }
 </script>
 
@@ -64,7 +68,7 @@
                         <b>{$user.discordName}</b>
                     </div>
                     <div class="buttons">
-                        <button on:click={unlinkDiscord}>Unlink Discord</button>
+                        <button onclick={unlinkDiscord}>Unlink Discord</button>
                     </div>
                 {:else}
                     {#if linkToken}
@@ -73,7 +77,7 @@
                         <p>The command will only be valid for next 5 minutes.</p>
                     {:else}
                         <div class="buttons">
-                            <button on:click={linkDiscord}>Link Discord</button>
+                            <button onclick={linkDiscord}>Link Discord</button>
                         </div>
                     {/if}
                 {/if}
@@ -87,7 +91,7 @@
                         {#await fetchJson("https://corsjangsessionserver.b-cdn.net/session/minecraft/profile/" + uuid)}
                             <li><img src="https://mc-heads.net/head/MHF_Steve/32" alt="head">Steve<button>Remove</button></li>
                         {:then res}
-                            <li><img src={"https://mc-heads.net/head/" + uuid + "/32"} alt="head">{res.name}<button on:click={() => removeMcAccount(uuid)}>Remove</button></li>
+                            <li><img src={"https://mc-heads.net/head/" + uuid + "/32"} alt="head">{res.name}<button onclick={() => removeMcAccount(uuid)}>Remove</button></li>
                         {:catch err}
                             <li>Failed to load account</li>
                         {/await}
@@ -113,18 +117,21 @@
                                 <b>{cape.title}</b>
                             {:else}
                                 {cape.title}
-                                <button on:click={() => selectCape(cape.id)} style="background-color: gray;">Select
+                                <button onclick={() => selectCape(cape.id)} style="background-color: gray;">Select
                                 </button>
                             {/if}
                         </li>
                     {/each}
                 </ul>
                 {#if $user.canHavaCustomcape}
-                    <form on:submit|preventDefault={submit}>
+                    <form onsubmit={event => {
+                        event.preventDefault();
+                        submit();
+                    }}>
                         <label for="upload-cape" class="form-label"><b>Upload custom cape</b></label>
                         <input bind:this={customCape} type="file" accept=".png" id="upload-cape" name="upload-cape" required>
 
-                        <span bind:this={customCapeError} class="error"></span>
+                        <span class="error">{customCapeError}</span>
 
                         <button type="submit" class="form-button" style="width: 100%;">Upload</button>
                     </form>
@@ -135,7 +142,7 @@
             <div class="section">
                 <h2>Controls</h2>
                 <div class="buttons">
-                    <button on:click={logout}>Logout</button>
+                    <button onclick={logout}>Logout</button>
                     <a class="button" href="/changeUsername">Change Username</a>
                     <a class="button" href="/changeEmail">Change Email</a>
                     <a class="button" href="/changePassword">Change Password</a>

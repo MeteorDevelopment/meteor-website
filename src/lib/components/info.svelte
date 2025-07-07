@@ -2,7 +2,7 @@
     import type { Stats } from "$lib/stats";
     import semver from "semver";
 
-    export let stats: Stats;
+    let { stats } = $props<{stats: Stats}>();
 
     function prettyNumber(x: number) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");

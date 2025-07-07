@@ -15,7 +15,7 @@
     const clientId = "Abmv78qycqx6AFnq-5ICVQGd6KPXX7Sp5VA-U2ca41hJzlmJnLpXCDVq-Hj9PzIBM9Jlu0SHrwSGenHA";
 
     onMount(async () => {
-        const paypal = await loadScript({"client-id": clientId, currency: "EUR"});
+        const paypal = await loadScript({"clientId": clientId, currency: "EUR"});
         await paypal!.Buttons!({
             style: {color: "blue"},
             createOrder,

@@ -1,5 +1,8 @@
 <script lang="ts">
     import Navbar from "$lib/components/navbar.svelte";
+    import type { PageData } from './$types';
+
+    let { data } = $props<{data: PageData}>();
 </script>
 
 <Navbar />
@@ -15,10 +18,10 @@
 
         <div class="center">
             <div class="groups">
-                {#each Object.keys($$props.data.builds) as group}
+                {#each Object.keys(data.builds) as group}
                     <h3>{group}</h3>
                     <ul>
-                        {#each $$props.data.builds[group] as build}
+                        {#each data.builds[group] as build}
                             <li><a href="https://meteorclient.com/api/download?version={build.version}">{build.version} - {build.number}</a></li>
                         {/each}
                     </ul>

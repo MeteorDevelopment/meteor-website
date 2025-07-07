@@ -5,10 +5,10 @@
     import { browser } from "$app/environment";
     import { clickOutside } from "svelte-use-click-outside";
 
-    export let hideProfile = false;
+    let { hideProfile = false } = $props<{hideProfile?: boolean}>();
 
-    let hamburger: boolean;
-    let hamburgerOpen: boolean;
+    let hamburger = $state(false);
+    let hamburgerOpen = $state(false);
 
     function slide(node: Element, options?: any): TransitionConfig {
         return {
@@ -35,7 +35,7 @@
     <a href="/" class="icon-link"><img src="/icon.png" alt="icon" class="icon"></a>
 
     {#if hamburger}
-        <button on:click={() => hamburgerOpen = !hamburgerOpen} use:clickOutside={() => hamburgerOpen = false} class="hamburger hamburger--collapse" class:is-active={hamburgerOpen} type="button">
+        <button aria-label="Open navigation menu" onclick={() => hamburgerOpen = !hamburgerOpen} use:clickOutside={() => hamburgerOpen = false} class="hamburger hamburger--collapse" class:is-active={hamburgerOpen} type="button">
             <span class="hamburger-box"><span class="hamburger-inner"></span></span>
         </button>
 

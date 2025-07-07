@@ -22,7 +22,8 @@
         cfToken = event.detail.token;
     }
 
-    function submit() {
+    function handleSubmit(event: SubmitEvent) {
+        event.preventDefault();
         error.textContent = "";
 
         const formData = new FormData()
@@ -48,11 +49,11 @@
         </div>
     </div>
 {:else}
-    <form on:submit|preventDefault={submit}>
+    <form onsubmit={handleSubmit}>
         <h1>Register</h1>
 
         <label for="username" class="form-label"><b>Username</b></label>
-        <!-- svelte-ignore a11y-autofocus -->
+        <!-- svelte-ignore a11y_autofocus -->
         <input bind:value={username} type="text" placeholder="Username" id="username" name="username" required autofocus>
 
         <label for="email" class="form-label"><b>Email</b></label>
@@ -63,7 +64,7 @@
 
         <p class="form-label"><b>Captcha</b></p>
         <Turnstile
-            id="captcha"
+            widgetId="captcha"
             siteKey="0x4AAAAAAAH2MXj1b8rpN6cf"
             theme="light"
             on:turnstile-callback={onTurnstileSuccess}

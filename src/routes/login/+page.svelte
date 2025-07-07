@@ -5,11 +5,12 @@
     import { token } from "$lib/user";
     import { goto } from "$app/navigation";
 
-    let name: string;
-    let password: string;
+    let name = $state("");
+    let password = $state("");
     let error: HTMLSpanElement;
 
-    function submit() {
+    function handleSubmit(event: SubmitEvent) {
+        event.preventDefault();
         error.textContent = "";
 
         api("account/login?name=" + name + "&password=" + password)
@@ -17,16 +18,18 @@
             .catch(reason => error.textContent = reason);
     }
 
-    $: if (browser && $token) goto("/account");
+    $effect(() => {
+        if (browser && $token) goto("/account");
+    });
 </script>
 
 <Navbar hideProfile/>
 
-<form on:submit|preventDefault={submit}>
+<form onsubmit={handleSubmit}>
     <h1>Login</h1>
 
     <label for="name" class="form-label"><b>Username or Email</b></label>
-    <!-- svelte-ignore a11y-autofocus -->
+    <!-- svelte-ignore a11y_autofocus -->
     <input bind:value={name} type="text" placeholder="Username or Email" id="name" name="name" required autofocus>
 
     <label for="password" class="form-label"><b>Password</b></label>

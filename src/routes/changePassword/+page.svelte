@@ -6,13 +6,14 @@
     import { api } from "$lib/api";
     import type { PageData } from './$types';
 
-    export let data: PageData;
+    let { data } = $props<{data: PageData}>();
 
-    let oldPassword: string;
-    let newPassword: string;
+    let oldPassword = $state<string>("");
+    let newPassword = $state<string>("");
     let error: HTMLSpanElement;
 
-    function submit() {
+    function handleSubmit(event: SubmitEvent) {
+        event.preventDefault();
         error.textContent = "";
 
         let url = "account/changePassword";
@@ -24,22 +25,24 @@
             .catch(reason => error.textContent = reason);
     }
 
-    $: if (browser && !$token && !data.qToken) goto("/login");
+    $effect(() => {
+        if (browser && !$token && !data.qToken) goto("/login");
+    });
 </script>
 
 <Navbar/>
 
-<form on:submit|preventDefault={submit}>
+<form onsubmit={handleSubmit}>
     <h1>Change Password</h1>
 
     {#if !data.qToken}
         <label for="oldPassword" class="form-label"><b>Old Password</b></label>
-        <!-- svelte-ignore a11y-autofocus -->
+        <!-- svelte-ignore a11y_autofocus -->
         <input bind:value={oldPassword} type="password" placeholder="Old Password" id="oldPassword" name="oldPassword" required autofocus={data.qToken == null}>
     {/if}
 
     <label for="newPassword" class="form-label"><b>New Password</b></label>
-    <!-- svelte-ignore a11y-autofocus -->
+    <!-- svelte-ignore a11y_autofocus -->
     <input bind:value={newPassword} type="password" placeholder="New Password" id="newPassword" name="newPassword" required autofocus={data.qToken != null}>
 
     <span bind:this={error} class="error"></span>
@@ -47,7 +50,7 @@
     <button type="submit" class="form-button">Change</button>
 </form>
 
-<!-- svelte-ignore css-unused-selector -->
+<!-- svelte-ignore css_unused_selector -->
 <style>
     @import "form.css";
 </style>

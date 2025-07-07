@@ -5,8 +5,8 @@
     import { goto } from "$app/navigation";
     import type { PageData } from './$types';
 
-    export let data: PageData;
-    let error: string | null = null;
+    let { data } = $props<{data: PageData}>();
+    let error = $state<string | null>(null);
 
     if (browser) {
         if (!data.qToken) error = "Invalid token.";

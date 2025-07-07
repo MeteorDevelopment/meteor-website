@@ -34,7 +34,6 @@
 
     .card {
         box-shadow: 0 0 16px rgba(0, 0, 0, 0.25);
-        padding: 1rem;
         transition: box-shadow 0.25s;
         border-radius: 0.375rem;
         padding: 2rem;

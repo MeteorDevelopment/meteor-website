@@ -4,10 +4,12 @@
     import Info from "$lib/components/info.svelte";
     import Team from "$lib/components/team.svelte";
     import Footer from "$lib/components/footer.svelte";
+
+    const {data} = $props();
 </script>
 
 <Navbar/>
 <Main/>
-<Info stats={$$props.data.stats}/>
+<Info stats={data.stats}/>
 <Team/>
 <Footer/>

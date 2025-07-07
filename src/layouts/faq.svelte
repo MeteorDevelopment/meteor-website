@@ -1,12 +1,14 @@
-<script>
+<script lang="ts">
     import Footer from "$lib/components/footer.svelte";
     import Navbar from "$lib/components/navbar.svelte";
+
+    let { children } = $props();
 </script>
 
 <Navbar/>
 <div class="container">
     <div>
-        <slot/>
+        {@render children()}
     </div>
     <ul>
         <li><a href="/faq">Home</a></li>
