@@ -1,29 +1,29 @@
 <script lang="ts">
-    import Navbar from "$lib/components/navbar.svelte";
-    import { browser } from "$app/environment";
-    import { token } from "$lib/user";
-    import { goto } from "$app/navigation";
-    import { api } from "$lib/api";
+    import Navbar from '$lib/components/navbar.svelte';
+    import { browser } from '$app/environment';
+    import { token } from '$lib/user';
+    import { goto } from '$app/navigation';
+    import { api } from '$lib/api';
 
-    let newEmail = $state<string>("");
-    let errorMessage = $state<string>("");
+    let newEmail = $state<string>('');
+    let errorMessage = $state<string>('');
     let sent = $state(false);
 
     function handleSubmit(event: SubmitEvent) {
         event.preventDefault();
-        errorMessage = "";
+        errorMessage = '';
 
-        api("account/changeEmail?email=" + newEmail, true, "POST")
-            .then(() => sent = true)
-            .catch(reason => errorMessage = reason);
+        api('account/changeEmail?email=' + newEmail, true, 'POST')
+            .then(() => (sent = true))
+            .catch((reason) => (errorMessage = reason));
     }
 
     $effect(() => {
-        if (browser && !$token) goto("/login");
+        if (browser && !$token) goto('/login');
     });
 </script>
 
-<Navbar/>
+<Navbar />
 
 {#if sent}
     <div class="container">
@@ -37,9 +37,19 @@
 
         <label for="newEmail" class="form-label"><b>New Email</b></label>
         <!-- svelte-ignore a11y_autofocus -->
-        <input bind:value={newEmail} type="email" placeholder="New Email" id="newEmail" name="newEmail" required autofocus>
+        <input
+            bind:value={newEmail}
+            type="email"
+            placeholder="New Email"
+            id="newEmail"
+            name="newEmail"
+            required
+            autofocus
+        />
 
-        <span class="error">{errorMessage}</span>
+        {#if errorMessage}
+            <span class="error">{errorMessage}</span>
+        {/if}
 
         <button type="submit" class="form-button">Change</button>
     </form>
@@ -47,5 +57,5 @@
 
 <!-- svelte-ignore css_unused_selector -->
 <style>
-    @import "form.css";
+    @import 'form.css';
 </style>

@@ -21,12 +21,12 @@ you wish for your workers to run on.
 Next, make sure the Swarm module is enabled, open the settings page from the GUI and select "Worker" from the mode
 setting.  
 Now enter the ip and port that the host server is running on, in most cases these can be left default, unless you
-changed the port your server is running on *or* the host server is not running on the same network as you.  
-Once you have configured your connection details, click the "Start" button and you *should* see a message saying you
+changed the port your server is running on _or_ the host server is not running on the same network as you.  
+Once you have configured your connection details, click the "Start" button and you _should_ see a message saying you
 have successfully connected to the host server.  
 Repeat this for any other worker accounts you want to add to your Swarm session.
 
 ## Controlling workers
 
-To control workers, just use the `.swarm` command from the host instance, this will transmit any commands you enter to *
-*all** of the workers connected to your session.
+To control workers, just use the `.swarm` command from the host instance, this will transmit any commands you enter to
+**all** the workers connected to your session.

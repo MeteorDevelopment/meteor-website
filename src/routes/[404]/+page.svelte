@@ -1,11 +1,11 @@
 <script lang="ts">
-    import Navbar from "$lib/components/navbar.svelte";
+    import Navbar from '$lib/components/navbar.svelte';
 </script>
 
-<Navbar/>
+<Navbar />
 
 <div>
-    <img src="icon.png" alt="icon">
+    <img src="icon.png" alt="icon" />
     <h1>Page not found</h1>
 </div>
 

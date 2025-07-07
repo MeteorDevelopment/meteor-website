@@ -1,8 +1,8 @@
 <script lang="ts">
-    import Navbar from "$lib/components/navbar.svelte";
+    import Navbar from '$lib/components/navbar.svelte';
     import type { PageData } from './$types';
 
-    let { data } = $props<{data: PageData}>();
+    let { data } = $props<{ data: PageData }>();
 </script>
 
 <Navbar />
@@ -11,21 +11,27 @@
     <div>
         <h2>Version Archive</h2>
 
-        <hr>
-        <p class="warning">These versions are archived and NOT supported, you will NOT receive any help when using these versions!</p>
+        <hr />
+        <p class="warning">
+            These versions are archived and NOT supported, you will NOT receive any help when using these versions!
+        </p>
         <p class="warning-small">See the <a href="/faq/old-versions">FAQ</a> for more details.</p>
-        <hr>
+        <hr />
 
         <div class="center">
             <div class="groups">
-                {#each Object.keys(data.builds) as group}
+                {#each Object.keys(data.builds) as group (group)}
                     <h3>{group}</h3>
                     <ul>
-                        {#each data.builds[group] as build}
-                            <li><a href="https://meteorclient.com/api/download?version={build.version}">{build.version} - {build.number}</a></li>
+                        {#each data.builds[group] as build (build.version)}
+                            <li>
+                                <a href={`https://meteorclient.com/api/download?version=${build.version}`}>
+                                    {build.version} - {build.number}
+                                </a>
+                            </li>
                         {/each}
                     </ul>
-                    <hr>
+                    <hr />
                 {/each}
             </div>
         </div>

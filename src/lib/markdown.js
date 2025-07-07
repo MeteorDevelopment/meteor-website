@@ -1,4 +1,4 @@
-import {visit} from "unist-util-visit";
+import { visit } from 'unist-util-visit';
 
 export function markdown() {
     // @ts-ignore
@@ -7,79 +7,78 @@ export function markdown() {
         node.data.hProperties = node.data.hProperties || {};
         node.data.hProperties.className = node.data.hProperties.className || [];
 
-        node.data.hProperties.className.push(...classes)
+        node.data.hProperties.className.push(...classes);
     }
 
     // @ts-ignore
     return (root) => {
         // Add .md-hX, separators and link
         visit(root, (node, index, parent) => {
-            if (node.type == "heading") {
-                addClasses(node, "md-h" + node.depth);
+            if (node.type == 'heading') {
+                addClasses(node, 'md-h' + node.depth);
 
                 if (node.depth <= 2) {
                     // @ts-ignore
                     parent.children.splice(index + 1, 0, {
-                        type: "thematicBreak",
+                        type: 'thematicBreak',
                         data: {
                             hProperties: {
-                                className: ["md-hr"]
+                                className: ['md-hr']
                             }
                         }
                     });
                 }
 
-                let id = node.children[0].value.toLowerCase().replaceAll(" ", "-");
+                let id = node.children[0].value.toLowerCase().replaceAll(' ', '-');
                 node.children.splice(0, 0, {
-                    type: "link",
-                    url: "#" + id,
+                    type: 'link',
+                    url: '#' + id,
                     children: [
                         {
-                            type: "image",
-                            url: "/icons/link.svg",
-                            alt: "X"
+                            type: 'image',
+                            url: '/icons/link.svg',
+                            alt: 'X'
                         }
                     ],
                     data: {
                         hProperties: {
                             id,
-                            className: ["md-h-a"]
+                            className: ['md-h-a']
                         }
                     }
-                })
+                });
 
                 // @ts-ignore
                 return index + 2;
             }
         });
 
-        // @ts-ignore
-        visit(root, (node, index, parent) => {
+        visit(root, (node, _index, _parent) => {
             // Add .md-ul and .md-ol
-            if (node.type == "list") {
-                addClasses(node, node.ordered ? "md-ol" : "md-ul");
+            if (node.type == 'list') {
+                addClasses(node, node.ordered ? 'md-ol' : 'md-ul');
             }
             // Add .md-code
-            else if (node.type == "inlineCode") {
-                addClasses(node, "md-code");
+            else if (node.type == 'inlineCode') {
+                addClasses(node, 'md-code');
             }
             // Add .md-a
-            else if (node.type == "link") {
-                addClasses(node, "md-a");
+            else if (node.type == 'link') {
+                addClasses(node, 'md-a');
             }
             // Add .md-img and set alt
-            else if (node.type == "image") {
-                addClasses(node, "md-img");
+            else if (node.type == 'image') {
+                addClasses(node, 'md-img');
 
                 if (node.position) node.alt = node.url;
             }
             // Add .md-table
-            else if (node.type == "table") {
-                addClasses(node, "md-table");
+            else if (node.type == 'table') {
+                addClasses(node, 'md-table');
             }
             // Add .md-td
-            else if (node.type == "tableCell") {
-                addClasses(node, "md-td");
+            else if (node.type == 'tableCell') {
+                addClasses(node, 'md-td');
             }
         });
     };

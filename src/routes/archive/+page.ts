@@ -1,12 +1,12 @@
-import type { PageLoad } from "./$types";
-import { fetchStats } from "$lib/stats";
-import { parse } from "semver";
+import type { PageLoad } from './$types';
+import { fetchStats } from '$lib/stats';
+import { parse } from 'semver';
 
-export const load: PageLoad = async ({ params, fetch }) => {
+export const load: PageLoad = async ({ fetch }) => {
     const stats = await fetchStats(fetch);
     const builds = [];
 
-    let latest = parse("0.0.0")!;
+    let latest = parse('0.0.0')!;
 
     for (const str in stats.builds) {
         const version = parse(str)!;
@@ -16,7 +16,7 @@ export const load: PageLoad = async ({ params, fetch }) => {
     for (const str in stats.builds) {
         const version = parse(str)!;
         const number = stats.builds[str];
-        
+
         if (version.compare(latest) != 0) {
             builds.push({
                 version,
@@ -28,8 +28,8 @@ export const load: PageLoad = async ({ params, fetch }) => {
     builds.sort((a, b) => -a.version.compare(b.version));
 
     return {
-        builds: groupBy(builds, build => build.version.major + "." + build.version.minor)
-    }
+        builds: groupBy(builds, (build) => build.version.major + '.' + build.version.minor)
+    };
 };
 
 function groupBy<T>(arr: T[], fn: (item: T) => any) {

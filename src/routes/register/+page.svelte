@@ -1,21 +1,21 @@
 <script lang="ts">
-    import Navbar from "$lib/components/navbar.svelte";
-    import { api } from "$lib/api";
-    import { browser } from "$app/environment";
-    import { token } from "$lib/user";
-    import { goto } from "$app/navigation";
+    import Navbar from '$lib/components/navbar.svelte';
+    import { api } from '$lib/api';
+    import { browser } from '$app/environment';
+    import { token } from '$lib/user';
+    import { goto } from '$app/navigation';
     import { Turnstile } from 'svelte-turnstile';
 
-    let username: string;
-    let email: string;
-    let password: string;
-    let cfToken: string;
-    let error: HTMLSpanElement;
+    let username = $state<string>('');
+    let email = $state<string>('');
+    let password = $state<string>('');
+    let cfToken = $state<string>('');
+    let errorMessage = $state<string>('');
 
-    let sent = false;
+    let sent = $state<boolean>(false);
 
     function onTurnstileError() {
-        error.textContent = "Captcha failed, please try again.";
+        errorMessage = 'Captcha failed, please try again.';
     }
 
     function onTurnstileSuccess(event: CustomEvent) {
@@ -24,23 +24,25 @@
 
     function handleSubmit(event: SubmitEvent) {
         event.preventDefault();
-        error.textContent = "";
+        errorMessage = '';
 
-        const formData = new FormData()
-        formData.append("username", username)
-        formData.append("email", email)
-        formData.append("password", password)
-        formData.append("cf-token", cfToken)
+        const formData = new FormData();
+        formData.append('username', username);
+        formData.append('email', email);
+        formData.append('password', password);
+        formData.append('cf-token', cfToken);
 
-        api("account/register", true, "POST", formData)
-            .then(() => sent = true)
-            .catch(reason => error.textContent = reason);
+        api('account/register', true, 'POST', formData)
+            .then(() => (sent = true))
+            .catch((reason) => (errorMessage = reason));
     }
 
-    if (browser && $token) goto("/account");
+    $effect(() => {
+        if (browser && $token) goto('/account');
+    });
 </script>
 
-<Navbar hideProfile/>
+<Navbar hideProfile />
 
 {#if sent}
     <div class="container">
@@ -54,13 +56,21 @@
 
         <label for="username" class="form-label"><b>Username</b></label>
         <!-- svelte-ignore a11y_autofocus -->
-        <input bind:value={username} type="text" placeholder="Username" id="username" name="username" required autofocus>
+        <input
+            bind:value={username}
+            type="text"
+            placeholder="Username"
+            id="username"
+            name="username"
+            required
+            autofocus
+        />
 
         <label for="email" class="form-label"><b>Email</b></label>
-        <input bind:value={email} type="email" placeholder="Email" id="email" name="email" required>
+        <input bind:value={email} type="email" placeholder="Email" id="email" name="email" required />
 
         <label for="password" class="form-label"><b>Password</b></label>
-        <input bind:value={password} type="password" placeholder="Password" id="password" name="password" required>
+        <input bind:value={password} type="password" placeholder="Password" id="password" name="password" required />
 
         <p class="form-label"><b>Captcha</b></p>
         <Turnstile
@@ -73,17 +83,22 @@
             on:turnstile-timeout={onTurnstileError}
         />
 
-        <span bind:this={error} class="error"></span>
+        {#if errorMessage}
+            <span class="error">{errorMessage}</span>
+        {/if}
 
         <button type="submit" class="form-button">Register</button>
 
         <div class="footer">
             <p><i class="hide">Have an account? </i><a href="/login">Login</a></p>
-            <p><i class="hide">Forgot your password? </i> <a href="/forgotPassword">Reset Password</a></p>
+            <p>
+                <i class="hide">Forgot your password? </i>
+                <a href="/forgotPassword">Reset Password</a>
+            </p>
         </div>
     </form>
 {/if}
 
 <style>
-    @import "form.css";
+    @import 'form.css';
 </style>

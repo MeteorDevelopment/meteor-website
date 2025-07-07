@@ -12,9 +12,9 @@ Many of them are incorrect or outdated and, as stated below, we do not support o
 To install Meteor Client:
 
 1. Download the Meteor Client, choosing one of two options:
-    * `Release`: this version is updated less frequently, but is preferred if you don't want to update often.  
+    - `Release`: this version is updated less frequently, but is preferred if you don't want to update often.  
       You can download it on the [official website](https://meteorclient.com/download);
-    * `Dev build`: this version is updated frequently, but can have some bugs.  
+    - `Dev build`: this version is updated frequently, but can have some bugs.  
       You can get this version from the [official website](https://meteorclient.com/download?devBuild=latest),
       the `#dev-builds` channel in the [Meteor Discord](https://meteorclient.com/discord), or by compiling the source
       from [GitHub](https://github.com/MeteorDevelopment/meteor-client).
@@ -62,6 +62,7 @@ You can also use this feature in individual modules and individual tabs (GUI, Co
 
 Optifine is not and will never be supported by Meteor. We recommend using these instead:
 
+<!-- prettier-ignore -->
 | Mod                                             | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
 | [Sodium](https://modrinth.com/mod/sodium)       | Performance improvements (better than Optifine) |
