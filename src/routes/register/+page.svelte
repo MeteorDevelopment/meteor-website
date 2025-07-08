@@ -91,10 +91,7 @@
 
         <div class="footer">
             <p><i class="hide">Have an account? </i><a href="/login">Login</a></p>
-            <p>
-                <i class="hide">Forgot your password? </i>
-                <a href="/forgotPassword">Reset Password</a>
-            </p>
+            <p><i class="hide">Forgot your password? </i><a href="/forgotPassword">Reset Password</a></p>
         </div>
     </form>
 {/if}

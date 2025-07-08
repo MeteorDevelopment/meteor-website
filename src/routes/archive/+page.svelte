@@ -25,9 +25,7 @@
                     <ul>
                         {#each data.builds[group] as build (build.version)}
                             <li>
-                                <a href={`https://meteorclient.com/api/download?version=${build.version}`}>
-                                    {build.version} - {build.number}
-                                </a>
+                                <a href={`https://meteorclient.com/api/download?version=${build.version}`}>{build.version} - {build.number}</a>
                             </li>
                         {/each}
                     </ul>

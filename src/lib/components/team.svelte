@@ -16,18 +16,10 @@
         </div>
 
         <div class="cont">
-            <a href="/discord" target="_blank" class="button" style="background-color: var(--discord);"
-                ><img src="icons/discord.svg" alt="discord" />Discord</a
-            >
-            <a href="/github" target="_blank" class="button" style="background-color: var(--github);"
-                ><img src="icons/github.svg" alt="github" />GitHub</a
-            >
-            <a href="/youtube" target="_blank" class="button" style="background-color: var(--youtube);"
-                ><img src="icons/youtube.svg" alt="youtube" />YouTube</a
-            >
-            <a href="/donate" target="_blank" class="button" style="background-color: var(--paypal);"
-                ><img src="icons/paypal.svg" alt="donate" />Donate</a
-            >
+            <a href="/discord" target="_blank" class="button" style="background-color: var(--discord);"><img src="icons/discord.svg" alt="discord" />Discord</a>
+            <a href="/github" target="_blank" class="button" style="background-color: var(--github);"><img src="icons/github.svg" alt="github" />GitHub</a>
+            <a href="/youtube" target="_blank" class="button" style="background-color: var(--youtube);"><img src="icons/youtube.svg" alt="youtube" />YouTube</a>
+            <a href="/donate" target="_blank" class="button" style="background-color: var(--paypal);"><img src="icons/paypal.svg" alt="donate" />Donate</a>
         </div>
     </div>
 </div>

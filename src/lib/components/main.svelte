@@ -6,12 +6,8 @@
     <div class="inside">
         <Logo />
         <div class="buttons">
-            <a href="/discord" target="_blank" class="button" style="background-color: var(--discord);"
-                ><img src="icons/discord.svg" alt="discord" /> Discord</a
-            >
-            <a href="/donate" target="_blank" class="button" style="background-color: var(--paypal);"
-                ><img src="icons/paypal.svg" alt="paypal" /> Donate</a
-            >
+            <a href="/discord" target="_blank" class="button" style="background-color: var(--discord);"><img src="icons/discord.svg" alt="discord" /> Discord</a>
+            <a href="/donate" target="_blank" class="button" style="background-color: var(--paypal);"><img src="icons/paypal.svg" alt="paypal" /> Donate</a>
         </div>
     </div>
 </div>

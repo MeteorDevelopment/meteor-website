@@ -51,8 +51,7 @@ If you already have Fabric Loader installed, skip to step 4.
 If you already have one of these installed, skip to step 2.  
 If you already have an instance with Fabric Loader, skip to step 4.
 
-1. Download [PrismLauncher](https://prismlauncher.org/download/) or [MultiMC](https://multimc.org/#Download) and install
-   it.
+1. Download [PrismLauncher](https://prismlauncher.org/download/) or [MultiMC](https://multimc.org/#Download) and install it.
 2. Open the launcher and click `Add Instance`, make sure the correct Minecraft version is selected, choose the `Fabric`
    loader in the bottom window, and press `OK`.
 3. Click `Edit Instance` with your new instance selected and then click `Install Fabric` then `OK`.

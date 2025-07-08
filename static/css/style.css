@@ -45,8 +45,7 @@ h2 {
     font-size: 3rem;
 }
 
-button,
-.button {
+button, .button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,14 +64,12 @@ button,
     text-decoration: none;
 }
 
-button:hover,
-.button:hover {
+button:hover, .button:hover {
     box-shadow: 0.2rem 0.2rem 10px rgba(0, 0, 0, 0.5);
     text-decoration: none;
 }
 
-button img,
-.button img {
+button img, .button img {
     color: white;
     width: 1rem;
 }

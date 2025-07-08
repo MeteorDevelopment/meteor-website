@@ -2,13 +2,11 @@ import js from '@eslint/js';
 import sveltePlugin from 'eslint-plugin-svelte';
 import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
-import prettierConfig from 'eslint-config-prettier';
 import globals from 'globals';
 
 export default [
     js.configs.recommended,
     ...sveltePlugin.configs.recommended,
-    prettierConfig,
     {
         // JavaScript
         files: ['**/*.js'],

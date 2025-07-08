@@ -43,9 +43,7 @@
 
     <div class="footer">
         <p><i class="hide">Don't have an account? </i><a href="/register">Register</a></p>
-        <p>
-            <i class="hide">Forgot your password? </i> <a href="/forgotPassword">Reset Password</a>
-        </p>
+        <p><i class="hide">Forgot your password? </i> <a href="/forgotPassword">Reset Password</a></p>
     </div>
 </form>
 

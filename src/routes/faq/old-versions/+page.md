@@ -19,8 +19,7 @@ These steps expect you to use the latest version of Minecraft, Meteor and ViaFab
 1. Download Meteor as instructed in the [Installation guide](https://meteorclient.com/faq/installation).
 2. Download [ViaFabricPlus](https://modrinth.com/mod/viafabricplus/versions) and put it in your `mods` folder.
 3. If you are using other mods, make sure they are all up to date with the latest Minecraft version.
-4. Launch the game and click `Multiplayer`; here, you should select the server you want to join and click the `Edit`
-   button.
+4. Launch the game and click `Multiplayer`; here, you should select the server you want to join and click the `Edit` button.
 5. A new `Set version` button should appear, click it and select the version required by the server you want to join.
 
 <br>

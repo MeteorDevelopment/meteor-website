@@ -62,7 +62,6 @@ You can also use this feature in individual modules and individual tabs (GUI, Co
 
 Optifine is not and will never be supported by Meteor. We recommend using these instead:
 
-<!-- prettier-ignore -->
 | Mod                                             | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
 | [Sodium](https://modrinth.com/mod/sodium)       | Performance improvements (better than Optifine) |
