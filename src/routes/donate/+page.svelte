@@ -9,15 +9,15 @@
     } from "@paypal/paypal-js";
     import { onMount } from "svelte";
     import { api } from "$lib/api";
-    import { goto } from '$app/navigation';
+    import { goto } from "$app/navigation";
 
-    let amount = 5.00;
+    let amount = 5.0;
     const clientId = "Abmv78qycqx6AFnq-5ICVQGd6KPXX7Sp5VA-U2ca41hJzlmJnLpXCDVq-Hj9PzIBM9Jlu0SHrwSGenHA";
 
     onMount(async () => {
-        const paypal = await loadScript({"client-id": clientId, currency: "EUR"});
+        const paypal = await loadScript({ clientId: clientId, currency: "EUR" });
         await paypal!.Buttons!({
-            style: {color: "blue"},
+            style: { color: "blue" },
             createOrder,
             onApprove,
             onCancel,
@@ -25,12 +25,12 @@
         }).render("#paypal-buttons");
     });
 
-    async function createOrder(data: CreateOrderData, actions: CreateOrderActions) {
+    async function createOrder(_data: CreateOrderData, _actions: CreateOrderActions) {
         return (await api("payments/create?amount=" + amount.toFixed(2), true)).id;
     }
 
-    async function onApprove(data: OnApproveData, actions: OnApproveActions) {
-        return actions.order!.capture().then(function (details) {
+    async function onApprove(_data: OnApproveData, actions: OnApproveActions) {
+        return actions.order!.capture().then(function (_details) {
             const text = document.getElementById("paypal-text");
             text!.innerText = "Payment successful!";
             text!.style.color = "#0EA50E";
@@ -39,7 +39,7 @@
         });
     }
 
-    async function onCancel(data: Record<string, unknown>, actions: OnCancelledActions) {
+    async function onCancel(data: Record<string, unknown>, _actions: OnCancelledActions) {
         let res = await api("payments/cancel?id=" + data.orderId);
 
         const text = document.getElementById("paypal-text");
@@ -74,7 +74,7 @@
         <h1>Donations</h1>
         <p>Minimum amount to donate to get donator benefits is 5€.</p>
         <h3>Donation Amount (€)</h3>
-        <input type="number" min="5" step="0.01" placeholder="5.00" bind:value={amount}/>
+        <input type="number" min="5" step="0.01" placeholder="5.00" bind:value={amount} />
         <p id="paypal-text"></p>
         <div id="paypal-buttons"></div>
     </div>

@@ -11,32 +11,32 @@ const __dirname = dirname(__filename);
 
 /** @type {import("@sveltejs/kit").Config} */
 const config = {
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
-	extensions: [ ".svelte", ".md" ],
+    // Consult https://github.com/sveltejs/svelte-preprocess
+    // for more information about preprocessors
+    extensions: [".svelte", ".md"],
 
-	preprocess: [
-		sveltePreprocess({
-			postcss: {
-				plugins: [
-					atImport({
-						path: "static/css"
-					})
-				]
-			}
-		}),
-		mdsvex({
-			extensions: [ ".md" ],
-			layout: {
-				faq: join(__dirname, "./src/layouts/faq.svelte")
-			},
-			remarkPlugins: [markdown]
-		})
-	],
+    preprocess: [
+        sveltePreprocess({
+            postcss: {
+                plugins: [
+                    atImport({
+                        path: "static/css"
+                    })
+                ]
+            }
+        }),
+        mdsvex({
+            extensions: [".md"],
+            layout: {
+                faq: join(__dirname, "./src/layouts/faq.svelte")
+            },
+            remarkPlugins: [markdown]
+        })
+    ],
 
-	kit: {
-		adapter: adapter()
-	}
+    kit: {
+        adapter: adapter()
+    }
 };
 
 export default config;

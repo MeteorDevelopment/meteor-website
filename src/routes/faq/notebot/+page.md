@@ -5,7 +5,7 @@ layout: faq
 ## Loading songs
 
 To load songs you need to put a file with supported format inside folder located in `.minecraft/meteor-client/notebot`
-*(Create it, if it doesn't exist)*.
+_(Create it, if it doesn't exist)_.
 
 ## Supported formats
 

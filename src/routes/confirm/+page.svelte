@@ -3,10 +3,10 @@
     import { browser } from "$app/environment";
     import { api } from "$lib/api";
     import { goto } from "$app/navigation";
-    import type { PageData } from './$types';
+    import type { PageData } from "./$types";
 
-    export let data: PageData;
-    let error: string | null = null;
+    let { data } = $props<{ data: PageData }>();
+    let error = $state<string | null>(null);
 
     if (browser) {
         if (!data.qToken) error = "Invalid token.";
@@ -15,12 +15,12 @@
                 .then(() => {
                     setTimeout(() => goto("/login"), 2500);
                 })
-                .catch(reason => error = reason);
+                .catch((reason) => (error = reason));
         }
     }
 </script>
 
-<Navbar/>
+<Navbar />
 
 <div class="container">
     <div>

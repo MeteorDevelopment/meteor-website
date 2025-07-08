@@ -28,7 +28,7 @@ export type User = {
 export const token = writable<string | null>(browser ? localStorage.getItem("token") : null);
 export const user = writable<User | null>();
 
-token.subscribe(token => {
+token.subscribe((token) => {
     if (browser) {
         if (token != null) localStorage.setItem("token", token);
         else localStorage.removeItem("token");
@@ -46,7 +46,7 @@ export function refreshUser() {
     }
 
     api("account/info", true)
-        .then(res => {
+        .then((res) => {
             user.set({
                 id: res.id,
                 username: res.username,
@@ -63,7 +63,7 @@ export function refreshUser() {
                 capes: res.capes
             });
         })
-        .catch(reason => {
+        .catch((reason) => {
             console.error("Error: " + reason);
 
             token.set(null);

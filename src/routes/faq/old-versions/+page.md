@@ -30,8 +30,8 @@ the [ViaFabricPlus wiki](https://github.com/ViaVersion/ViaFabricPlus/blob/main/d
 
 ### Archive
 
-Since Minecraft version 1.21.4 (when we changed Meteor's versioning scheme) we are providing an [archive page](/archive) with
-the latest build for every Minecraft version.  
+Since Minecraft version 1.21.4 (when we changed Meteor's versioning scheme) we are providing an [archive page](/archive)
+with the latest build for every Minecraft version.  
 **WARNING: These versions are archived and NOT supported, you will NOT receive any help when using these versions!**
 
 ### Building from source

@@ -5,27 +5,27 @@ layout: faq
 ## Meteor Addon Template
 
 Our template is a great way to get started with Meteor addon development.  
-The following guide will show you how to set up a new project using said template.    
+The following guide will show you how to set up a new project using said template.  
 We will be using [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/), but you can use any IDE.
 
 <br>
 
 First, a couple of prerequisites:
 
-- Knowledge of [**Java**](https://docs.oracle.com/en/java/javase/17/docs/api/index.html) programming, [**Git
+- Knowledge of [**Java**](https://docs.oracle.com/en/java/javase/21/docs/api/index.html) programming, [**Git
   **](https://git-scm.com/docs) for version control and [**Gradle
   **](https://docs.gradle.org/current/userguide/about_manual.html#about_manual) for dependency management.
 - A [GitHub](https://github.com/) account to host your repository.
 - A [Git](https://git-scm.com/downloads) client for all the Git commands.
 - A Java-compatible IDE, IntelliJ IDEA in this case.
-- (Optional) A Java 17 JDK, we recommend [Adoptium](https://adoptium.net/temurin/releases/?package=jdk&version=17). You
+- (Optional) A Java 21 JDK, we recommend [Adoptium](https://adoptium.net/temurin/releases/?package=jdk&version=21). You
   can also
   use the one bundled with IntelliJ IDEA.
 
 <br>
 
 We will not be teaching you how to use Git, Java, Gradle or IntelliJ IDEA in detail. That is out of the scope of this
-guide.    
+guide.  
 If you are not familiar with any of these, we recommend you to learn the basics before continuing, or learn as you go.  
 You can find documentation and many tutorials online for all of these topics.
 
@@ -46,9 +46,9 @@ You can now set up Git:
 
 1. Download and install Git from the link above.
 2. Once that is done, open a terminal and run the following commands:
-   ```shell
-   git config --global user.name YOUR_GITHUB_USERNAME
-   git config --global user.email YOUR_GITHUB_EMAIL
+    ```shell
+    git config --global user.name YOUR_GITHUB_USERNAME
+    git config --global user.email YOUR_GITHUB_EMAIL
     ```
 3. You can now close the terminal and open IntelliJ IDEA.
 
@@ -75,7 +75,7 @@ The template contains the following important files:
   The entry point of your addon, it extends the extends `MeteorAddon` class.  
   This is where you will register your modules, commands, HUD elements, etc.
 - `src/main/resources/fabric.mod.json`, better explained by
-  the [fabric.mod.json](https://fabricmc.net/wiki/documentation:fabric_mod_json) specification.   
+  the [fabric.mod.json](https://fabricmc.net/wiki/documentation:fabric_mod_json) specification.  
   The Fabric mod metadata file contains information about your addon, and you should change these fields:
     - `id`: The mod identifier of your addon.
     - `name`: The user-facing mod name.
@@ -87,7 +87,7 @@ The template contains the following important files:
       root.
     - `custom/meteor-client:color`: RGB comma separated value used for the color of your addon's credits in the main
       menu.
-- `build.gradle`: The Gradle build script contains the [Loom](https://github.com/FabricMC/fabric-loom) version, the
+- `build.gradle.kts`: The Gradle build script contains the [Loom](https://github.com/FabricMC/fabric-loom) version, the
   mod's dependencies, and other useful
   variables.
 - `gradle.properties`: The Gradle properties file contains the Minecraft version used by the project,

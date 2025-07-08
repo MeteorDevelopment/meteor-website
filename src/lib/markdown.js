@@ -1,4 +1,4 @@
-import {visit} from "unist-util-visit";
+import { visit } from "unist-util-visit";
 
 export function markdown() {
     // @ts-ignore
@@ -7,12 +7,12 @@ export function markdown() {
         node.data.hProperties = node.data.hProperties || {};
         node.data.hProperties.className = node.data.hProperties.className || [];
 
-        node.data.hProperties.className.push(...classes)
+        node.data.hProperties.className.push(...classes);
     }
 
     // @ts-ignore
     return (root) => {
-        // Add .md-hX, spearators and link
+        // Add .md-hX, separators and link
         visit(root, (node, index, parent) => {
             if (node.type == "heading") {
                 addClasses(node, "md-h" + node.depth);
@@ -46,15 +46,14 @@ export function markdown() {
                             className: ["md-h-a"]
                         }
                     }
-                })
+                });
 
                 // @ts-ignore
                 return index + 2;
             }
         });
 
-        // @ts-ignore
-        visit(root, (node, index, parent) => {
+        visit(root, (node, _index, _parent) => {
             // Add .md-ul and .md-ol
             if (node.type == "list") {
                 addClasses(node, node.ordered ? "md-ol" : "md-ul");
