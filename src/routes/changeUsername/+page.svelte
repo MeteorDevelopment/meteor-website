@@ -1,27 +1,27 @@
 <script lang="ts">
-    import Navbar from '$lib/components/navbar.svelte';
-    import { browser } from '$app/environment';
-    import { refreshUser, token } from '$lib/user';
-    import { goto } from '$app/navigation';
-    import { api } from '$lib/api';
+    import Navbar from "$lib/components/navbar.svelte";
+    import { browser } from "$app/environment";
+    import { refreshUser, token } from "$lib/user";
+    import { goto } from "$app/navigation";
+    import { api } from "$lib/api";
 
-    let newUsername = $state('');
-    let errorMessage = $state<string>('');
+    let newUsername = $state("");
+    let errorMessage = $state<string>("");
 
     function handleSubmit(event: SubmitEvent) {
         event.preventDefault();
-        errorMessage = '';
+        errorMessage = "";
 
-        api('account/changeUsername?username=' + newUsername, true, 'POST')
+        api("account/changeUsername?username=" + newUsername, true, "POST")
             .then(() => {
                 refreshUser(); // Idk why it doesn't refresh the stores automatically
-                goto('/account');
+                goto("/account");
             })
             .catch((reason) => (errorMessage = reason));
     }
 
     $effect(() => {
-        if (browser && !$token) goto('/login');
+        if (browser && !$token) goto("/login");
     });
 </script>
 

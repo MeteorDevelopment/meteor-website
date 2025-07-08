@@ -1,5 +1,5 @@
-import type { PageLoad } from './$types';
-import { fetchStats } from '$lib/stats';
+import type { PageLoad } from "./$types";
+import { fetchStats } from "$lib/stats";
 
 export const load: PageLoad = async ({ fetch }) => {
     return {

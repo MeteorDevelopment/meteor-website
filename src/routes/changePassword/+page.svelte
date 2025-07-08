@@ -1,32 +1,32 @@
 <script lang="ts">
-    import Navbar from '$lib/components/navbar.svelte';
-    import { browser } from '$app/environment';
-    import { token } from '$lib/user';
-    import { goto } from '$app/navigation';
-    import { api } from '$lib/api';
-    import type { PageData } from './$types';
+    import Navbar from "$lib/components/navbar.svelte";
+    import { browser } from "$app/environment";
+    import { token } from "$lib/user";
+    import { goto } from "$app/navigation";
+    import { api } from "$lib/api";
+    import type { PageData } from "./$types";
 
     let { data } = $props<{ data: PageData }>();
 
-    let oldPassword = $state<string>('');
-    let newPassword = $state<string>('');
-    let errorMessage = $state<string>('');
+    let oldPassword = $state<string>("");
+    let newPassword = $state<string>("");
+    let errorMessage = $state<string>("");
 
     function handleSubmit(event: SubmitEvent) {
         event.preventDefault();
-        errorMessage = '';
+        errorMessage = "";
 
-        let url = 'account/changePassword';
-        if (data.qToken) url += 'Token?token=' + data.qToken + '&new=' + newPassword;
-        else url += '?old=' + oldPassword + '&new=' + newPassword;
+        let url = "account/changePassword";
+        if (data.qToken) url += "Token?token=" + data.qToken + "&new=" + newPassword;
+        else url += "?old=" + oldPassword + "&new=" + newPassword;
 
-        api(url, data.qToken == null, 'POST')
-            .then(() => goto('/account'))
+        api(url, data.qToken == null, "POST")
+            .then(() => goto("/account"))
             .catch((reason) => (errorMessage = reason));
     }
 
     $effect(() => {
-        if (browser && !$token && !data.qToken) goto('/login');
+        if (browser && !$token && !data.qToken) goto("/login");
     });
 </script>
 

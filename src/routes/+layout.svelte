@@ -1,11 +1,11 @@
 <script lang="ts">
-    import { page } from '$app/state';
+    import { page } from "$app/state";
 
     let { children } = $props();
 </script>
 
 <svelte:head>
-    {#if page.route.id !== '/privacy'}
+    {#if page.route.id !== "/privacy"}
         <meta name="google-adsense-account" content="ca-pub-8546584413187411" />
         <script
             async

@@ -1,25 +1,25 @@
 <script lang="ts">
-    import Navbar from '$lib/components/navbar.svelte';
-    import { browser } from '$app/environment';
-    import { token } from '$lib/user';
-    import { goto } from '$app/navigation';
-    import { api } from '$lib/api';
+    import Navbar from "$lib/components/navbar.svelte";
+    import { browser } from "$app/environment";
+    import { token } from "$lib/user";
+    import { goto } from "$app/navigation";
+    import { api } from "$lib/api";
 
-    let email = $state<string>('');
-    let errorMessage = $state<string>('');
+    let email = $state<string>("");
+    let errorMessage = $state<string>("");
     let sent = $state(false);
 
     function handleSubmit(event: SubmitEvent) {
         event.preventDefault();
-        errorMessage = '';
+        errorMessage = "";
 
-        api('account/forgotPassword?email=' + email, false, 'POST')
+        api("account/forgotPassword?email=" + email, false, "POST")
             .then(() => (sent = true))
             .catch((reason) => (errorMessage = reason));
     }
 
     $effect(() => {
-        if (browser && !$token) goto('/account');
+        if (browser && !$token) goto("/account");
     });
 </script>
 

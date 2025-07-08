@@ -11,7 +11,7 @@ export interface Stats {
 }
 
 export async function fetchStats(fetch: any): Promise<Stats> {
-    let stats = await (await fetch('https://meteorclient.com/api/stats')).json();
+    let stats = await (await fetch("https://meteorclient.com/api/stats")).json();
 
     return {
         builds: stats.builds,

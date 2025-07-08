@@ -1,10 +1,10 @@
-import adapter from '@sveltejs/adapter-node';
-import { sveltePreprocess } from 'svelte-preprocess';
-import atImport from 'postcss-import';
-import { mdsvex } from 'mdsvex';
-import { markdown } from './src/lib/markdown.js';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import adapter from "@sveltejs/adapter-node";
+import { sveltePreprocess } from "svelte-preprocess";
+import atImport from "postcss-import";
+import { mdsvex } from "mdsvex";
+import { markdown } from "./src/lib/markdown.js";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,22 +13,22 @@ const __dirname = dirname(__filename);
 const config = {
     // Consult https://github.com/sveltejs/svelte-preprocess
     // for more information about preprocessors
-    extensions: ['.svelte', '.md'],
+    extensions: [".svelte", ".md"],
 
     preprocess: [
         sveltePreprocess({
             postcss: {
                 plugins: [
                     atImport({
-                        path: 'static/css'
+                        path: "static/css"
                     })
                 ]
             }
         }),
         mdsvex({
-            extensions: ['.md'],
+            extensions: [".md"],
             layout: {
-                faq: join(__dirname, './src/layouts/faq.svelte')
+                faq: join(__dirname, "./src/layouts/faq.svelte")
             },
             remarkPlugins: [markdown]
         })

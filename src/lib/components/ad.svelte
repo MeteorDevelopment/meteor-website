@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { dev } from '$app/environment';
-    import { onMount } from 'svelte';
+    import { dev } from "$app/environment";
+    import { onMount } from "svelte";
 
     onMount(() => {
         const w: any = window;

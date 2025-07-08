@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Logo from '$lib/components/logo.svelte';
+    import Logo from "$lib/components/logo.svelte";
 </script>
 
 <div class="main">
@@ -14,7 +14,7 @@
 
 <style>
     .main {
-        background-image: url('/background.webp');
+        background-image: url("/background.webp");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;

@@ -1,9 +1,9 @@
 <script lang="ts">
-    import type { TransitionConfig } from 'svelte/transition';
-    import { cubicOut } from 'svelte/easing';
-    import { user } from '$lib/user';
-    import { browser } from '$app/environment';
-    import { clickOutside } from 'svelte-use-click-outside';
+    import type { TransitionConfig } from "svelte/transition";
+    import { cubicOut } from "svelte/easing";
+    import { user } from "$lib/user";
+    import { browser } from "$app/environment";
+    import { clickOutside } from "svelte-use-click-outside";
 
     let { hideProfile = false } = $props<{ hideProfile?: boolean }>();
 
@@ -20,10 +20,10 @@
     }
 
     if (browser) {
-        let query = window.matchMedia('(max-width: 1100px)');
+        let query = window.matchMedia("(max-width: 1100px)");
         hamburger = query.matches;
 
-        query.addEventListener('change', (query) => (hamburger = query.matches));
+        query.addEventListener("change", (query) => (hamburger = query.matches));
     }
 </script>
 
@@ -51,7 +51,7 @@
                 {#if !hideProfile}
                     {#if $user}
                         <a class="user" href="/account">
-                            <img src={$user.discordAvatar ? $user.discordAvatar : '/empty-profile.jpg'} alt="profile" />
+                            <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.jpg"} alt="profile" />
                         </a>
                     {:else}
                         <a href="/login">
@@ -77,7 +77,7 @@
         {:else if $user}
             <a class="user" href="/account">
                 <p>{$user.username}</p>
-                <img src={$user.discordAvatar ? $user.discordAvatar : '/empty-profile.png'} alt="profile" />
+                <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.png"} alt="profile" />
             </a>
         {:else}
             <a href="/login">

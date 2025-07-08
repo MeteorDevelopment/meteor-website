@@ -1,6 +1,6 @@
-import { get, writable } from 'svelte/store';
-import { browser } from '$app/environment';
-import { api } from './api';
+import { get, writable } from "svelte/store";
+import { browser } from "$app/environment";
+import { api } from "./api";
 
 export type Cape = {
     current: boolean;
@@ -25,13 +25,13 @@ export type User = {
     capes: Cape[];
 };
 
-export const token = writable<string | null>(browser ? localStorage.getItem('token') : null);
+export const token = writable<string | null>(browser ? localStorage.getItem("token") : null);
 export const user = writable<User | null>();
 
 token.subscribe((token) => {
     if (browser) {
-        if (token != null) localStorage.setItem('token', token);
-        else localStorage.removeItem('token');
+        if (token != null) localStorage.setItem("token", token);
+        else localStorage.removeItem("token");
 
         refreshUser();
     }
@@ -45,7 +45,7 @@ export function refreshUser() {
         return;
     }
 
-    api('account/info', true)
+    api("account/info", true)
         .then((res) => {
             user.set({
                 id: res.id,
@@ -64,7 +64,7 @@ export function refreshUser() {
             });
         })
         .catch((reason) => {
-            console.error('Error: ' + reason);
+            console.error("Error: " + reason);
 
             token.set(null);
             user.set(null);

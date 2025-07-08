@@ -1,21 +1,21 @@
 <script lang="ts">
-    import Navbar from '$lib/components/navbar.svelte';
-    import { api } from '$lib/api';
-    import { browser } from '$app/environment';
-    import { token } from '$lib/user';
-    import { goto } from '$app/navigation';
-    import { Turnstile } from 'svelte-turnstile';
+    import Navbar from "$lib/components/navbar.svelte";
+    import { api } from "$lib/api";
+    import { browser } from "$app/environment";
+    import { token } from "$lib/user";
+    import { goto } from "$app/navigation";
+    import { Turnstile } from "svelte-turnstile";
 
-    let username = $state<string>('');
-    let email = $state<string>('');
-    let password = $state<string>('');
-    let cfToken = $state<string>('');
-    let errorMessage = $state<string>('');
+    let username = $state<string>("");
+    let email = $state<string>("");
+    let password = $state<string>("");
+    let cfToken = $state<string>("");
+    let errorMessage = $state<string>("");
 
     let sent = $state<boolean>(false);
 
     function onTurnstileError() {
-        errorMessage = 'Captcha failed, please try again.';
+        errorMessage = "Captcha failed, please try again.";
     }
 
     function onTurnstileSuccess(event: CustomEvent) {
@@ -24,21 +24,21 @@
 
     function handleSubmit(event: SubmitEvent) {
         event.preventDefault();
-        errorMessage = '';
+        errorMessage = "";
 
         const formData = new FormData();
-        formData.append('username', username);
-        formData.append('email', email);
-        formData.append('password', password);
-        formData.append('cf-token', cfToken);
+        formData.append("username", username);
+        formData.append("email", email);
+        formData.append("password", password);
+        formData.append("cf-token", cfToken);
 
-        api('account/register', true, 'POST', formData)
+        api("account/register", true, "POST", formData)
             .then(() => (sent = true))
             .catch((reason) => (errorMessage = reason));
     }
 
     $effect(() => {
-        if (browser && $token) goto('/account');
+        if (browser && $token) goto("/account");
     });
 </script>
 

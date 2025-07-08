@@ -1,30 +1,30 @@
 <script lang="ts">
-    import Navbar from '$lib/components/navbar.svelte';
-    import { refreshUser, token, user } from '$lib/user';
-    import { goto } from '$app/navigation';
-    import { browser } from '$app/environment';
-    import { api, fetchJson } from '$lib/api';
+    import Navbar from "$lib/components/navbar.svelte";
+    import { refreshUser, token, user } from "$lib/user";
+    import { goto } from "$app/navigation";
+    import { browser } from "$app/environment";
+    import { api, fetchJson } from "$lib/api";
 
     $effect(() => {
-        if (browser && !$token) goto('/login');
+        if (browser && !$token) goto("/login");
     });
 
     let linkToken = $state<string | null>(null);
 
     function unlinkDiscord() {
-        api('account/unlinkDiscord', true, 'POST').then(() => refreshUser());
+        api("account/unlinkDiscord", true, "POST").then(() => refreshUser());
     }
 
     function linkDiscord() {
-        api('account/generateDiscordLinkToken', true).then((res) => (linkToken = res.token));
+        api("account/generateDiscordLinkToken", true).then((res) => (linkToken = res.token));
     }
 
     function removeMcAccount(uuid: string) {
-        api('account/mcAccount?uuid=' + uuid, true, 'DELETE').then(() => refreshUser());
+        api("account/mcAccount?uuid=" + uuid, true, "DELETE").then(() => refreshUser());
     }
 
     function selectCape(id: string) {
-        api('account/selectCape?cape=' + id, true, 'POST').then(() => refreshUser());
+        api("account/selectCape?cape=" + id, true, "POST").then(() => refreshUser());
     }
 
     function logout() {
@@ -32,17 +32,17 @@
     }
 
     let customCape = $state<HTMLInputElement | null>(null);
-    let customCapeError = $state<string>('');
+    let customCapeError = $state<string>("");
 
     function submit() {
         if (!customCape || !customCape.files || !customCape.files.length) return;
 
         let form = new FormData();
-        form.append('file', customCape.files[0]);
+        form.append("file", customCape.files[0]);
 
-        customCapeError = '';
+        customCapeError = "";
 
-        api('account/uploadCape', true, 'POST', form)
+        api("account/uploadCape", true, "POST", form)
             .then(() => refreshUser())
             .catch((reason) => (customCapeError = reason));
     }
@@ -82,14 +82,14 @@
                 <h2>Minecraft</h2>
                 <ul>
                     {#each $user.mcAccounts as uuid (uuid)}
-                        {#await fetchJson('https://corsjangsessionserver.b-cdn.net/session/minecraft/profile/' + uuid)}
+                        {#await fetchJson("https://corsjangsessionserver.b-cdn.net/session/minecraft/profile/" + uuid)}
                             <li>
                                 <img src="https://mc-heads.net/head/MHF_Steve/32" alt="head" />Steve
                                 <button>Remove</button>
                             </li>
                         {:then res}
                             <li>
-                                <img src={'https://mc-heads.net/head/' + uuid + '/32'} alt="head" />{res.name}
+                                <img src={"https://mc-heads.net/head/" + uuid + "/32"} alt="head" />{res.name}
                                 <button onclick={() => removeMcAccount(uuid)}>Remove</button>
                             </li>
                         {:catch _err}
@@ -108,10 +108,10 @@
                 <ul>
                     {#each $user.capes as cape (cape.id)}
                         <li>
-                            {#if cape.url !== ''}
+                            {#if cape.url !== ""}
                                 <!-- Quick hack to disable browser cache -->
                                 <img
-                                    src={cape.url + '?_rand=' + new Date().getTime()}
+                                    src={cape.url + "?_rand=" + new Date().getTime()}
                                     alt="cape"
                                     style="width: 10rem;"
                                 />

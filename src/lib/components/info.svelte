@@ -1,15 +1,15 @@
 <script lang="ts">
-    import type { Stats } from '$lib/stats';
-    import semver from 'semver';
+    import type { Stats } from "$lib/stats";
+    import semver from "semver";
 
     let { stats } = $props<{ stats: Stats }>();
 
     function prettyNumber(x: number) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
 
     function getLatestVersion(): string {
-        let latest = '0.0.0';
+        let latest = "0.0.0";
 
         for (const version of Object.keys(stats.builds)) {
             if (semver.gt(version, latest)) {
