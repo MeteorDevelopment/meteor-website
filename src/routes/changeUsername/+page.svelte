@@ -1,31 +1,31 @@
 <script lang="ts">
-    import Navbar from "$lib/components/navbar.svelte";
-    import { browser } from "$app/environment";
-    import { refreshUser, token } from "$lib/user";
-    import { goto } from "$app/navigation";
-    import { api } from "$lib/api";
+    import Navbar from "$lib/components/navbar.svelte"
+    import { browser } from "$app/environment"
+    import { refreshUser, token } from "$lib/user"
+    import { goto } from "$app/navigation"
+    import { api } from "$lib/api"
 
-    let newUsername = $state("");
-    let errorMessage = $state<string>("");
+    let newUsername = $state("")
+    let errorMessage = $state<string>("")
 
     function handleSubmit(event: SubmitEvent) {
-        event.preventDefault();
-        errorMessage = "";
+        event.preventDefault()
+        errorMessage = ""
 
         api("account/changeUsername?username=" + newUsername, true, "POST")
             .then(() => {
-                refreshUser(); // Idk why it doesn't refresh the stores automatically
-                goto("/account");
+                refreshUser() // Idk why it doesn't refresh the stores automatically
+                goto("/account")
             })
-            .catch((reason) => (errorMessage = reason));
+            .catch(reason => (errorMessage = reason))
     }
 
     $effect(() => {
-        if (browser && !$token) goto("/login");
-    });
+        if (browser && !$token) goto("/login")
+    })
 </script>
 
-<Navbar />
+<Navbar/>
 
 <form onsubmit={handleSubmit}>
     <h1>Change Username</h1>
@@ -51,5 +51,5 @@
 
 <!-- svelte-ignore css_unused_selector -->
 <style>
-    @import 'form.css';
+    @import "form.css";
 </style>

@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { page } from "$app/state";
+    import { page } from "$app/state"
 
-    let { children } = $props();
+    let { children } = $props()
 </script>
 
 <svelte:head>

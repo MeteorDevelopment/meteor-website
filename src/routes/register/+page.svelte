@@ -1,48 +1,48 @@
 <script lang="ts">
-    import Navbar from "$lib/components/navbar.svelte";
-    import { api } from "$lib/api";
-    import { browser } from "$app/environment";
-    import { token } from "$lib/user";
-    import { goto } from "$app/navigation";
-    import { Turnstile } from "svelte-turnstile";
+    import Navbar from "$lib/components/navbar.svelte"
+    import { api } from "$lib/api"
+    import { browser } from "$app/environment"
+    import { token } from "$lib/user"
+    import { goto } from "$app/navigation"
+    import { Turnstile } from "svelte-turnstile"
 
-    let username = $state<string>("");
-    let email = $state<string>("");
-    let password = $state<string>("");
-    let cfToken = $state<string>("");
-    let errorMessage = $state<string>("");
+    let username = $state<string>("")
+    let email = $state<string>("")
+    let password = $state<string>("")
+    let cfToken = $state<string>("")
+    let errorMessage = $state<string>("")
 
-    let sent = $state<boolean>(false);
+    let sent = $state<boolean>(false)
 
     function onTurnstileError() {
-        errorMessage = "Captcha failed, please try again.";
+        errorMessage = "Captcha failed, please try again."
     }
 
     function onTurnstileSuccess(event: CustomEvent) {
-        cfToken = event.detail.token;
+        cfToken = event.detail.token
     }
 
     function handleSubmit(event: SubmitEvent) {
-        event.preventDefault();
-        errorMessage = "";
+        event.preventDefault()
+        errorMessage = ""
 
-        const formData = new FormData();
-        formData.append("username", username);
-        formData.append("email", email);
-        formData.append("password", password);
-        formData.append("cf-token", cfToken);
+        const formData = new FormData()
+        formData.append("username", username)
+        formData.append("email", email)
+        formData.append("password", password)
+        formData.append("cf-token", cfToken)
 
         api("account/register", true, "POST", formData)
             .then(() => (sent = true))
-            .catch((reason) => (errorMessage = reason));
+            .catch(reason => (errorMessage = reason))
     }
 
     $effect(() => {
-        if (browser && $token) goto("/account");
-    });
+        if (browser && $token) goto("/account")
+    })
 </script>
 
-<Navbar hideProfile />
+<Navbar hideProfile/>
 
 {#if sent}
     <div class="container">
@@ -67,10 +67,10 @@
         />
 
         <label for="email" class="form-label"><b>Email</b></label>
-        <input bind:value={email} type="email" placeholder="Email" id="email" name="email" required />
+        <input bind:value={email} type="email" placeholder="Email" id="email" name="email" required/>
 
         <label for="password" class="form-label"><b>Password</b></label>
-        <input bind:value={password} type="password" placeholder="Password" id="password" name="password" required />
+        <input bind:value={password} type="password" placeholder="Password" id="password" name="password" required/>
 
         <p class="form-label"><b>Captcha</b></p>
         <Turnstile
@@ -97,5 +97,5 @@
 {/if}
 
 <style>
-    @import 'form.css';
+    @import "form.css";
 </style>

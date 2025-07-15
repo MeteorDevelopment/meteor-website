@@ -1,38 +1,38 @@
 <script lang="ts">
-    import type { TransitionConfig } from "svelte/transition";
-    import { cubicOut } from "svelte/easing";
-    import { user } from "$lib/user";
-    import { browser } from "$app/environment";
-    import { clickOutside } from "svelte-use-click-outside";
+    import type { TransitionConfig } from "svelte/transition"
+    import { cubicOut } from "svelte/easing"
+    import { user } from "$lib/user"
+    import { browser } from "$app/environment"
+    import { clickOutside } from "svelte-use-click-outside"
 
-    let { hideProfile = false } = $props<{ hideProfile?: boolean }>();
+    let { hideProfile = false } = $props<{ hideProfile?: boolean }>()
 
-    let hamburger = $state(false);
-    let hamburgerOpen = $state(false);
+    let hamburger = $state(false)
+    let hamburgerOpen = $state(false)
 
-    function slide(_node: Element, _options?: any): TransitionConfig {
+    function slide(_node: Element, _options?: TransitionConfig): TransitionConfig {
         return {
             delay: 0,
             duration: 400,
             easing: cubicOut,
-            css: (t, _u) => `transform: translateX(${(1 - t) * 100}%)`
-        };
+            css: (t, _u) => `transform: translateX(${(1 - t) * 100}%)`,
+        }
     }
 
     if (browser) {
-        let query = window.matchMedia("(max-width: 1100px)");
-        hamburger = query.matches;
+        let query = window.matchMedia("(max-width: 1100px)")
+        hamburger = query.matches
 
-        query.addEventListener("change", (query) => (hamburger = query.matches));
+        query.addEventListener("change", query => (hamburger = query.matches))
     }
 </script>
 
 <svelte:head>
-    <link rel="stylesheet" href="/css/hamburgers.css" />
+    <link rel="stylesheet" href="/css/hamburgers.css"/>
 </svelte:head>
 
 <nav>
-    <a href="/" class="icon-link"><img src="/icon.png" alt="icon" class="icon" /></a>
+    <a href="/" class="icon-link"><img src="/icon.png" alt="icon" class="icon"/></a>
 
     {#if hamburger}
         <button
@@ -51,7 +51,7 @@
                 {#if !hideProfile}
                     {#if $user}
                         <a class="user" href="/account">
-                            <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.jpg"} alt="profile" />
+                            <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.jpg"} alt="profile"/>
                         </a>
                     {:else}
                         <a href="/login">
@@ -77,7 +77,7 @@
         {:else if $user}
             <a class="user" href="/account">
                 <p>{$user.username}</p>
-                <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.png"} alt="profile" />
+                <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.png"} alt="profile"/>
             </a>
         {:else}
             <a href="/login">

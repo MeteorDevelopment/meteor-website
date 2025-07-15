@@ -1,30 +1,30 @@
 <script lang="ts">
-    import { browser } from "$app/environment";
-    import { goto } from "$app/navigation";
-    import { refreshUser, token } from "$lib/user";
-    import Navbar from "$lib/components/navbar.svelte";
-    import { OTPInput, OTPRoot } from "@jimmyverburgt/svelte-input-otp";
-    import { api } from "$lib/api";
+    import { browser } from "$app/environment"
+    import { goto } from "$app/navigation"
+    import { refreshUser, token } from "$lib/user"
+    import Navbar from "$lib/components/navbar.svelte"
+    import { OTPInput, OTPRoot } from "@jimmyverburgt/svelte-input-otp"
+    import { api } from "$lib/api"
 
     $effect(() => {
-        if (browser && !$token) goto("/login");
-    });
+        if (browser && !$token) goto("/login")
+    })
 
-    let value = $state<string>("");
-    let errorMessage = $state<string>("");
+    let value = $state<string>("")
+    let errorMessage = $state<string>("")
 
     function onComplete(code: string) {
-        errorMessage = "";
+        errorMessage = ""
 
         api("account/mcAccount?code=" + code, true, "POST")
             .then(() => {
-                refreshUser();
-                goto("/account");
+                refreshUser()
+                goto("/account")
             })
             .catch((error) => {
-                value = "";
-                errorMessage = error;
-            });
+                value = ""
+                errorMessage = error
+            })
     }
 </script>
 

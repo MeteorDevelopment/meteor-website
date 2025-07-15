@@ -1,8 +1,8 @@
 <script lang="ts">
-    import Footer from "$lib/components/footer.svelte";
-    import Navbar from "$lib/components/navbar.svelte";
+    import Footer from "$lib/components/footer.svelte"
+    import Navbar from "$lib/components/navbar.svelte"
 
-    let { children } = $props();
+    let { children } = $props()
 </script>
 
 <Navbar />

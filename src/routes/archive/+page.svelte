@@ -1,8 +1,8 @@
 <script lang="ts">
-    import Navbar from "$lib/components/navbar.svelte";
-    import type { PageData } from "./$types";
+    import Navbar from "$lib/components/navbar.svelte"
+    import type { PageData } from "./$types"
 
-    let { data } = $props<{ data: PageData }>();
+    let { data } = $props<{ data: PageData }>()
 </script>
 
 <Navbar />
