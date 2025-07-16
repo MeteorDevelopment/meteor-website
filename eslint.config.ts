@@ -1,4 +1,3 @@
-import js from "@eslint/js"
 import tsESLint from "@typescript-eslint/eslint-plugin"
 import tsParser from "@typescript-eslint/parser"
 import svelte from "eslint-plugin-svelte"
@@ -34,20 +33,6 @@ export default [
         },
     },
 
-    // JavaScript
-    js.configs.recommended,
-    {
-        files: ["**/*.js"],
-        languageOptions: {
-            globals: {
-                ...globals.node,
-            },
-        },
-        rules: {
-            "no-unused-vars": ["error", unusedVarsConfig],
-        },
-    },
-
     // TypeScript
     {
         files: ["**/*.ts", "**/*.tsx"],
@@ -63,8 +48,6 @@ export default [
         },
         rules: {
             ...tsESLint.configs.recommended.rules,
-            "no-unused-vars": "off",
-            "no-undef": "off",
             "@typescript-eslint/no-unused-vars": ["error", unusedVarsConfig],
             "@typescript-eslint/no-explicit-any": "warn",
         },
@@ -92,8 +75,6 @@ export default [
             "svelte/require-each-key": "warn",
             "svelte/css-unused-selector": "off",
             "svelte/no-unused-svelte-ignore": "off",
-            "no-unused-vars": "off",
-            "no-undef": "off",
             "@typescript-eslint/no-unused-vars": ["error", unusedVarsConfig],
             "@typescript-eslint/no-explicit-any": "warn",
         },

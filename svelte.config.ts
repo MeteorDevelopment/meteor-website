@@ -4,7 +4,7 @@ import type { PreprocessorGroup } from "svelte/compiler"
 import { sveltePreprocess } from "svelte-preprocess"
 import atImport from "postcss-import"
 import { mdsvex } from "mdsvex"
-import { markdown } from "./src/lib/markdown.js"
+import { markdown } from "./src/lib/markdown.ts"
 import { join, dirname } from "path"
 import { fileURLToPath } from "url"
 
