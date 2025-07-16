@@ -1,28 +1,30 @@
 <script lang="ts">
-    import { browser } from "$app/environment";
-    import { goto } from "$app/navigation";
-    import { refreshUser, token } from "$lib/user";
-    import Navbar from "$lib/components/navbar.svelte";
-    import { OTPRoot, OTPInput } from "@jimmyverburgt/svelte-input-otp";
-    import { api } from "$lib/api";
+    import { browser } from "$app/environment"
+    import { goto } from "$app/navigation"
+    import { refreshUser, token } from "$lib/user"
+    import Navbar from "$lib/components/navbar.svelte"
+    import { OTPInput, OTPRoot } from "@jimmyverburgt/svelte-input-otp"
+    import { api } from "$lib/api"
 
-    $: if (browser && !$token) goto("/login");
+    $effect(() => {
+        if (browser && !$token) goto("/login")
+    })
 
-    let errorEl: HTMLSpanElement;
-    let value = "";
+    let value = $state<string>("")
+    let errorMessage = $state<string>("")
 
     function onComplete(code: string) {
-        errorEl.textContent = "";
+        errorMessage = ""
 
         api("account/mcAccount?code=" + code, true, "POST")
             .then(() => {
-                refreshUser();
-                goto("/account");
+                refreshUser()
+                goto("/account")
             })
-            .catch(error => {
-                value = "";
-                errorEl.textContent = error;
-            });
+            .catch((error) => {
+                value = ""
+                errorMessage = error
+            })
     }
 </script>
 
@@ -34,11 +36,11 @@
 
         <ol>
             <li>Launch your Minecraft client and join our server with the IP <span class="ip">mcauth.meteorclient.com</span></li>
-            <li>You will be immediatelly kicked with a one-time 6-digit code</li>
+            <li>You will be immediately kicked with a one-time 6-digit code</li>
             <li>Write the code into the input box below</li>
         </ol>
 
-        <OTPRoot maxLength={6} autoFocus={true} inputMode="numeric" onComplete={onComplete} bind:value className="otp-root">
+        <OTPRoot maxLength={6} autoFocus={true} inputMode="numeric" {onComplete} bind:value className="otp-root">
             <OTPInput index={0} className="otp-input" focusClassName="focused" />
             <OTPInput index={1} className="otp-input" focusClassName="focused" />
             <OTPInput index={2} className="otp-input" focusClassName="focused" />
@@ -47,7 +49,9 @@
             <OTPInput index={5} className="otp-input" focusClassName="focused" />
         </OTPRoot>
 
-        <span class="error" bind:this={errorEl}></span>
+        {#if errorMessage}
+            <span class="error">{errorMessage}</span>
+        {/if}
     </div>
 </div>
 
@@ -92,7 +96,7 @@
     :global(.otp-input) {
         width: 1em;
         height: 1.4em;
-        
+
         border: 1px rgb(80, 80, 80) solid;
         border-radius: 0.325rem;
     }

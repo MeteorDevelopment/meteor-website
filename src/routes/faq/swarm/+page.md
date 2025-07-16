@@ -11,7 +11,7 @@ large tasks to be completed quickly and efficiently by utilising many features o
 
 To set up a Swarm Host, first open the Swarm module settings from Meteor's GUI and select "Host" under the mode
 setting (you must be in a world/server or this won't work).  
-You can optionally choose a port for the host server to run on, but in most cases you wont need to change this.  
+You can optionally choose a port for the host server to run on, but in most cases you won't need to change this.  
 Now just click the "Start" button and your host server is ready to go!
 
 ## Connecting workers
@@ -21,12 +21,12 @@ you wish for your workers to run on.
 Next, make sure the Swarm module is enabled, open the settings page from the GUI and select "Worker" from the mode
 setting.  
 Now enter the ip and port that the host server is running on, in most cases these can be left default, unless you
-changed the port your server is running on *or* the host server is not running on the same network as you.  
-Once you have configured your connection details, click the "Start" button and you *should* see a message saying you
+changed the port your server is running on _or_ the host server is not running on the same network as you.  
+Once you have configured your connection details, click the "Start" button and you _should_ see a message saying you
 have successfully connected to the host server.  
 Repeat this for any other worker accounts you want to add to your Swarm session.
 
 ## Controlling workers
 
-To control workers, just use the `.swarm` command from the host instance, this will transmit any commands you enter to *
-*all** of the workers connected to your session.
+To control workers, just use the `.swarm` command from the host instance, this will transmit any commands you enter to
+**all** the workers connected to your session.

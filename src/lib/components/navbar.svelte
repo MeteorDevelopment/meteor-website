@@ -1,41 +1,48 @@
 <script lang="ts">
-    import type { TransitionConfig } from "svelte/transition";
-    import { cubicOut } from "svelte/easing";
-    import { user } from "$lib/user";
-    import { browser } from "$app/environment";
-    import { clickOutside } from "svelte-use-click-outside";
+    import type { TransitionConfig } from "svelte/transition"
+    import { cubicOut } from "svelte/easing"
+    import { user } from "$lib/user"
+    import { browser } from "$app/environment"
+    import { clickOutside } from "svelte-use-click-outside"
 
-    export let hideProfile = false;
+    let { hideProfile = false } = $props<{ hideProfile?: boolean }>()
 
-    let hamburger: boolean;
-    let hamburgerOpen: boolean;
+    let hamburger = $state(false)
+    let hamburgerOpen = $state(false)
 
-    function slide(node: Element, options?: any): TransitionConfig {
+    function slide(_node: Element, _options?: TransitionConfig): TransitionConfig {
         return {
             delay: 0,
             duration: 400,
             easing: cubicOut,
-            css: (t, u) => `transform: translateX(${(1 - t) * 100}%)`
-        };
+            css: (t, _u) => `transform: translateX(${(1 - t) * 100}%)`,
+        }
     }
 
     if (browser) {
-        let query = window.matchMedia("(max-width: 1100px)");
-        hamburger = query.matches;
+        let query = window.matchMedia("(max-width: 1100px)")
+        hamburger = query.matches
 
-        query.addEventListener("change", (query) => hamburger = query.matches);
+        query.addEventListener("change", query => (hamburger = query.matches))
     }
 </script>
 
 <svelte:head>
-    <link rel="stylesheet" href="/css/hamburgers.css">
+    <link rel="stylesheet" href="/css/hamburgers.css"/>
 </svelte:head>
 
 <nav>
-    <a href="/" class="icon-link"><img src="/icon.png" alt="icon" class="icon"></a>
+    <a href="/" class="icon-link"><img src="/icon.png" alt="icon" class="icon"/></a>
 
     {#if hamburger}
-        <button on:click={() => hamburgerOpen = !hamburgerOpen} use:clickOutside={() => hamburgerOpen = false} class="hamburger hamburger--collapse" class:is-active={hamburgerOpen} type="button">
+        <button
+            aria-label="Open navigation menu"
+            onclick={() => (hamburgerOpen = !hamburgerOpen)}
+            use:clickOutside={() => (hamburgerOpen = false)}
+            class="hamburger hamburger--collapse"
+            class:is-active={hamburgerOpen}
+            type="button"
+        >
             <span class="hamburger-box"><span class="hamburger-inner"></span></span>
         </button>
 
@@ -47,7 +54,9 @@
                             <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.jpg"} alt="profile"/>
                         </a>
                     {:else}
-                        <a href="/login"><button>Login</button></a>
+                        <a href="/login">
+                            <button>Login</button>
+                        </a>
                     {/if}
                 {/if}
 
@@ -65,15 +74,15 @@
 
         {#if hideProfile}
             <div></div>
+        {:else if $user}
+            <a class="user" href="/account">
+                <p>{$user.username}</p>
+                <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.png"} alt="profile"/>
+            </a>
         {:else}
-            {#if $user}
-                <a class="user" href="/account">
-                    <p>{$user.username}</p>
-                    <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.png"} alt="profile"/>
-                </a>
-            {:else}
-                <a href="/login"><button>Login</button></a>
-            {/if}
+            <a href="/login">
+                <button>Login</button>
+            </a>
         {/if}
     {/if}
 </nav>

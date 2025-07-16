@@ -1,7 +1,7 @@
-import type { Load } from "@sveltejs/kit";
+import type { Load } from "@sveltejs/kit"
 
 export const load = (({ url }) => {
     return {
-        qToken: url.searchParams.get("token")
-    };
-}) satisfies Load;
+        qToken: url.searchParams.get("token"),
+    }
+}) satisfies Load
