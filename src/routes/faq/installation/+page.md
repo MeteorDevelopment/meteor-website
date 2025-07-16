@@ -4,17 +4,16 @@ layout: faq
 
 ## Downloading
 
-When you download Meteor, you can choose one of two options:
-
-- `Release`: this version is updated less frequently, but is preferred if you don't want to update often.  
-  You can download it on the [official website](https://meteorclient.com/download);
-- `Dev build`: this version is updated frequently, can have some bugs, but often has less than the release.  
-  You can get this version from the [official website](https://meteorclient.com/download?devBuild=latest),
-  the `#dev-builds` channel in the [Meteor Discord](https://meteorclient.com/discord), or by compiling the source
-  from [GitHub](https://github.com/MeteorDevelopment/meteor-client).
+Meteor is continuously updated to support the latest version of Minecraft and can be downloaded from
+our [home page](https://meteorclient.com).  
+If you're looking for a slightly older version of Meteor (from `1.21.4` and up), check out
+the [archive](https://meteorclient.com/archive).  
+Advanced users may also [compile Meteor from source](https://meteorclient.com/faq/old-versions), though this is not
+recommended for most players.
 
 _Disclaimer: If your antivirus flags Meteor as dangerous, it is probably because it is an executable (JAR) file.  
-If you have any concerns feel free to check the source code located within this repository._
+If you have any concerns feel free to check the source code located
+within [this](https://github.com/MeteorDevelopment/meteor-client/) repository._
 
 ## Installing
 
@@ -31,6 +30,16 @@ Avoid using closed source third-party launchers (`TLauncher` is a common example
 Since nobody can look at the code, the developers could insert malicious code, that could potentially harm your
 devices.  
 We do not provide support to cracked users in any way, as they do not legally own the game.
+
+### Non-standard launchers
+
+Some launchers, such as `Feather Client`, `Lunar Client`, and similar, modify the Minecraft JAR or environment in
+non-standard ways.  
+This often causes incompatibilities with Meteor and other mods.
+
+As a result, we cannot provide support for issues encountered when using these launchers.  
+We recommend using a standard or mod-friendly launcher such as `Prism Launcher`, `MultiMC`, or the official Minecraft
+launcher.
 
 ### Minecraft Launcher
 
@@ -51,7 +60,7 @@ If you already have Fabric Loader installed, skip to step 4.
 If you already have one of these installed, skip to step 2.  
 If you already have an instance with Fabric Loader, skip to step 4.
 
-1. Download [PrismLauncher](https://prismlauncher.org/download/) or [MultiMC](https://multimc.org/#Download) and install it.
+1. Install [PrismLauncher](https://prismlauncher.org/download/) or [MultiMC](https://multimc.org/#Download).
 2. Open the launcher and click `Add Instance`, make sure the correct Minecraft version is selected, choose the `Fabric`
    loader in the bottom window, and press `OK`.
 3. Click `Edit Instance` with your new instance selected and then click `Install Fabric` then `OK`.
