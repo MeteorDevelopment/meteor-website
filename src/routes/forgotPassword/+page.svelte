@@ -19,7 +19,7 @@
     }
 
     $effect(() => {
-        if (browser && !$token) goto("/account")
+        if (browser && $token) goto("/account")
     })
 </script>
 
