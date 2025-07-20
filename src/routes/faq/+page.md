@@ -11,13 +11,7 @@ Many of them are incorrect or outdated and, as stated below, we do not support o
 
 To install Meteor Client:
 
-1. Download the Meteor Client, choosing one of two options:
-    - `Release`: this version is updated less frequently, but is preferred if you don't want to update often.  
-      You can download it on the [official website](https://meteorclient.com/download);
-    - `Dev build`: this version is updated frequently, but can have some bugs.  
-      You can get this version from the [official website](https://meteorclient.com/download?devBuild=latest),
-      the `#dev-builds` channel in the [Meteor Discord](https://meteorclient.com/discord), or by compiling the source
-      from [GitHub](https://github.com/MeteorDevelopment/meteor-client).
+1. Download the Meteor Client from our [home page](https://meteorclient.com).
 2. Create a Fabric instance in your Minecraft launcher, and choose the `latest` version of Minecraft;
 3. Go in the `mods` folder of the newly created instance, and paste the `meteor-client-x.x.x-xxxx.jar` file in it;
 4. Run the instance, and if you did everything correctly, you should see a text in the top right corner indicating that
@@ -58,18 +52,19 @@ You can use Copy and Paste shortcuts in the GUI to copy and paste configs.
 
 You can also use this feature in individual modules and individual tabs (GUI, Config, HUD, etc).
 
-## How to use Meteor with Optifine?
+## How to use Meteor with OptiFine?
 
-Optifine is not and will never be supported by Meteor. We recommend using these instead:
+OptiFine is not and will never be supported by Meteor. We recommend using these instead:
 
-| Mod                                             | Description                                     |
-|-------------------------------------------------|-------------------------------------------------|
-| [Sodium](https://modrinth.com/mod/sodium)       | Performance improvements (better than Optifine) |
-| [Lithium](https://modrinth.com/mod/lithium)     | Server optimisations                            |
-| [Starlight](https://modrinth.com/mod/starlight) | Lighting engine improvements                    |
+| Mod                                               | Description                                     |
+|---------------------------------------------------|-------------------------------------------------|
+| [Sodium](https://modrinth.com/mod/sodium)         | Performance improvements (better than OptiFine) |
+| [Lithium](https://modrinth.com/mod/lithium)       | Server optimisations                            |
+| [Iris Shaders](https://modrinth.com/mod/iris)     | Modern shader pack loader                       |
+| [Moonrise](https://modrinth.com/mod/moonrise-opt) | Optimisation for the integrated server          |
 
-More alternatives and the detailed reason Optifine is not
-supported [here](https://lambdaurora.dev/optifine_alternatives/).
+More alternatives and the detailed reason OptiFine is not
+supported [here](https://optifine.alternatives.lambdaurora.dev/).
 
 ## How do I use Baritone with Meteor?
 
