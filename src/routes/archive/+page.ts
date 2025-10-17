@@ -10,7 +10,7 @@ export const load: PageLoad = async ({ fetch }) => {
 
     for (const str in stats.builds) {
         const version = parse(str)!
-        if (version > latest) latest = version
+        if (version.compare(latest) > 0) latest = version
     }
 
     for (const str in stats.builds) {
