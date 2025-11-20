@@ -55,7 +55,6 @@
     </form>
 {/if}
 
-<!-- svelte-ignore css_unused_selector -->
 <style>
     @import "form.css";
 </style>

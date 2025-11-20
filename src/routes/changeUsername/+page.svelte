@@ -49,7 +49,6 @@
     <button type="submit" class="form-button">Change</button>
 </form>
 
-<!-- svelte-ignore css_unused_selector -->
 <style>
     @import "form.css";
 </style>

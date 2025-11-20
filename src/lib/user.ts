@@ -38,7 +38,7 @@ token.subscribe((token) => {
 })
 
 export function refreshUser() {
-    let tok = get(token)
+    const tok = get(token)
 
     if (!tok) {
         user.set(null)

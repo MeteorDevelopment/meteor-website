@@ -45,7 +45,7 @@ export function markdown() {
                 }
 
                 if (node.children?.[0]?.value) {
-                    let id = node.children[0].value.toLowerCase().replaceAll(" ", "-")
+                    const id = node.children[0].value.toLowerCase().replaceAll(" ", "-")
                     node.children.splice(0, 0, {
                         type: "link",
                         url: "#" + id,

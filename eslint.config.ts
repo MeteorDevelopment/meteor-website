@@ -1,91 +1,86 @@
-import tsESLint from "@typescript-eslint/eslint-plugin"
-import tsParser from "@typescript-eslint/parser"
+import js from "@eslint/js"
+import globals from "globals"
+import tsESLint from "typescript-eslint"
+import stylistic from "@stylistic/eslint-plugin"
 import svelte from "eslint-plugin-svelte"
 import svelteParser from "svelte-eslint-parser"
-import stylistic from "@stylistic/eslint-plugin"
-import globals from "globals"
+import { defineConfig } from "eslint/config"
 
-const unusedVarsConfig = {
-    args: "all",
-    argsIgnorePattern: "^_",
-    caughtErrors: "all",
-    caughtErrorsIgnorePattern: "^_",
-    destructuredArrayIgnorePattern: "^_",
-    varsIgnorePattern: "^_",
-    ignoreRestSiblings: true,
-}
-
-export default [
-    // Stylistic
-    stylistic.configs.customize({
-        indent: 4,
-        quotes: "double",
-        semi: false,
-        jsx: false,
-    }),
+export default defineConfig([
+    // ------------------------------------------------------------------------
+    // 1. Ignore build folders
+    // ------------------------------------------------------------------------
     {
+        ignores: [
+            "node_modules/**",
+            "build/**",
+            ".svelte-kit/**",
+        ],
+    },
+
+    // ------------------------------------------------------------------------
+    // 2. Base recommended configs FIRST
+    // ------------------------------------------------------------------------
+    js.configs.recommended,
+    ...tsESLint.configs.recommended,
+    ...svelte.configs.recommended,
+
+    // ------------------------------------------------------------------------
+    // 3. TypeScript files
+    // ------------------------------------------------------------------------
+    {
+        files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
+        languageOptions: {
+            parser: tsESLint.parser,
+            globals: globals.browser,
+        },
         plugins: {
             "@stylistic": stylistic,
         },
-        rules: {
-            "@stylistic/object-curly-spacing": ["error", "always"],
-            "@stylistic/brace-style": ["error", "1tbs", { allowSingleLine: true }],
-        },
     },
 
-    // TypeScript
-    {
-        files: ["**/*.ts", "**/*.tsx"],
-        languageOptions: {
-            parser: tsParser,
-            globals: {
-                ...globals.browser,
-                ...globals.node,
-            },
-        },
-        plugins: {
-            "@typescript-eslint": tsESLint,
-        },
-        rules: {
-            ...tsESLint.configs.recommended.rules,
-            "@typescript-eslint/no-unused-vars": ["error", unusedVarsConfig],
-            "@typescript-eslint/no-explicit-any": "warn",
-        },
-    },
-
-    // Svelte
-    ...svelte.configs.recommended,
+    // ------------------------------------------------------------------------
+    // 4. Svelte files
+    // ------------------------------------------------------------------------
     {
         files: ["**/*.svelte"],
         languageOptions: {
             parser: svelteParser,
             parserOptions: {
-                parser: tsParser,
+                parser: tsESLint.parser,
+                extraFileExtensions: [".svelte"],
             },
-            globals: {
-                ...globals.browser,
-            },
-        },
-        plugins: {
-            svelte,
-            "@typescript-eslint": tsESLint,
-        },
-        rules: {
-            "svelte/no-dom-manipulating": "warn",
-            "svelte/require-each-key": "warn",
-            "svelte/css-unused-selector": "off",
-            "svelte/no-unused-svelte-ignore": "off",
-            "@typescript-eslint/no-unused-vars": ["error", unusedVarsConfig],
-            "@typescript-eslint/no-explicit-any": "warn",
+            globals: globals.browser,
         },
     },
 
+    // ------------------------------------------------------------------------
+    // 5. Shared stylistic + rules
+    // ------------------------------------------------------------------------
     {
-        // Ignore generated files
-        ignores: [
-            ".svelte-kit/**",
-            "node_modules/**",
-            "build/**",
-        ],
+        files: ["**/*.{js,mjs,cjs,ts,mts,cts,svelte}"],
+        plugins: {
+            "@stylistic": stylistic,
+        },
+        rules: {
+            ...stylistic.configs.customize({
+                indent: 4,
+                quotes: "double",
+                semi: false,
+                jsx: false,
+            }).rules,
+            "@stylistic/object-curly-spacing": ["error", "always"],
+            "@stylistic/brace-style": ["error", "1tbs", { allowSingleLine: true }],
+
+            "@typescript-eslint/no-unused-vars": ["warn", {
+                args: "all",
+                argsIgnorePattern: "^_",
+                caughtErrors: "all",
+                caughtErrorsIgnorePattern: "^_",
+                destructuredArrayIgnorePattern: "^_",
+                varsIgnorePattern: "^_",
+                ignoreRestSiblings: true,
+            }],
+        },
     },
-]
+])

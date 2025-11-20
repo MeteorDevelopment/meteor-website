@@ -12,7 +12,7 @@ export interface Stats {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function fetchStats(fetch: any): Promise<Stats> {
-    let stats = await (await fetch("https://meteorclient.com/api/stats")).json()
+    const stats = await (await fetch("https://meteorclient.com/api/stats")).json()
 
     return {
         builds: stats.builds,
