@@ -1,23 +1,23 @@
 <script lang="ts">
-    import type { Stats } from "$lib/stats";
-    import semver from "semver";
+    import type { Stats } from "$lib/stats"
+    import semver from "semver"
 
-    export let stats: Stats;
+    let { stats } = $props<{ stats: Stats }>()
 
     function prettyNumber(x: number) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
     }
 
     function getLatestVersion(): string {
-        let latest = "0.0.0";
+        let latest = "0.0.0"
 
         for (const version of Object.keys(stats.builds)) {
             if (semver.gt(version, latest)) {
-                latest = version;
+                latest = version
             }
         }
 
-        return latest;
+        return latest
     }
 </script>
 
@@ -28,9 +28,9 @@
         <p>Online Players: {prettyNumber(stats.onlinePlayers)}</p>
 
         <div class="buttons">
-            <a href="https://adfoc.us/81926897739205" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> Meteor Client [{getLatestVersion()} - #{stats.builds[getLatestVersion()]}]</a>
+            <a href="https://adfoc.us/81926897739205" target="_blank" class="button"><img src="/icons/download.svg" alt="download" /> Meteor Client [{getLatestVersion()} - #{stats.builds[getLatestVersion()]}]</a>
             <p>If you're looking for older versions of Meteor, check out the <a href="/archive">archive</a>.</p>
-            <a href="/api/downloadBaritone" target="_blank" class="button"><img src="/icons/download.svg" alt="download"> *Baritone [{stats.baritoneMcVersion}]</a>
+            <a href="/api/downloadBaritone" target="_blank" class="button"><img src="/icons/download.svg" alt="download" /> *Baritone [{stats.baritoneMcVersion}]</a>
         </div>
 
         <p>* Baritone is our <a href="https://github.com/MeteorDevelopment/baritone">fork</a> which was previously included in Meteor itself. If you want the most up to date version, or want help with Baritone go to the <a href="https://github.com/cabaletta/baritone">official sources</a>.</p>

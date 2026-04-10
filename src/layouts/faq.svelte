@@ -1,12 +1,14 @@
-<script>
-    import Footer from "$lib/components/footer.svelte";
-    import Navbar from "$lib/components/navbar.svelte";
+<script lang="ts">
+    import Footer from "$lib/components/footer.svelte"
+    import Navbar from "$lib/components/navbar.svelte"
+
+    let { children } = $props()
 </script>
 
-<Navbar/>
+<Navbar />
 <div class="container">
     <div>
-        <slot/>
+        {@render children()}
     </div>
     <ul>
         <li><a href="/faq">Home</a></li>
@@ -19,10 +21,10 @@
         <li><a href="/faq/swarm">Swarm</a></li>
     </ul>
 </div>
-<Footer/>
+<Footer />
 
 <style>
-    @import "markdown.css";
+    @import 'markdown.css';
 
     ul {
         align-self: flex-start;

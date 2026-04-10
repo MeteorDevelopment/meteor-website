@@ -1,11 +1,12 @@
 <script lang="ts">
-    import { dev } from "$app/environment";
-    import { onMount } from "svelte";
+    import { dev } from "$app/environment"
+    import { onMount } from "svelte"
 
     onMount(() => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const w: any = window;
-        (w.adsbygoogle = w.adsbygoogle || []).push({});
-    });
+        (w.adsbygoogle = w.adsbygoogle || []).push({})
+    })
 </script>
 
 <ins
