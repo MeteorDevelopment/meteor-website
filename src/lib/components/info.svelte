@@ -30,6 +30,7 @@
         <div class="buttons">
             <a href="https://adfoc.us/81926897739205" target="_blank" class="button"><img src="/icons/download.svg" alt="download" /> Meteor Client [{getLatestVersion()} - #{stats.builds[getLatestVersion()]}]</a>
             <p>If you're looking for older versions of Meteor, check out the <a href="/archive">archive</a>.</p>
+            <p>If you plan to use Meteor on DonutSMP. Please also install <a href="https://modrinth.com/mod/exploitpreventer" target="_blank">Exploit Preventer</a> to avoid getting banned instantly.</p>
             <a href="/api/downloadBaritone" target="_blank" class="button"><img src="/icons/download.svg" alt="download" /> *Baritone [{stats.baritoneMcVersion}]</a>
         </div>
 
