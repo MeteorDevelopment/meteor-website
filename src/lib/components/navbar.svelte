@@ -35,6 +35,7 @@
     <a href="/" class="icon-link"><img src="/icon.png" alt="icon" class="icon"/></a>
 
     {#if hamburger}
+        <div></div>
         <button
             aria-label="Open navigation menu"
             onclick={() => (hamburgerOpen = !hamburgerOpen)}
@@ -80,7 +81,7 @@
                 <img src={$user.discordAvatar ? $user.discordAvatar : "/empty-profile.png"} alt="profile"/>
             </a>
         {:else}
-            <a href="/login">
+            <a class="login-button" href="/login">
                 <button>Login</button>
             </a>
         {/if}
@@ -89,10 +90,13 @@
 
 <style>
     nav {
-        background-color: var(--accent);
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         align-items: center;
-        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: var(--accent);
     }
 
     a {
@@ -116,13 +120,15 @@
     .user {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: end;
         gap: 0.5rem;
         min-height: 4.5rem;
         padding-left: 1.5rem;
         padding-right: 1.5rem;
         color: var(--text-primary);
         text-decoration: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .user:hover {
@@ -149,11 +155,16 @@
         text-shadow: rgba(0, 0, 0, 0.44) 1px 1px 4px;
     }
 
+    .login-button {
+        place-self: center end;
+    }
+
     button {
         margin-right: 1rem;
     }
 
     .hamburger {
+        place-self: center end;
         background-image: none;
         padding: 0 !important;
         box-shadow: none;
