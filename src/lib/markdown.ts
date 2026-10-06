@@ -7,6 +7,8 @@ interface MarkdownNode extends Node {
         hProperties?: {
             className?: string[]
             id?: string
+            target?: string
+            rel?: string
         }
     }
     position?: Position
@@ -79,6 +81,23 @@ export function markdown() {
             } else if (node.type == "link") {
                 // Add .md-a
                 addClasses(node, "md-a")
+
+                if (node.url && (node.url.startsWith("http://") || node.url.startsWith("https://"))) {
+                    try {
+                        const url = new URL(node.url)
+                        if (
+                            url.hostname !== "meteorclient.com"
+                            && url.hostname !== "www.meteorclient.com"
+                        ) {
+                            node.data ??= {}
+                            node.data.hProperties ??= {}
+                            node.data.hProperties.target = "_blank"
+                            node.data.hProperties.rel = "noopener noreferrer"
+                        }
+                    } catch {
+                        // ignores any invalid urls
+                    }
+                }
             } else if (node.type == "image") {
                 // Add .md-img and set alt
                 addClasses(node, "md-img")
