@@ -9,7 +9,6 @@ _(Create it, if it doesn't exist)_.
 
 ## Supported formats
 
-- Classic `.nbs` [Download](https://github.com/thatcraniumguy/Songs/tree/master/NBS%20files)
 - OpenNBS v5 `.nbs` [Download](https://opennbs.org/songs)
 - .txt files using format `<tick>:<note>`
 
