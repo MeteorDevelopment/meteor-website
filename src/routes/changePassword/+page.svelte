@@ -16,11 +16,16 @@
         event.preventDefault()
         errorMessage = ""
 
-        let url = "account/changePassword"
-        if (data.qToken) url += "Token?token=" + encodeURIComponent(data.qToken) + "&new=" + encodeURIComponent(newPassword)
-        else url += "?old=" + encodeURIComponent(oldPassword) + "&new=" + encodeURIComponent(newPassword)
+        const formData = new FormData()
+        formData.append("new", newPassword)
 
-        api(url, data.qToken == null, "POST")
+        let url = "account/changePassword"
+        if (data.qToken) {
+            url += "Token"
+            formData.append("token", data.qToken)
+        } else formData.append("old", oldPassword)
+
+        api(url, data.qToken == null, "POST", formData)
             .then(() => goto("/account"))
             .catch(reason => (errorMessage = reason))
     }
@@ -49,7 +54,7 @@
         />
     {/if}
 
-    <label for="newPassword" class="form-label"><b>New Password</b></label>
+    <label for="newPassword" class="form-label"><b>New Password</b> <i>(8 to 72 characters)</i></label>
     <!-- svelte-ignore a11y_autofocus -->
     <input
         bind:value={newPassword}
@@ -57,6 +62,8 @@
         placeholder="New Password"
         id="newPassword"
         name="newPassword"
+        minlength="8"
+        maxlength="72"
         required
         autofocus={data.qToken != null}
     />

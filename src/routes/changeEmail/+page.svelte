@@ -13,7 +13,10 @@
         event.preventDefault()
         errorMessage = ""
 
-        api("account/changeEmail?email=" + encodeURIComponent(newEmail), true, "POST")
+        const formData = new FormData()
+        formData.append("email", newEmail)
+
+        api("account/changeEmail", true, "POST", formData)
             .then(() => (sent = true))
             .catch(reason => (errorMessage = reason))
     }

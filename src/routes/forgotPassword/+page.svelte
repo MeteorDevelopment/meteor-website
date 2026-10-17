@@ -13,7 +13,10 @@
         event.preventDefault()
         errorMessage = ""
 
-        api("account/forgotPassword?email=" + encodeURIComponent(email), false, "POST")
+        const formData = new FormData()
+        formData.append("email", email)
+
+        api("account/forgotPassword", false, "POST", formData)
             .then(() => (sent = true))
             .catch(reason => (errorMessage = reason))
     }
