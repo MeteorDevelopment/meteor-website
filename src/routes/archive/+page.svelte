@@ -18,8 +18,11 @@
         <p class="warning-small">See the <a href="/faq/old-versions">FAQ</a> for more details.</p>
         <hr />
 
-        <div class="center">
+        <div class="columns">
             <div class="groups">
+                <h3 class="title">Meteor Client</h3>
+                <hr />
+
                 {#each Object.keys(data.builds) as group (group)}
                     <h3>{group}</h3>
                     <ul>
@@ -32,6 +35,21 @@
                     <hr />
                 {/each}
             </div>
+
+            {#if data.baritone.length}
+                <div class="groups">
+                    <h3 class="title">Baritone</h3>
+                    <hr />
+
+                    <ul>
+                        {#each data.baritone as version (version)}
+                            <li>
+                                <a href={`https://meteorclient.com/api/downloadBaritone?version=${version}`}>{version}</a>
+                            </li>
+                        {/each}
+                    </ul>
+                </div>
+            {/if}
         </div>
     </div>
 </div>
@@ -58,10 +76,19 @@
         color: darkred;
     }
 
-    .center {
+    .columns {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 6rem;
+    }
+
+    @media screen and (max-width: 700px) {
+        .columns {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
     }
 
     .groups {
@@ -77,6 +104,11 @@
 
     h3 {
         font-size: 2rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+        text-align: center;
     }
 
     ul {

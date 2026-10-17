@@ -29,6 +29,27 @@ export const load: PageLoad = async ({ fetch }) => {
 
     return {
         builds: groupBy(builds, build => build.version.major + "." + build.version.minor),
+        baritone: await fetchBaritoneVersions(fetch, stats.baritoneMcVersion),
+    }
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function fetchBaritoneVersions(fetch: any, latest: string): Promise<string[]> {
+    try {
+        const res = await fetch("https://maven.meteordev.org/snapshots/meteordevelopment/baritone/maven-metadata.xml")
+        const xml: string = await res.text()
+
+        const versions = new Set<string>()
+        for (const match of xml.matchAll(/<version>([^<]+)<\/version>/g)) {
+            versions.add(match[1].replace(/-SNAPSHOT$/, ""))
+        }
+        versions.delete(latest)
+
+        return [...versions]
+            .filter(version => parseVersion(version) != null)
+            .sort((a, b) => -parseVersion(a)!.compare(parseVersion(b)!))
+    } catch {
+        return []
     }
 }
 
