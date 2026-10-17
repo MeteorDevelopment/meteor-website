@@ -13,7 +13,7 @@
         event.preventDefault()
         errorMessage = ""
 
-        api("account/login?name=" + name + "&password=" + password)
+        api("account/login?name=" + encodeURIComponent(name) + "&password=" + encodeURIComponent(password))
             .then(res => token.set(res.token))
             .catch(reason => (errorMessage = reason))
     }
@@ -42,8 +42,8 @@
     <button type="submit" class="form-button">Login</button>
 
     <div class="footer">
-        <p><i class="hide">Don't have an account? </i><a href="/register">Register</a></p>
-        <p><i class="hide">Forgot your password? </i> <a href="/forgotPassword">Reset Password</a></p>
+        <p><i class="hide">Don't have an account?</i> <a href="/register">Register</a></p>
+        <p><i class="hide">Forgot your password?</i> <a href="/forgotPassword">Reset Password</a></p>
     </div>
 </form>
 

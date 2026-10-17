@@ -13,7 +13,7 @@
         event.preventDefault()
         errorMessage = ""
 
-        api("account/changeEmail?email=" + newEmail, true, "POST")
+        api("account/changeEmail?email=" + encodeURIComponent(newEmail), true, "POST")
             .then(() => (sent = true))
             .catch(reason => (errorMessage = reason))
     }

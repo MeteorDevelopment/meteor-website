@@ -17,8 +17,8 @@
         errorMessage = ""
 
         let url = "account/changePassword"
-        if (data.qToken) url += "Token?token=" + data.qToken + "&new=" + newPassword
-        else url += "?old=" + oldPassword + "&new=" + newPassword
+        if (data.qToken) url += "Token?token=" + encodeURIComponent(data.qToken) + "&new=" + encodeURIComponent(newPassword)
+        else url += "?old=" + encodeURIComponent(oldPassword) + "&new=" + encodeURIComponent(newPassword)
 
         api(url, data.qToken == null, "POST")
             .then(() => goto("/account"))
