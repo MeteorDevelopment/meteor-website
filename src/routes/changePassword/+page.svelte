@@ -54,7 +54,7 @@
         />
     {/if}
 
-    <label for="newPassword" class="form-label"><b>New Password</b></label>
+    <label for="newPassword" class="form-label"><b>New Password</b> <i>(8 to 72 characters)</i></label>
     <!-- svelte-ignore a11y_autofocus -->
     <input
         bind:value={newPassword}
@@ -62,6 +62,8 @@
         placeholder="New Password"
         id="newPassword"
         name="newPassword"
+        minlength="8"
+        maxlength="72"
         required
         autofocus={data.qToken != null}
     />

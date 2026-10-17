@@ -69,8 +69,17 @@
         <label for="email" class="form-label"><b>Email</b></label>
         <input bind:value={email} type="email" placeholder="Email" id="email" name="email" required/>
 
-        <label for="password" class="form-label"><b>Password</b></label>
-        <input bind:value={password} type="password" placeholder="Password" id="password" name="password" required/>
+        <label for="password" class="form-label"><b>Password</b> <i>(8 to 72 characters)</i></label>
+        <input
+            bind:value={password}
+            type="password"
+            placeholder="Password"
+            id="password"
+            name="password"
+            minlength="8"
+            maxlength="72"
+            required
+        />
 
         <p class="form-label"><b>Captcha</b></p>
         <Turnstile
