@@ -13,7 +13,11 @@
         event.preventDefault()
         errorMessage = ""
 
-        api("account/login?name=" + encodeURIComponent(name) + "&password=" + encodeURIComponent(password))
+        const formData = new FormData()
+        formData.append("name", name)
+        formData.append("password", password)
+
+        api("account/login", false, "POST", formData)
             .then(res => token.set(res.token))
             .catch(reason => (errorMessage = reason))
     }

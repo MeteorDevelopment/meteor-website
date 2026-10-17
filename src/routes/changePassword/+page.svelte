@@ -16,11 +16,16 @@
         event.preventDefault()
         errorMessage = ""
 
-        let url = "account/changePassword"
-        if (data.qToken) url += "Token?token=" + encodeURIComponent(data.qToken) + "&new=" + encodeURIComponent(newPassword)
-        else url += "?old=" + encodeURIComponent(oldPassword) + "&new=" + encodeURIComponent(newPassword)
+        const formData = new FormData()
+        formData.append("new", newPassword)
 
-        api(url, data.qToken == null, "POST")
+        let url = "account/changePassword"
+        if (data.qToken) {
+            url += "Token"
+            formData.append("token", data.qToken)
+        } else formData.append("old", oldPassword)
+
+        api(url, data.qToken == null, "POST", formData)
             .then(() => goto("/account"))
             .catch(reason => (errorMessage = reason))
     }

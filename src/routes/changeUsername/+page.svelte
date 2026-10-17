@@ -12,7 +12,10 @@
         event.preventDefault()
         errorMessage = ""
 
-        api("account/changeUsername?username=" + encodeURIComponent(newUsername), true, "POST")
+        const formData = new FormData()
+        formData.append("username", newUsername)
+
+        api("account/changeUsername", true, "POST", formData)
             .then(() => {
                 refreshUser() // Idk why it doesn't refresh the stores automatically
                 goto("/account")
